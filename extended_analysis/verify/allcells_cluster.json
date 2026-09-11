@@ -1,0 +1,27 @@
+{
+ "definition": "every 20 m DEM cell whose centre lies inside a rainfall landslide polygon is a case row; controls as in the published design; standard errors clustered by landslide polygon (each control its own cluster)",
+ "all_cells_polygon_weight1": {
+  "OR": 1.0283,
+  "ci": [
+   1.0082,
+   1.0487
+  ],
+  "p": 0.00546,
+  "n_cells": 94901,
+  "n_polygons": 5915,
+  "n_ctrl": 9365,
+  "note": "weights 1/n per cell so each polygon counts once; cluster covariance with fractional frequency weights is approximate"
+ },
+ "all_cells_area_weighted": {
+  "OR": 1.0272,
+  "ci": [
+   1.004,
+   1.051
+  ],
+  "p": 0.02149,
+  "n_cells": 94901,
+  "n_polygons": 5915,
+  "n_ctrl": 9365,
+  "note": "each cell weight 1; exact cluster covariance"
+ }
+}

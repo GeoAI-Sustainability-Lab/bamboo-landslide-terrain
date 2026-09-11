@@ -1,0 +1,228 @@
+{
+ "facts": {
+  "S10.pre_event_greenness": {
+   "value": {
+    "like_for_like": {
+     "coverage": {
+      "cases_with_value": 5393,
+      "cases_total": 5915,
+      "controls_with_value": 9148,
+      "controls_total": 9365,
+      "cases_with_ge3_obs": 4963,
+      "median_obs_cases": 8.0,
+      "median_obs_controls": 8.0
+     },
+     "medians": {
+      "cases_bamboo": {
+       "NDVI": 0.8,
+       "NDMI": 0.243,
+       "NBR": 0.527
+      },
+      "cases_broadleaf": {
+       "NDVI": 0.798,
+       "NDMI": 0.257,
+       "NBR": 0.546
+      },
+      "controls_bamboo": {
+       "NDVI": 0.817,
+       "NDMI": 0.239,
+       "NBR": 0.538
+      },
+      "controls_broadleaf": {
+       "NDVI": 0.843,
+       "NDMI": 0.305,
+       "NBR": 0.61
+      }
+     },
+     "base_on_covered_subset": {
+      "OR": 1.0324,
+      "ci": [
+       1.0099,
+       1.0554
+      ],
+      "p": 0.00451,
+      "n": 14541,
+      "n_case": 5393,
+      "n_bamboo_case": 166
+     },
+     "plus_ndvi": {
+      "OR": 1.0354,
+      "ci": [
+       1.0127,
+       1.0587
+      ],
+      "p": 0.00212,
+      "n": 14541,
+      "n_case": 5393,
+      "n_bamboo_case": 166,
+      "NDVI_beta": -3.307,
+      "NDVI_p": 0.0
+     },
+     "plus_ndmi": {
+      "OR": 1.0411,
+      "ci": [
+       1.018,
+       1.0647
+      ],
+      "p": 0.00043,
+      "n": 14541,
+      "n_case": 5393,
+      "n_bamboo_case": 166,
+      "NDMI_beta": -5.563,
+      "NDMI_p": 0.0
+     },
+     "plus_ndvi_ndmi": {
+      "OR": 1.0406,
+      "ci": [
+       1.0175,
+       1.0641
+      ],
+      "p": 0.0005,
+      "n": 14541,
+      "n_case": 5393,
+      "n_bamboo_case": 166,
+      "NDVI_beta": -0.954,
+      "NDVI_p": 0.0,
+      "NDMI_beta": -4.611,
+      "NDMI_p": 0.0
+     },
+     "plus_nbr": {
+      "OR": 1.0409,
+      "ci": [
+       1.0177,
+       1.0645
+      ],
+      "p": 0.00047,
+      "n": 14541,
+      "n_case": 5393,
+      "n_bamboo_case": 166,
+      "NBR_beta": -4.957,
+      "NBR_p": 0.0
+     },
+     "control_date_assignment": {
+      "rule": "pre-event image date of the nearest landslide case (planar distance, TWD97 TM2)",
+      "median_distance_m": 1575,
+      "p90_distance_m": 8540,
+      "n_dates": 76
+     }
+    },
+    "multiyear_controls": {
+     "coverage": {
+      "cases_with_value": 5393,
+      "cases_total": 5915,
+      "controls_with_value": 9365,
+      "controls_total": 9365,
+      "cases_with_ge3_obs": 4963,
+      "median_obs_cases": 8.0,
+      "median_obs_controls": 298.0
+     },
+     "medians": {
+      "cases_bamboo": {
+       "NDVI": 0.8,
+       "NDMI": 0.243,
+       "NBR": 0.527
+      },
+      "cases_broadleaf": {
+       "NDVI": 0.798,
+       "NDMI": 0.257,
+       "NBR": 0.546
+      },
+      "controls_bamboo": {
+       "NDVI": 0.806,
+       "NDMI": 0.229,
+       "NBR": 0.537
+      },
+      "controls_broadleaf": {
+       "NDVI": 0.84,
+       "NDMI": 0.307,
+       "NBR": 0.614
+      }
+     },
+     "base_on_covered_subset": {
+      "OR": 1.0328,
+      "ci": [
+       1.0103,
+       1.0558
+      ],
+      "p": 0.00408,
+      "n": 14758,
+      "n_case": 5393,
+      "n_bamboo_case": 166
+     },
+     "plus_ndvi": {
+      "OR": 1.0396,
+      "ci": [
+       1.0164,
+       1.0634
+      ],
+      "p": 0.00076,
+      "n": 14758,
+      "n_case": 5393,
+      "n_bamboo_case": 166,
+      "NDVI_beta": -6.446,
+      "NDVI_p": 0.0
+     },
+     "plus_ndmi": {
+      "OR": 1.0442,
+      "ci": [
+       1.0206,
+       1.0683
+      ],
+      "p": 0.00021,
+      "n": 14758,
+      "n_case": 5393,
+      "n_bamboo_case": 166,
+      "NDMI_beta": -8.353,
+      "NDMI_p": 0.0
+     },
+     "plus_ndvi_ndmi": {
+      "OR": 1.0434,
+      "ci": [
+       1.0198,
+       1.0674
+      ],
+      "p": 0.00027,
+      "n": 14758,
+      "n_case": 5393,
+      "n_bamboo_case": 166,
+      "NDVI_beta": -3.216,
+      "NDVI_p": 0.0,
+      "NDMI_beta": -5.271,
+      "NDMI_p": 0.0
+     },
+     "plus_nbr": {
+      "OR": 1.0459,
+      "ci": [
+       1.022,
+       1.0703
+      ],
+      "p": 0.00014,
+      "n": 14758,
+      "n_case": 5393,
+      "n_bamboo_case": 166,
+      "NBR_beta": -8.169,
+      "NBR_p": 0.0
+     }
+    },
+    "manuscript_values": {
+     "base": 1.032,
+     "plus_greenness": 1.036,
+     "plus_moisture": 1.038,
+     "greenness_cases": [
+      0.75,
+      0.73
+     ],
+     "greenness_controls": [
+      0.79,
+      0.8
+     ],
+     "note": "earlier section 3.1 values (controls: 2019-2024 median); the original per-point extraction was not preserved"
+    }
+   },
+   "definition": "pre-event Sentinel-2 NDVI/NDMI/NBR (cases: 80-5 days before the pre-event image; controls: same window of the nearest case's pre-event image date, and 2019-2024 median as the earlier definition) added to the island-wide interaction model",
+   "source": "gee/s2_cases.csv, gee/s2_controls.csv, gee/s2_controls_multiyear.csv",
+   "cls": "B",
+   "note": "SCL classes 3, 8, 9, 10, 11 masked; median of all cloud-free observations; points with no observation set to missing"
+  }
+ }
+}

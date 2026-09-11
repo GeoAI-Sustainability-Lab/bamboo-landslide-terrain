@@ -1,0 +1,341 @@
+{
+ "facts": {
+  "S0.sources": {
+   "value": {
+    "dem_20m.tif": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/Dataset/01_SOURCE/Terrain_Canopy/Taiwan_DEM_20m/不分幅_全台及澎湖DEM/dem_20m.tif",
+     "bytes": 389235991,
+     "sha256_16": "e6a686ad99d33123"
+    },
+    "forest4.shp": {
+     "path": "/home/claude/forest4/f4.shp",
+     "bytes": 1233085292,
+     "sha256_16": "5813c7f2ea8250d2"
+    },
+    "overlay_result.csv": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/Dataset/99_INBOX/Downloads_archives/overlay_result.csv",
+     "bytes": 360621,
+     "sha256_16": "b554ec401f324bdb"
+    },
+    "landslide_centroids.csv": {
+     "path": "/home/claude/landslide_centroids.csv",
+     "bytes": 985726,
+     "sha256_16": "63aaf1675178215b"
+    },
+    "bg_points.csv": {
+     "path": "/home/claude/bg_points.csv",
+     "bytes": 1938926,
+     "sha256_16": "c43c44b3c7b22e3d"
+    },
+    "step1_dataset.csv": {
+     "path": "/home/claude/step1_dataset.csv",
+     "bytes": 2884215,
+     "sha256_16": "e17b9aead5acb9d1"
+    },
+    "results.json": {
+     "path": "/home/claude/results.json",
+     "bytes": 77232,
+     "sha256_16": "19973b384519dc14"
+    },
+    "poly_2018": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/_stage_polygons/2018/Event_Inventory_2018_SWCB.shp",
+     "bytes": 290884,
+     "sha256_16": "6cacb2600827b181"
+    },
+    "poly_2019": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/_stage_polygons/2019/Event_Inventory_2019_SWCB_UTF8.shp",
+     "bytes": 50556,
+     "sha256_16": "a1cf20b1c6f240e1"
+    },
+    "poly_2020": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/_stage_polygons/2020/109年事件型崩塌目錄_UTF8.shp",
+     "bytes": 9788,
+     "sha256_16": "3853a2348e5457f6"
+    },
+    "poly_2021": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/_stage_polygons/2021/Event_Inventory_2021_SWCB.shp",
+     "bytes": 180148,
+     "sha256_16": "3dc173b1a491aaf1"
+    },
+    "poly_2022": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/_stage_polygons/2022/111年事件型崩塌目錄_UTF8.shp",
+     "bytes": 185508,
+     "sha256_16": "e910afe8ab77a97e"
+    },
+    "poly_2023": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/_stage_polygons/2023/Event_Inventory_2023_SWCB.shp",
+     "bytes": 6369536,
+     "sha256_16": "632121b4b810b79a"
+    },
+    "poly_2024": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/Dataset/01_SOURCE/Hazard_Events/Landslide_Taiwan/2024_113/Event_Inventory_2024_ARDSWC_V7.shp",
+     "bytes": 123776360,
+     "sha256_16": "5a20e00ee1d7111c"
+    },
+    "poly_2025": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/Dataset/01_SOURCE/Hazard_Events/Landslide_Taiwan/2025_114/20260526_114年事件型崩塌目錄判釋成果/20260526_114年事件型崩塌目錄判釋成果/Event_Inventory_2025_ARDSWC_V2.shp",
+     "bytes": 5679412,
+     "sha256_16": "8bddbf0b282a9200"
+    }
+   },
+   "definition": "raw input files with size and SHA-256 prefix (first 64 MB)",
+   "source": "filesystem",
+   "cls": "A",
+   "note": "sha over first 64 MB only for files >64 MB"
+  },
+  "S1.n_polygons_total": {
+   "value": 13900,
+   "definition": "records in the 2018-2025 event-based inventory",
+   "source": "landslide_centroids.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S1.by_year": {
+   "value": {
+    "2018": 73,
+    "2019": 137,
+    "2020": 23,
+    "2021": 411,
+    "2022": 173,
+    "2023": 2094,
+    "2024": 8315,
+    "2025": 2674
+   },
+   "definition": "inventory records per year",
+   "source": "landslide_centroids.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S1.by_trigger": {
+   "value": {
+    "降雨": 11090,
+    "地震": 2802,
+    "其他": 5,
+    "混合": 3
+   },
+   "definition": "inventory records per trigger class",
+   "source": "landslide_centroids.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S1.polygon_counts_match_centroids": {
+   "value": true,
+   "definition": "per-year polygon count equals per-year centroid count for every year 2018-2025",
+   "source": "annual shapefiles vs landslide_centroids.csv",
+   "cls": "A",
+   "note": "polygons per year = {2018: 73, 2019: 137, 2020: 23, 2021: 411, 2022: 173, 2023: 2094, 2024: 8315, 2025: 2674}"
+  },
+  "S1.centroid_offset_m": {
+   "value": {
+    "median": 0.031122377573506277,
+    "p99": 0.7596272193547924,
+    "max": 2.695017351252638
+   },
+   "definition": "planar distance between landslide_centroids.csv coordinates and the polygon centroid",
+   "source": "annual shapefiles vs landslide_centroids.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S1.event_label_mismatches": {
+   "value": 0,
+   "definition": "records whose event name differs between the centroid table and the shapefile",
+   "source": "annual shapefiles vs landslide_centroids.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S1.area_max_abs_diff_ha": {
+   "value": 0.0,
+   "definition": "largest absolute difference in mapped area",
+   "source": "annual shapefiles vs landslide_centroids.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S2.dem": {
+   "value": {
+    "width": 10175,
+    "height": 19112,
+    "dtype": "int16",
+    "res": [
+     20.0,
+     20.0
+    ],
+    "nodata": -32767.0,
+    "origin": [
+     148310.0,
+     2801730.0
+    ],
+    "epsg": 3826
+   },
+   "definition": "digital elevation model header",
+   "source": "dem_20m.tif",
+   "cls": "A",
+   "note": ""
+  },
+  "S2.case_selection_rule": {
+   "value": {
+    "n": 7454,
+    "rule": "trigger == rainfall AND forest_type in the six analysed classes"
+   },
+   "definition": "the filter that reproduces the case rows of step1_dataset.csv exactly",
+   "source": "landslide_centroids.csv + overlay_result.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S2.case_ft_sequence_identical": {
+   "value": true,
+   "definition": "the forest-type sequence of the filtered centroid table equals that of step1_dataset cases, row for row",
+   "source": "landslide_centroids.csv + overlay_result.csv vs step1_dataset.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S2.terrain_max_abs_diff": {
+   "value": {
+    "slope": 1.4210854715202004e-14,
+    "north": 1.1102230246251565e-16,
+    "east": 2.4492935982947064e-16,
+    "planc": 9.999054535747565e-17,
+    "profc": 9.999054535747565e-17,
+    "elev": 0.0
+   },
+   "definition": "largest absolute difference between recomputed terrain and step1_dataset, over the 7,454 cases",
+   "source": "dem_20m.tif recomputation (Zevenbergen-Thorne, nearest-cell sampling)",
+   "cls": "A",
+   "note": ""
+  },
+  "S2.slope_vs_horn": {
+   "value": {
+    "median_deg": 0.7494211487215132,
+    "max_deg": 15.987311795212836,
+    "pct_gt_2deg": 14.27421518647706
+   },
+   "definition": "difference between the Horn slope and the slope actually stored in step1_dataset",
+   "source": "dem_20m.tif recomputation",
+   "cls": "A",
+   "note": "the stored slope is Zevenbergen-Thorne, not Horn"
+  },
+  "S3.forest_map": {
+   "value": {
+    "polygons": 348617,
+    "total_area_ha": 2026625.0750943501,
+    "distinct_typename_strings": 18,
+    "area_ha_by_type": {
+     "闊葉樹林型": 1348067.43528123,
+     "針葉樹林型": 295801.62336097,
+     "針闊葉樹混淆": 167380.81667926,
+     "竹林": 97871.74729851,
+     "竹闊混淆林": 89173.48827118,
+     "待成林地": 27363.7855596,
+     "竹針混淆林": 673.39658169,
+     "竹針闊混淆林": 209.21343567
+    },
+    "polygons_by_type": {
+     "闊葉樹林型": 190998,
+     "針葉樹林型": 38312,
+     "針闊葉樹混淆": 20008,
+     "竹林": 49620,
+     "竹闊混淆林": 22675,
+     "待成林地": 26445,
+     "竹針混淆林": 353,
+     "竹針闊混淆林": 67
+    }
+   },
+   "definition": "Fourth Forest Resource Inventory type map summary",
+   "source": "forest4.shp",
+   "cls": "A",
+   "note": ""
+  },
+  "S3.case_forest_type_agreement": {
+   "value": {
+    "n": 7454,
+    "agree": 7454,
+    "pct": 100.0
+   },
+   "definition": "forest type recomputed at the polygon CENTROID vs the published overlay_result.csv",
+   "source": "forest4.shp point-in-polygon at centroids",
+   "cls": "A",
+   "note": ""
+  },
+  "S3.control_counts_match": {
+   "value": {
+    "match": true,
+    "recomputed": {
+     "待成林地": 175,
+     "竹林": 663,
+     "竹闊混淆林": 591,
+     "針葉樹林型": 1874,
+     "針闊葉樹混淆": 1126,
+     "闊葉樹林型": 8702
+    },
+    "step1": {
+     "待成林地": 175,
+     "竹林": 663,
+     "竹闊混淆林": 591,
+     "針葉樹林型": 1874,
+     "針闊葉樹混淆": 1126,
+     "闊葉樹林型": 8702
+    },
+    "bg_on_forest_land": 13138,
+    "bg_in_six_classes": 13131,
+    "bg_excluded_rare_classes": 7
+   },
+   "definition": "forest type recomputed at the 50,000 background points vs the control composition of step1_dataset",
+   "source": "forest4.shp point-in-polygon at background points",
+   "cls": "A",
+   "note": ""
+  },
+  "S4.control_match": {
+   "value": {
+    "n_controls": 13131,
+    "unique_on_six_covariates": 13083,
+    "ambiguous": 17,
+    "unmatched": 31,
+    "strictly_increasing_in_bg_order": true
+   },
+   "definition": "recovery of control coordinates by matching all six terrain covariates against the background points",
+   "source": "bg_points.csv + dem_20m.tif vs step1_dataset.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S4.residual_after_completion": {
+   "value": {
+    "slope": 1.4210854715202004e-14,
+    "north": 1.1102230246251565e-16,
+    "east": 2.4492935982947064e-16,
+    "planc": 9.996344030316351e-17,
+    "profc": 9.996344030316351e-17,
+    "elev": 0.0
+   },
+   "definition": "largest covariate mismatch after monotone completion of the control mapping",
+   "source": "bg_points.csv + dem_20m.tif vs step1_dataset.csv",
+   "cls": "A",
+   "note": ""
+  }
+ },
+ "log": [
+  "[    0.0s] STAGE 0  source inventory",
+  "[    0.3s]    dem_20m.tif                 389,235,991 B  sha16=e6a686ad99d33123",
+  "[    0.6s]    forest4.shp                1,233,085,292 B  sha16=5813c7f2ea8250d2",
+  "[    0.6s]    overlay_result.csv              360,621 B  sha16=b554ec401f324bdb",
+  "[    0.6s]    landslide_centroids.csv         985,726 B  sha16=63aaf1675178215b",
+  "[    0.8s]    bg_points.csv                 1,938,926 B  sha16=c43c44b3c7b22e3d",
+  "[    0.9s]    step1_dataset.csv             2,884,215 B  sha16=e17b9aead5acb9d1",
+  "[    0.9s]    results.json                     77,232 B  sha16=19973b384519dc14",
+  "[    0.9s]    poly_2018                       290,884 B  sha16=6cacb2600827b181",
+  "[    0.9s]    poly_2019                        50,556 B  sha16=a1cf20b1c6f240e1",
+  "[    0.9s]    poly_2020                         9,788 B  sha16=3853a2348e5457f6",
+  "[    0.9s]    poly_2021                       180,148 B  sha16=3dc173b1a491aaf1",
+  "[    0.9s]    poly_2022                       185,508 B  sha16=e910afe8ab77a97e",
+  "[    1.4s]    poly_2023                     6,369,536 B  sha16=632121b4b810b79a",
+  "[    4.8s]    poly_2024                   123,776,360 B  sha16=5a20e00ee1d7111c",
+  "[    5.0s]    poly_2025                     5,679,412 B  sha16=8bddbf0b282a9200",
+  "[    5.0s] STAGE 1  landslide inventory",
+  "[   10.7s]    polygons 13900  centroid offset median 0.0311 m  max 2.70 m",
+  "[   10.7s] STAGE 2  terrain reconstruction",
+  "[   20.2s]    terrain max abs diff: slope 1.42e-14, north 1.11e-16, east 2.45e-16, planc 1.00e-16, profc 1.00e-16, elev 0.00e+00",
+  "[   20.2s]    Horn differs by median 0.75 deg, max 15.99 deg",
+  "[   20.2s] STAGE 3  forest type reconstruction",
+  "[   37.7s]    case forest-type agreement 7454/7454  control counts match: True",
+  "[   37.7s] STAGE 4  control coordinate recovery",
+  "[   38.0s]    controls matched uniquely 13083/13131, monotone True, residual slope 1.42e-14"
+ ]
+}

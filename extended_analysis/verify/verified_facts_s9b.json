@@ -1,0 +1,88 @@
+{
+ "facts": {
+  "S9.canopy_height_checks": {
+   "value": {
+    "coverage_share_all_points": 0.9999,
+    "base_on_covered_subset": {
+     "OR": 1.0341,
+     "ci": [
+      1.0123,
+      1.0565
+     ],
+     "p": 0.00209,
+     "n": 15279,
+     "n_case": 5915,
+     "n_bamboo_case": 171
+    },
+    "plus_canopy_height": {
+     "OR": 1.0338,
+     "ci": [
+      1.0115,
+      1.0567
+     ],
+     "p": 0.00286,
+     "n": 15279,
+     "n_case": 5915,
+     "n_bamboo_case": 171
+    },
+    "published_text": {
+     "base": 1.032,
+     "plus_greenness_and_canopy": 1.034,
+     "note": "earlier section 3.1: canopy height leaves the interaction essentially unchanged, 1.034 to 1.034; figure script used 1.0318 vs 1.0337 (greenness + canopy)"
+    },
+    "median_canopy_m_controls": {
+     "待成林地": 2.0,
+     "竹林": 8.0,
+     "竹闊混淆林": 10.0,
+     "針葉樹林型": 15.0,
+     "針闊葉樹混淆": 15.0,
+     "闊葉樹林型": 13.0
+    },
+    "median_canopy_m_cases": {
+     "待成林地": 0.0,
+     "竹林": 8.0,
+     "竹闊混淆林": 7.0,
+     "針葉樹林型": 11.0,
+     "針闊葉樹混淆": 12.0,
+     "闊葉樹林型": 9.0
+    },
+    "mean_canopy_m_controls": {
+     "待成林地": 3.6,
+     "竹林": 8.6,
+     "竹闊混淆林": 10.3,
+     "針葉樹林型": 14.7,
+     "針闊葉樹混淆": 15.4,
+     "闊葉樹林型": 12.7
+    },
+    "mean_canopy_m_cases": {
+     "待成林地": 2.8,
+     "竹林": 8.2,
+     "竹闊混淆林": 7.8,
+     "針葉樹林型": 10.5,
+     "針闊葉樹混淆": 11.6,
+     "闊葉樹林型": 9.4
+    },
+    "manuscript_values": {
+     "median_landscape": {
+      "竹林": 8,
+      "竹闊混淆林": 10,
+      "闊葉樹林型": 13,
+      "針葉樹林型": 15
+     },
+     "broadleaf_cases_vs_population": [
+      9.4,
+      12.7
+     ],
+     "bamboo_cases_vs_population": [
+      8.2,
+      8.6
+     ]
+    }
+   },
+   "definition": "canopy-height robustness re-derived from combined_chm.csv (CHM v2 mosaic 2010-2019, 1.2 m, coverage limited)",
+   "source": "combined_chm.csv",
+   "cls": "A",
+   "note": "greenness (Sentinel-2) values of the earlier text cannot be re-derived until the GEE extraction is repeated"
+  }
+ }
+}

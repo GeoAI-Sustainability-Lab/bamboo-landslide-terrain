@@ -1,0 +1,2956 @@
+{
+ "facts": {
+  "S0.sources": {
+   "value": {
+    "dem_20m.tif": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/Dataset/01_SOURCE/Terrain_Canopy/Taiwan_DEM_20m/不分幅_全台及澎湖DEM/dem_20m.tif",
+     "bytes": 389235991,
+     "sha256_16": "e6a686ad99d33123"
+    },
+    "forest4.shp": {
+     "path": "/home/claude/forest4/f4.shp",
+     "bytes": 1233085292,
+     "sha256_16": "5813c7f2ea8250d2"
+    },
+    "overlay_result.csv": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/Dataset/99_INBOX/Downloads_archives/overlay_result.csv",
+     "bytes": 360621,
+     "sha256_16": "b554ec401f324bdb"
+    },
+    "landslide_centroids.csv": {
+     "path": "/home/claude/landslide_centroids.csv",
+     "bytes": 985726,
+     "sha256_16": "63aaf1675178215b"
+    },
+    "bg_points.csv": {
+     "path": "/home/claude/bg_points.csv",
+     "bytes": 1938926,
+     "sha256_16": "c43c44b3c7b22e3d"
+    },
+    "step1_dataset.csv": {
+     "path": "/home/claude/step1_dataset.csv",
+     "bytes": 2884215,
+     "sha256_16": "e17b9aead5acb9d1"
+    },
+    "results.json": {
+     "path": "/home/claude/results.json",
+     "bytes": 77232,
+     "sha256_16": "19973b384519dc14"
+    },
+    "poly_2018": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/_stage_polygons/2018/Event_Inventory_2018_SWCB.shp",
+     "bytes": 290884,
+     "sha256_16": "6cacb2600827b181"
+    },
+    "poly_2019": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/_stage_polygons/2019/Event_Inventory_2019_SWCB_UTF8.shp",
+     "bytes": 50556,
+     "sha256_16": "a1cf20b1c6f240e1"
+    },
+    "poly_2020": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/_stage_polygons/2020/109年事件型崩塌目錄_UTF8.shp",
+     "bytes": 9788,
+     "sha256_16": "3853a2348e5457f6"
+    },
+    "poly_2021": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/_stage_polygons/2021/Event_Inventory_2021_SWCB.shp",
+     "bytes": 180148,
+     "sha256_16": "3dc173b1a491aaf1"
+    },
+    "poly_2022": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/_stage_polygons/2022/111年事件型崩塌目錄_UTF8.shp",
+     "bytes": 185508,
+     "sha256_16": "e910afe8ab77a97e"
+    },
+    "poly_2023": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/_stage_polygons/2023/Event_Inventory_2023_SWCB.shp",
+     "bytes": 6369536,
+     "sha256_16": "632121b4b810b79a"
+    },
+    "poly_2024": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/Dataset/01_SOURCE/Hazard_Events/Landslide_Taiwan/2024_113/Event_Inventory_2024_ARDSWC_V7.shp",
+     "bytes": 123776360,
+     "sha256_16": "5a20e00ee1d7111c"
+    },
+    "poly_2025": {
+     "path": "/mnt/user-data/uploads/文章發想與實踐/Dataset/01_SOURCE/Hazard_Events/Landslide_Taiwan/2025_114/20260526_114年事件型崩塌目錄判釋成果/20260526_114年事件型崩塌目錄判釋成果/Event_Inventory_2025_ARDSWC_V2.shp",
+     "bytes": 5679412,
+     "sha256_16": "8bddbf0b282a9200"
+    }
+   },
+   "definition": "raw input files with size and SHA-256 prefix (first 64 MB)",
+   "source": "filesystem",
+   "cls": "A",
+   "note": "sha over first 64 MB only for files >64 MB"
+  },
+  "S1.n_polygons_total": {
+   "value": 13900,
+   "definition": "records in the 2018-2025 event-based inventory",
+   "source": "landslide_centroids.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S1.by_year": {
+   "value": {
+    "2018": 73,
+    "2019": 137,
+    "2020": 23,
+    "2021": 411,
+    "2022": 173,
+    "2023": 2094,
+    "2024": 8315,
+    "2025": 2674
+   },
+   "definition": "inventory records per year",
+   "source": "landslide_centroids.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S1.by_trigger": {
+   "value": {
+    "降雨": 11090,
+    "地震": 2802,
+    "其他": 5,
+    "混合": 3
+   },
+   "definition": "inventory records per trigger class",
+   "source": "landslide_centroids.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S1.polygon_counts_match_centroids": {
+   "value": true,
+   "definition": "per-year polygon count equals per-year centroid count for every year 2018-2025",
+   "source": "annual shapefiles vs landslide_centroids.csv",
+   "cls": "A",
+   "note": "polygons per year = {2018: 73, 2019: 137, 2020: 23, 2021: 411, 2022: 173, 2023: 2094, 2024: 8315, 2025: 2674}"
+  },
+  "S1.centroid_offset_m": {
+   "value": {
+    "median": 0.031122377573506277,
+    "p99": 0.7596272193547924,
+    "max": 2.695017351252638
+   },
+   "definition": "planar distance between landslide_centroids.csv coordinates and the polygon centroid",
+   "source": "annual shapefiles vs landslide_centroids.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S1.event_label_mismatches": {
+   "value": 0,
+   "definition": "records whose event name differs between the centroid table and the shapefile",
+   "source": "annual shapefiles vs landslide_centroids.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S1.area_max_abs_diff_ha": {
+   "value": 0.0,
+   "definition": "largest absolute difference in mapped area",
+   "source": "annual shapefiles vs landslide_centroids.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S2.dem": {
+   "value": {
+    "width": 10175,
+    "height": 19112,
+    "dtype": "int16",
+    "res": [
+     20.0,
+     20.0
+    ],
+    "nodata": -32767.0,
+    "origin": [
+     148310.0,
+     2801730.0
+    ],
+    "epsg": 3826
+   },
+   "definition": "digital elevation model header",
+   "source": "dem_20m.tif",
+   "cls": "A",
+   "note": ""
+  },
+  "S2.case_selection_rule": {
+   "value": {
+    "n": 7454,
+    "rule": "trigger == rainfall AND forest_type in the six analysed classes"
+   },
+   "definition": "the filter that reproduces the case rows of step1_dataset.csv exactly",
+   "source": "landslide_centroids.csv + overlay_result.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S2.case_ft_sequence_identical": {
+   "value": true,
+   "definition": "the forest-type sequence of the filtered centroid table equals that of step1_dataset cases, row for row",
+   "source": "landslide_centroids.csv + overlay_result.csv vs step1_dataset.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S2.terrain_max_abs_diff": {
+   "value": {
+    "slope": 1.4210854715202004e-14,
+    "north": 1.1102230246251565e-16,
+    "east": 2.4492935982947064e-16,
+    "planc": 9.999054535747565e-17,
+    "profc": 9.999054535747565e-17,
+    "elev": 0.0
+   },
+   "definition": "largest absolute difference between recomputed terrain and step1_dataset, over the 7,454 cases",
+   "source": "dem_20m.tif recomputation (Zevenbergen-Thorne, nearest-cell sampling)",
+   "cls": "A",
+   "note": ""
+  },
+  "S2.slope_vs_horn": {
+   "value": {
+    "median_deg": 0.7494211487215132,
+    "max_deg": 15.987311795212836,
+    "pct_gt_2deg": 14.27421518647706
+   },
+   "definition": "difference between the Horn slope and the slope actually stored in step1_dataset",
+   "source": "dem_20m.tif recomputation",
+   "cls": "A",
+   "note": "the stored slope is Zevenbergen-Thorne, not Horn"
+  },
+  "S3.forest_map": {
+   "value": {
+    "polygons": 348617,
+    "total_area_ha": 2026625.0750943501,
+    "distinct_typename_strings": 18,
+    "area_ha_by_type": {
+     "闊葉樹林型": 1348067.43528123,
+     "針葉樹林型": 295801.62336097,
+     "針闊葉樹混淆": 167380.81667926,
+     "竹林": 97871.74729851,
+     "竹闊混淆林": 89173.48827118,
+     "待成林地": 27363.7855596,
+     "竹針混淆林": 673.39658169,
+     "竹針闊混淆林": 209.21343567
+    },
+    "polygons_by_type": {
+     "闊葉樹林型": 190998,
+     "針葉樹林型": 38312,
+     "針闊葉樹混淆": 20008,
+     "竹林": 49620,
+     "竹闊混淆林": 22675,
+     "待成林地": 26445,
+     "竹針混淆林": 353,
+     "竹針闊混淆林": 67
+    }
+   },
+   "definition": "Fourth Forest Resource Inventory type map summary",
+   "source": "forest4.shp",
+   "cls": "A",
+   "note": ""
+  },
+  "S3.case_forest_type_agreement": {
+   "value": {
+    "n": 7454,
+    "agree": 7454,
+    "pct": 100.0
+   },
+   "definition": "forest type recomputed at the polygon CENTROID vs the published overlay_result.csv",
+   "source": "forest4.shp point-in-polygon at centroids",
+   "cls": "A",
+   "note": ""
+  },
+  "S3.control_counts_match": {
+   "value": {
+    "match": true,
+    "recomputed": {
+     "待成林地": 175,
+     "竹林": 663,
+     "竹闊混淆林": 591,
+     "針葉樹林型": 1874,
+     "針闊葉樹混淆": 1126,
+     "闊葉樹林型": 8702
+    },
+    "step1": {
+     "待成林地": 175,
+     "竹林": 663,
+     "竹闊混淆林": 591,
+     "針葉樹林型": 1874,
+     "針闊葉樹混淆": 1126,
+     "闊葉樹林型": 8702
+    },
+    "bg_on_forest_land": 13138,
+    "bg_in_six_classes": 13131,
+    "bg_excluded_rare_classes": 7
+   },
+   "definition": "forest type recomputed at the 50,000 background points vs the control composition of step1_dataset",
+   "source": "forest4.shp point-in-polygon at background points",
+   "cls": "A",
+   "note": ""
+  },
+  "S4.control_match": {
+   "value": {
+    "n_controls": 13131,
+    "unique_on_six_covariates": 13083,
+    "ambiguous": 17,
+    "unmatched": 31,
+    "strictly_increasing_in_bg_order": true
+   },
+   "definition": "recovery of control coordinates by matching all six terrain covariates against the background points",
+   "source": "bg_points.csv + dem_20m.tif vs step1_dataset.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S4.residual_after_completion": {
+   "value": {
+    "slope": 1.4210854715202004e-14,
+    "north": 1.1102230246251565e-16,
+    "east": 2.4492935982947064e-16,
+    "planc": 9.996344030316351e-17,
+    "profc": 9.996344030316351e-17,
+    "elev": 0.0
+   },
+   "definition": "largest covariate mismatch after monotone completion of the control mapping",
+   "source": "bg_points.csv + dem_20m.tif vs step1_dataset.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S5.headline_interaction": {
+   "value": {
+    "published": {
+     "OR": 1.0341,
+     "ci": [
+      1.0123,
+      1.0565
+     ],
+     "p": 0.0020914426187897185
+    },
+    "from_published_table": {
+     "OR": 1.0341,
+     "ci": [
+      1.0123,
+      1.0565
+     ],
+     "p": 0.002091442618789685,
+     "beta": 0.03356394051515349,
+     "se": 0.010908255382179152,
+     "n": 15280,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_bamboo_ctrl": 663
+    },
+    "from_rebuilt_table": {
+     "OR": 1.0341,
+     "ci": [
+      1.0123,
+      1.0565
+     ],
+     "p": 0.002091442618789463,
+     "beta": 0.03356394051515361,
+     "se": 0.010908255382179117,
+     "n": 15280,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_bamboo_ctrl": 663
+    },
+    "identical_tables": true
+   },
+   "definition": "bamboo x slope interaction odds ratio per degree, published specification",
+   "source": "step1_dataset.csv (published) and the independently rebuilt table",
+   "cls": "A",
+   "note": ""
+  },
+  "S5.spline_curve_reproduction": {
+   "value": {
+    "max_abs_OR_diff": 4.92083481011818e-05,
+    "grid": [
+     6.0,
+     8.0,
+     10.0,
+     12.0,
+     14.0,
+     16.0,
+     18.0,
+     20.0,
+     22.0,
+     24.0,
+     26.0,
+     28.0,
+     30.0,
+     32.0,
+     34.0,
+     36.0,
+     38.0,
+     40.0,
+     42.0,
+     44.0,
+     46.0,
+     48.0,
+     50.0,
+     52.0,
+     54.0,
+     56.0,
+     58.0,
+     60.0,
+     62.0
+    ],
+    "reproduced_or": [
+     0.6131,
+     0.5596,
+     0.5185,
+     0.4873,
+     0.4645,
+     0.449,
+     0.4398,
+     0.4365,
+     0.4387,
+     0.4465,
+     0.4599,
+     0.4792,
+     0.5051,
+     0.5382,
+     0.5796,
+     0.6307,
+     0.6936,
+     0.7717,
+     0.8701,
+     0.9955,
+     1.1572,
+     1.3688,
+     1.6497,
+     2.0286,
+     2.5489,
+     3.2767,
+     4.3158,
+     5.8323,
+     8.0979
+    ],
+    "published_or": [
+     0.6131,
+     0.5596,
+     0.5185,
+     0.4873,
+     0.4645,
+     0.449,
+     0.4398,
+     0.4365,
+     0.4387,
+     0.4465,
+     0.4599,
+     0.4792,
+     0.5051,
+     0.5382,
+     0.5796,
+     0.6307,
+     0.6936,
+     0.7717,
+     0.8701,
+     0.9955,
+     1.1572,
+     1.3688,
+     1.6497,
+     2.0286,
+     2.5489,
+     3.2767,
+     4.3158,
+     5.8323,
+     8.0979
+    ]
+   },
+   "definition": "spline odds-ratio curve evaluated on the published grid (6-62 deg by 2), compared with results.json E4",
+   "source": "step1_dataset.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S5.crossover_published_design": {
+   "value": {
+    "crossover_deg": 44.06,
+    "published_reported": 44.0,
+    "significant_protection_band": [
+     9.9,
+     39.5,
+     true
+    ],
+    "significantly_worse_band": null
+   },
+   "definition": "crossover = interpolated slope at which the fitted log odds ratio changes sign on the frozen grid 5.0-60.0 deg step 0.1; protection band = slopes whose delta-method 95% upper bound is below 1",
+   "source": "step1_dataset.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S5.event_cluster_robust": {
+   "value": {
+    "reproduced": {
+     "OR": 1.0341,
+     "ci": [
+      1.0128,
+      1.0559
+     ],
+     "p": 0.0015613605140760711,
+     "beta": 0.03356394051515361,
+     "se": 0.010611324194336426,
+     "n": 15280,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_bamboo_ctrl": 663
+    },
+    "published": {
+     "desc": "bamboo x slope interaction, event-cluster-robust (sandwich) SE clustered by event",
+     "n_clusters": 40,
+     "OR": 1.0341,
+     "ci": [
+      1.0128,
+      1.0559
+     ],
+     "z": 3.163,
+     "p": 0.001561360514044502
+    }
+   },
+   "definition": "event-cluster-robust (sandwich) standard errors, controls in one cluster",
+   "source": "rebuilt table with event labels",
+   "cls": "B",
+   "note": "the published E6 used 40 clusters; the exact control-cluster convention is not recorded in the repo"
+  },
+  "S5.size_sensitivity": {
+   "value": {
+    "reproduced": [
+     {
+      "area_min_ha": 0.0,
+      "OR": 1.0341,
+      "ci": [
+       1.0123,
+       1.0565
+      ],
+      "p": 0.002091442618789463,
+      "n_bamboo_case": 171
+     },
+     {
+      "area_min_ha": 0.1,
+      "OR": 1.0416,
+      "ci": [
+       1.0176,
+       1.0662
+      ],
+      "p": 0.0006213069668612459,
+      "n_bamboo_case": 137
+     },
+     {
+      "area_min_ha": 0.5,
+      "OR": 1.0232,
+      "ci": [
+       0.9849,
+       1.0631
+      ],
+      "p": 0.23817301434587135,
+      "n_bamboo_case": 39
+     },
+     {
+      "area_min_ha": 1.0,
+      "OR": 1.0706,
+      "ci": [
+       0.9795,
+       1.1702
+      ],
+      "p": 0.13255954213402976,
+      "n_bamboo_case": 8
+     }
+    ],
+    "published": [
+     {
+      "OR": 1.0341,
+      "ci": [
+       1.0123,
+       1.0565
+      ],
+      "p": 0.0020914426187897185,
+      "crossover": 47.1,
+      "n_case": 171,
+      "area_min_ha": 0.0,
+      "n_bamboo_ls": 171
+     },
+     {
+      "OR": 1.0416,
+      "ci": [
+       1.0176,
+       1.0662
+      ],
+      "p": 0.000621306966861352,
+      "crossover": 45.8,
+      "n_case": 137,
+      "area_min_ha": 0.1,
+      "n_bamboo_ls": 137
+     },
+     {
+      "OR": 1.0232,
+      "ci": [
+       0.9849,
+       1.0631
+      ],
+      "p": 0.23817301434588656,
+      "crossover": 57.0,
+      "n_case": 39,
+      "area_min_ha": 0.5,
+      "n_bamboo_ls": 39
+     },
+     {
+      "OR": 1.0706,
+      "ci": [
+       0.9795,
+       1.1702
+      ],
+      "p": 0.13255954213403198,
+      "crossover": 53.9,
+      "n_case": 8,
+      "area_min_ha": 1.0,
+      "n_bamboo_ls": 8
+     }
+    ]
+   },
+   "definition": "interaction refitted with cases restricted to landslides at or above an area threshold",
+   "source": "rebuilt table",
+   "cls": "A",
+   "note": ""
+  },
+  "S5.full_coefficients": {
+   "value": {
+    "Intercept": {
+     "beta": -3.401681,
+     "se": 0.150917,
+     "z": -22.540145,
+     "p": 0.0,
+     "OR": 0.033317,
+     "lo": 0.024786,
+     "hi": 0.044785
+    },
+    "slope": {
+     "beta": 0.110242,
+     "se": 0.008278,
+     "z": 13.318014,
+     "p": 0.0,
+     "OR": 1.116548,
+     "lo": 1.098579,
+     "hi": 1.134811
+    },
+    "slope2": {
+     "beta": -0.000809,
+     "se": 0.00011,
+     "z": -7.369299,
+     "p": 0.0,
+     "OR": 0.999191,
+     "lo": 0.998976,
+     "hi": 0.999406
+    },
+    "north": {
+     "beta": 0.483388,
+     "se": 0.025524,
+     "z": 18.938412,
+     "p": 0.0,
+     "OR": 1.62156,
+     "lo": 1.542433,
+     "hi": 1.704746
+    },
+    "east": {
+     "beta": 0.412945,
+     "se": 0.026101,
+     "z": 15.821205,
+     "p": 0.0,
+     "OR": 1.511262,
+     "lo": 1.435894,
+     "hi": 1.590586
+    },
+    "planc": {
+     "beta": 12.859153,
+     "se": 1.257442,
+     "z": 10.226442,
+     "p": 0.0,
+     "OR": 384290.266563,
+     "lo": 32681.611926,
+     "hi": 4518718.639377
+    },
+    "profc": {
+     "beta": -4.425624,
+     "se": 1.302592,
+     "z": -3.397552,
+     "p": 0.00068,
+     "OR": 0.011967,
+     "lo": 0.000932,
+     "hi": 0.153732
+    },
+    "elev": {
+     "beta": 3.8e-05,
+     "se": 3.2e-05,
+     "z": 1.172444,
+     "p": 0.241019,
+     "OR": 1.000038,
+     "lo": 0.999975,
+     "hi": 1.000101
+    },
+    "bamboo": {
+     "beta": -1.581578,
+     "se": 0.367326,
+     "z": -4.305647,
+     "p": 1.7e-05,
+     "OR": 0.20565,
+     "lo": 0.100105,
+     "hi": 0.422478
+    },
+    "bamboo:slope": {
+     "beta": 0.033564,
+     "se": 0.010908,
+     "z": 3.07693,
+     "p": 0.002091,
+     "OR": 1.034134,
+     "lo": 1.012258,
+     "hi": 1.056482
+    }
+   },
+   "definition": "complete coefficient table of the published specification",
+   "source": "step1_dataset.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S5.model_fit": {
+   "value": {
+    "n": 15280,
+    "llf": -9065.258639143563,
+    "llnull": -10198.430607823408,
+    "pseudo_r2": 0.11111238701870141,
+    "aic": 18150.517278287127
+   },
+   "definition": "fit statistics of the published specification",
+   "source": "step1_dataset.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S5.vif": {
+   "value": {
+    "raw": {
+     "slope": 17.85,
+     "slope2": 17.2,
+     "north": 1.01,
+     "east": 1.0,
+     "planc": 1.35,
+     "profc": 1.36,
+     "elev": 1.12,
+     "bamboo": 8.08,
+     "bam_slope": 7.95
+    },
+    "centred": {
+     "slope_c": 1.16,
+     "slope2_c": 1.06,
+     "north": 1.01,
+     "east": 1.0,
+     "planc": 1.35,
+     "profc": 1.36,
+     "elev": 1.12,
+     "bamboo": 1.49,
+     "bam_slope_c": 1.57
+    },
+    "slope_mean_deg": 34.762
+   },
+   "definition": "variance inflation factors, before and after centring slope",
+   "source": "step1_dataset.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S5.spline_spec": {
+   "value": {
+    "basis": "bs(slope, df=4)",
+    "degree": 3,
+    "all_knots": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     35.43232547287678,
+     79.36055186759805,
+     79.36055186759805,
+     79.36055186759805,
+     79.36055186759805
+    ],
+    "interior_knots": [
+     35.43232547287678
+    ],
+    "evaluation": "design_info of the fitted model reused; covariates cancel in the bamboo contrast"
+   },
+   "definition": "cubic B-spline specification actually used",
+   "source": "step1_dataset.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S6.footprint_definition": {
+   "value": {
+    "cell_m": 5000.0,
+    "n_events": 40,
+    "distinct_cells": 845,
+    "rule": "a 5 km grid cell belongs to an event's footprint if it intersects the bounding box of any polygon of that event"
+   },
+   "definition": "per-event interpretation footprint",
+   "source": "annual shapefiles",
+   "cls": "A",
+   "note": ""
+  },
+  "S6.event_fixed_effects": {
+   "value": {
+    "fe": {
+     "OR": 1.0315,
+     "ci": [
+      1.0114,
+      1.0521
+     ],
+     "p": 0.002061457606008732,
+     "n": 29277,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_bamboo_ctrl": 947
+    },
+    "cluster_by_point": {
+     "OR": 1.0315,
+     "ci": [
+      1.0054,
+      1.0583
+     ],
+     "p": 0.01779188014730626,
+     "n": 29277,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_bamboo_ctrl": 947
+    },
+    "cluster_by_event": {
+     "OR": 1.0315,
+     "ci": [
+      1.0111,
+      1.0523
+     ],
+     "p": 0.0023469172325654153,
+     "n": 29277,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_bamboo_ctrl": 947
+    },
+    "each_control_once": {
+     "OR": 1.0357,
+     "ci": [
+      1.0122,
+      1.0598
+     ],
+     "p": 0.0027512619021665685,
+     "n": 13093,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_bamboo_ctrl": 382
+    }
+   },
+   "definition": "logit with event fixed effects; controls restricted to the footprint of each event",
+   "source": "rebuilt table + 5 km footprints",
+   "cls": "B",
+   "note": "seed 11 for the control-used-once draw"
+  },
+  "S6.footprint_sensitivity": {
+   "value": {
+    "2km": {
+     "OR": 1.0221,
+     "ci": [
+      1.0003,
+      1.0444
+     ],
+     "p": 0.04730247039717517,
+     "n": 14359,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_bamboo_ctrl": 325
+    },
+    "5km": {
+     "OR": 1.0315,
+     "ci": [
+      1.0114,
+      1.0521
+     ],
+     "p": 0.002061457606008732,
+     "n": 29277,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_bamboo_ctrl": 947
+    },
+    "10km": {
+     "OR": 1.036,
+     "ci": [
+      1.0163,
+      1.0562
+     ],
+     "p": 0.00031316291854976974,
+     "n": 50565,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_bamboo_ctrl": 2042
+    },
+    "20km": {
+     "OR": 1.037,
+     "ci": [
+      1.0177,
+      1.0567
+     ],
+     "p": 0.00015204574144056515,
+     "n": 82140,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_bamboo_ctrl": 3790
+    },
+    "buffer2km": {
+     "OR": 1.0222,
+     "ci": [
+      1.0017,
+      1.043
+     ],
+     "p": 0.03348190551514518,
+     "n": 22277,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_bamboo_ctrl": 640
+    },
+    "buffer5km": {
+     "OR": 1.0355,
+     "ci": [
+      1.0158,
+      1.0557
+     ],
+     "p": 0.00037917814658205984,
+     "n": 46665,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_bamboo_ctrl": 1835
+    }
+   },
+   "definition": "event fixed-effects interaction under six footprint definitions",
+   "source": "rebuilt table",
+   "cls": "B",
+   "note": ""
+  },
+  "S6.new_control_pool": {
+   "value": {
+    "seed": 20260901,
+    "per_cell": 260,
+    "candidates": 219700,
+    "valid_terrain": 210546,
+    "on_forest_land": 167924,
+    "by_type": {
+     "闊葉樹林型": 109001,
+     "針葉樹林型": 28066,
+     "針闊葉樹混淆": 15734,
+     "竹闊混淆林": 6333,
+     "竹林": 6224,
+     "待成林地": 2494,
+     "竹針混淆林": 53,
+     "竹針闊混淆林": 12
+    }
+   },
+   "definition": "an independent control sample drawn uniformly inside the union of event footprints, typed with the official forest map and given terrain from the DEM",
+   "source": "dem_20m.tif + forest4.shp",
+   "cls": "B",
+   "note": ""
+  },
+  "S6.new_pool_models_mc": {
+   "value": {
+    "5to1": {
+     "OR_mean": 1.0271,
+     "OR_range_mc": [
+      1.0234,
+      1.0335
+     ],
+     "p_median": 0.0047576536136151315,
+     "p_max": 0.012919638525127564,
+     "share_p_lt_05": 1.0,
+     "n_draws": 25,
+     "n_bamboo_ctrl_median": 1541
+    },
+    "10to1": {
+     "OR_mean": 1.0285,
+     "OR_range_mc": [
+      1.0255,
+      1.0323
+     ],
+     "p_median": 0.0015726085245537647,
+     "p_max": 0.004592607261934445,
+     "share_p_lt_05": 1.0,
+     "n_draws": 25,
+     "n_bamboo_ctrl_median": 2791
+    },
+    "20to1": {
+     "OR_mean": 1.0289,
+     "OR_range_mc": [
+      1.0269,
+      1.032
+     ],
+     "p_median": 0.0010963242317960642,
+     "p_max": 0.002383868832236846,
+     "share_p_lt_05": 1.0,
+     "n_draws": 25,
+     "n_bamboo_ctrl_median": 5074
+    }
+   },
+   "definition": "event fixed-effects interaction on the new control pool, mean over 25 independent control draws (seeds 1000-1024); MC range = 2.5-97.5 percentile of the point estimates across draws",
+   "source": "rebuilt table + new control pool",
+   "cls": "C",
+   "note": ""
+  },
+  "S6.each_control_once_mc": {
+   "value": {
+    "OR_mean": 1.0366,
+    "OR_range_mc": [
+     1.0338,
+     1.0391
+    ],
+    "p_median": 0.0021192637725651053,
+    "p_max": 0.004352072365019888,
+    "share_p_lt_05": 1.0,
+    "n_draws": 25,
+    "n_bamboo_ctrl_median": 382
+   },
+   "definition": "event fixed-effects interaction with every control assigned to exactly one event, mean over 25 draws (seeds 3000-3024)",
+   "source": "rebuilt table",
+   "cls": "C",
+   "note": ""
+  },
+  "S6.polygon_cells": {
+   "value": {
+    "polygons": 11090,
+    "cells": 178221,
+    "cells_per_polygon_median": 7.0
+   },
+   "definition": "20 m DEM cells whose centre falls inside each rainfall landslide polygon",
+   "source": "dem_20m.tif + annual shapefiles",
+   "cls": "A",
+   "note": ""
+  },
+  "S6.source_point": {
+   "value": {
+    "bamboo_cases_at_source": 211,
+    "broadleaf_cases_at_source": 6348,
+    "published_E5_source_area": {
+     "OR": 1.0268,
+     "n_case": 209
+    },
+    "reproduced": {
+     "OR": 1.0288,
+     "ci": [
+      1.0094,
+      1.0485
+     ],
+     "p": 0.003486378429172987,
+     "n_case": 6559,
+     "n_bamboo_case": 211,
+     "n_ctrl": 9365,
+     "n_bamboo_ctrl": 663
+    },
+    "elev_gain_over_centroid_m": {
+     "mean": 38.9,
+     "median": 24.0,
+     "p90": 92.0,
+     "share_identical_pct": 14.3
+    },
+    "manuscript_states_60m": true
+   },
+   "definition": "forest type and terrain taken at the highest DEM cell inside each polygon (the rule the manuscript describes in section 2.3 but which the main analysis does not use)",
+   "source": "dem_20m.tif + forest4.shp",
+   "cls": "A",
+   "note": ""
+  },
+  "S6.polygon_representation": {
+   "value": {
+    "centroid": {
+     "OR": 1.0341,
+     "ci": [
+      1.0123,
+      1.0565
+     ],
+     "p": 0.002091442618789463,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_ctrl": 9365,
+     "n_bamboo_ctrl": 663
+    },
+    "highest_cell": {
+     "OR": 1.0215,
+     "ci": [
+      1.001,
+      1.0424
+     ],
+     "p": 0.03981510326312376,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_ctrl": 9365,
+     "n_bamboo_ctrl": 663
+    },
+    "steepest_cell": {
+     "OR": 1.0341,
+     "ci": [
+      1.0087,
+      1.0602
+     ],
+     "p": 0.008221839915279583,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_ctrl": 9365,
+     "n_bamboo_ctrl": 663
+    },
+    "lowest_cell": {
+     "OR": 1.0235,
+     "ci": [
+      1.0036,
+      1.0438
+     ],
+     "p": 0.02066612548167046,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_ctrl": 9365,
+     "n_bamboo_ctrl": 663
+    },
+    "median_cell": {
+     "OR": 1.0193,
+     "ci": [
+      0.9965,
+      1.0425
+     ],
+     "p": 0.0971959001975855,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_ctrl": 9365,
+     "n_bamboo_ctrl": 663
+    },
+    "polygon_mean": {
+     "OR": 1.0136,
+     "ci": [
+      0.9906,
+      1.0371
+     ],
+     "p": 0.24974920289895253,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_ctrl": 9365,
+     "n_bamboo_ctrl": 663
+    },
+    "source_area_top20pct": {
+     "OR": 1.0201,
+     "ci": [
+      0.9988,
+      1.0419
+     ],
+     "p": 0.0644665552568986,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_ctrl": 9365,
+     "n_bamboo_ctrl": 663
+    },
+    "all_cells_polygon_weight1": {
+     "OR": 1.0283,
+     "ci": [
+      1.0076,
+      1.0494
+     ],
+     "p": 0.007224089858509419,
+     "n_cells": 94901
+    },
+    "all_cells_area_weighted": {
+     "OR": 1.0272,
+     "ci": [
+      1.0171,
+      1.0375
+     ],
+     "p": 1.0987074339219305e-07,
+     "n_cells": 94901
+    },
+    "random_cell_200reps": {
+     "OR_mean": 1.0278,
+     "OR_range_mc": [
+      1.0191,
+      1.0368
+     ],
+     "share_gt1": 1.0,
+     "percentile_of_published": 90.0,
+     "seed": 2026
+    },
+    "dilution_check_ge5cells": {
+     "polygon_mean": {
+      "OR": 1.0147,
+      "ci": [
+       0.9856,
+       1.0448
+      ],
+      "p": 0.32530883132994415,
+      "n_case": 3548,
+      "n_bamboo_case": 95,
+      "n_ctrl": 9365,
+      "n_bamboo_ctrl": 663
+     },
+     "random_cell": {
+      "OR": 1.0389,
+      "ci": [
+       1.0134,
+       1.0649
+      ],
+      "p": 0.0025747560989328733,
+      "n_case": 3548,
+      "n_bamboo_case": 95,
+      "n_ctrl": 9365,
+      "n_bamboo_ctrl": 663
+     },
+     "n_polygons": 3548
+    },
+    "slope_sd": {
+     "centroid": 10.418718227470444,
+     "polygon_mean": 9.107762644237992,
+     "within_polygon_mean_sd": 4.961777246538642
+    }
+   },
+   "definition": "the interaction re-estimated with the landslide represented by different points or by all its cells",
+   "source": "dem_20m.tif + annual shapefiles + rebuilt control table",
+   "cls": "B",
+   "note": "random_cell uses seed 2026; all other rows are deterministic"
+  },
+  "S6.historic_inventory": {
+   "value": {
+    "years": "2004-2017",
+    "polygons": 29879
+   },
+   "definition": "pre-study-period event inventory used to flag reactivated scars",
+   "source": "annual shapefiles 2004-2017",
+   "cls": "A",
+   "note": ""
+  },
+  "S6.reactivation_rates": {
+   "value": {
+    "cases_pct": 8.08,
+    "cases_bamboo_pct": 9.36,
+    "cases_broadleaf_pct": 6.74,
+    "controls_pct": 0.67,
+    "new_pool_pct": 0.88
+   },
+   "definition": "share of points falling inside a 2004-2017 mapped landslide polygon",
+   "source": "annual shapefiles",
+   "cls": "A",
+   "note": ""
+  },
+  "S6.polygon_geometry": {
+   "value": {
+    "area_ha": {
+     "median": 0.24,
+     "p95": 1.7880071644959994,
+     "pct_ge_10ha": 0.2,
+     "pct_ge_1ha": 12.6
+    },
+    "relief_m": {
+     "median": 47.0,
+     "p95": 238.0
+    },
+    "elongation": {
+     "median": 1.9660679557290104,
+     "p95": 4.43057672158721
+    }
+   },
+   "definition": "geometry of the 7,454 rainfall landslide polygons in forest",
+   "source": "annual shapefiles + dem_20m.tif",
+   "cls": "A",
+   "note": ""
+  },
+  "S6.screens": {
+   "value": {
+    "definitions": {
+     "reliably_shallow": "area < 1 ha AND not on a 2004-2017 scar AND >200 m from a debris-flow torrent AND outside large-landslide potential areas",
+     "all_screens": "reliably_shallow AND >200 m from a national/provincial road AND >200 m from a river polygon"
+    },
+    "baseline": {
+     "OR": 1.0341,
+     "ci": [
+      1.0123,
+      1.0565
+     ],
+     "p": 0.002091442618789463,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_ctrl": 9365
+    },
+    "exclude_reactivation": {
+     "OR": 1.0306,
+     "ci": [
+      1.0083,
+      1.0535
+     ],
+     "p": 0.006995048609915955,
+     "n_case": 5512,
+     "n_bamboo_case": 155,
+     "n_ctrl": 9314
+    },
+    "exclude_debris_200m": {
+     "OR": 1.0352,
+     "ci": [
+      1.012,
+      1.059
+     ],
+     "p": 0.002785943774566091,
+     "n_case": 5464,
+     "n_bamboo_case": 155,
+     "n_ctrl": 8708
+    },
+    "exclude_debris_500m": {
+     "OR": 1.0318,
+     "ci": [
+      1.0074,
+      1.0567
+     ],
+     "p": 0.010199221464138875,
+     "n_case": 5141,
+     "n_bamboo_case": 137,
+     "n_ctrl": 7844
+    },
+    "exclude_road_200m": {
+     "OR": 1.0369,
+     "ci": [
+      1.0143,
+      1.06
+     ],
+     "p": 0.0012922608319074769,
+     "n_case": 5753,
+     "n_bamboo_case": 162,
+     "n_ctrl": 9128
+    },
+    "exclude_river_200m": {
+     "OR": 1.0265,
+     "ci": [
+      1.0025,
+      1.051
+     ],
+     "p": 0.03023793677972142,
+     "n_case": 5309,
+     "n_bamboo_case": 144,
+     "n_ctrl": 8657
+    },
+    "exclude_large_ls_potential": {
+     "OR": 1.0335,
+     "ci": [
+      1.0117,
+      1.0558
+     ],
+     "p": 0.0024882637230367877,
+     "n_case": 5895,
+     "n_bamboo_case": 171,
+     "n_ctrl": 9343
+    },
+    "exclude_area_ge10ha": {
+     "OR": 1.0339,
+     "ci": [
+      1.0121,
+      1.0563
+     ],
+     "p": 0.002216158487741149,
+     "n_case": 5904,
+     "n_bamboo_case": 171,
+     "n_ctrl": 9365
+    },
+    "exclude_area_ge1ha": {
+     "OR": 1.0321,
+     "ci": [
+      1.0101,
+      1.0546
+     ],
+     "p": 0.004037182491147373,
+     "n_case": 5216,
+     "n_bamboo_case": 163,
+     "n_ctrl": 9365
+    },
+    "relief_lt50m": {
+     "OR": 1.024,
+     "ci": [
+      0.9989,
+      1.0498
+     ],
+     "p": 0.06113286828021991,
+     "n_case": 3099,
+     "n_bamboo_case": 117,
+     "n_ctrl": 9365
+    },
+    "relief_lt30m": {
+     "OR": 1.0122,
+     "ci": [
+      0.9843,
+      1.0408
+     ],
+     "p": 0.39601081699480867,
+     "n_case": 2043,
+     "n_bamboo_case": 83,
+     "n_ctrl": 9365
+    },
+    "elongation_lt3": {
+     "OR": 1.0333,
+     "ci": [
+      1.0103,
+      1.0569
+     ],
+     "p": 0.0044094218041035305,
+     "n_case": 4783,
+     "n_bamboo_case": 152,
+     "n_ctrl": 9365
+    },
+    "reliably_shallow_original_controls": {
+     "OR": 1.0287,
+     "ci": [
+      1.005,
+      1.0529
+     ],
+     "p": 0.017192439247026625,
+     "n_case": 4502,
+     "n_bamboo_case": 139,
+     "n_ctrl": 8645
+    },
+    "reliably_shallow_new_pool": {
+     "OR": 1.0266,
+     "ci": [
+      1.0073,
+      1.0461
+     ],
+     "p": 0.006531664741697307,
+     "n_case": 4502,
+     "n_bamboo_case": 139,
+     "n_ctrl": 106367
+    },
+    "all_screens_original_controls": {
+     "OR": 1.0247,
+     "ci": [
+      0.9979,
+      1.0522
+     ],
+     "p": 0.071408293930463,
+     "n_case": 3910,
+     "n_bamboo_case": 112,
+     "n_ctrl": 7833
+    },
+    "all_screens_new_pool": {
+     "OR": 1.0211,
+     "ci": [
+      0.9995,
+      1.0431
+     ],
+     "p": 0.05539372067892101,
+     "n_case": 3910,
+     "n_bamboo_case": 112,
+     "n_ctrl": 97594
+    },
+    "pooled_all_screens_new_pool": {
+     "OR": 1.0225,
+     "ci": [
+      1.0091,
+      1.036
+     ],
+     "p": 0.0009582366684852683,
+     "n_case": 4079,
+     "n_bamboo_case": 281,
+     "n_ctrl": 102319
+    },
+    "pooled_reliably_shallow_new_pool": {
+     "OR": 1.0232,
+     "ci": [
+      1.0115,
+      1.0352
+     ],
+     "p": 9.942295829823422e-05,
+     "n_case": 4720,
+     "n_bamboo_case": 357,
+     "n_ctrl": 111976
+    }
+   },
+   "definition": "the interaction re-estimated after removing the failure types listed in the failure-type screen",
+   "source": "rebuilt table + official hazard layers",
+   "cls": "A",
+   "note": ""
+  },
+  "S6.relief_truncation": {
+   "value": {
+    "bamboo_cases_gt40deg": {
+     "all": 44,
+     "relief_lt50": 21,
+     "relief_lt30": 10
+    }
+   },
+   "definition": "how many bamboo cases above 40 degrees survive each relief restriction",
+   "source": "rebuilt table",
+   "cls": "A",
+   "note": "explains why the relief-restricted subsets lose the steep-slope leverage"
+  },
+  "S6.misclassification": {
+   "value": {
+    "seed": 5,
+    "2pct_both_ways": {
+     "OR_mean": 1.0258,
+     "OR_range_mc": [
+      1.0144,
+      1.0375
+     ],
+     "share_gt1": 1.0
+    },
+    "5pct_both_ways": {
+     "OR_mean": 1.0183,
+     "OR_range_mc": [
+      1.0071,
+      1.029
+     ],
+     "share_gt1": 1.0
+    },
+    "10pct_both_ways": {
+     "OR_mean": 1.0127,
+     "OR_range_mc": [
+      1.0034,
+      1.0226
+     ],
+     "share_gt1": 0.9933333333333333
+    },
+    "20pct_both_ways": {
+     "OR_mean": 1.0065,
+     "OR_range_mc": [
+      0.9983,
+      1.0144
+     ],
+     "share_gt1": 0.95
+    },
+    "5pct_bamboo_to_broadleaf": {
+     "OR_mean": 1.0338,
+     "share_gt1": 1.0
+    },
+    "10pct_bamboo_to_broadleaf": {
+     "OR_mean": 1.0337,
+     "share_gt1": 1.0
+    },
+    "20pct_bamboo_to_broadleaf": {
+     "OR_mean": 1.0339,
+     "share_gt1": 1.0
+    }
+   },
+   "definition": "non-differential and one-directional forest-type misclassification simulated on the analysis table",
+   "source": "rebuilt table",
+   "cls": "C",
+   "note": "bounds the effect of the gap between the 2017 forest map and the 2018-2025 inventory"
+  },
+  "S6.three_level": {
+   "value": {
+    "original_controls": {
+     "mixed_main": {
+      "OR": 0.6453,
+      "ci": [
+       0.3774,
+       1.1033
+      ],
+      "p": 0.10940086282977712
+     },
+     "bamboo_main": {
+      "OR": 0.2077,
+      "ci": [
+       0.1011,
+       0.4265
+      ],
+      "p": 1.862444379252537e-05
+     },
+     "mixed_x_slope": {
+      "OR": 1.0155,
+      "ci": [
+       0.9997,
+       1.0316
+      ],
+      "p": 0.055314802569838895
+     },
+     "bamboo_x_slope": {
+      "OR": 1.0338,
+      "ci": [
+       1.0119,
+       1.0561
+      ],
+      "p": 0.002298937964894776
+     }
+    },
+    "new_pool": {
+     "mixed_main": {
+      "OR": 0.7164,
+      "ci": [
+       0.4561,
+       1.1251
+      ],
+      "p": 0.14757144577126668
+     },
+     "bamboo_main": {
+      "OR": 0.2482,
+      "ci": [
+       0.1358,
+       0.4535
+      ],
+      "p": 5.857513640128431e-06
+     },
+     "mixed_x_slope": {
+      "OR": 1.0107,
+      "ci": [
+       0.9981,
+       1.0234
+      ],
+      "p": 0.09642679699552503
+     },
+     "bamboo_x_slope": {
+      "OR": 1.0326,
+      "ci": [
+       1.0152,
+       1.0504
+      ],
+      "p": 0.00022307321511916278
+     }
+    },
+    "LR_test_common_slope_interaction": {
+     "chi2": 4.156,
+     "df": 1,
+     "p": 0.04148499290875429,
+     "conclusion": "reject a common slope interaction"
+    }
+   },
+   "definition": "forest type entered as three levels (broadleaf reference, bamboo-broadleaf mixed, pure bamboo), each with its own slope interaction; the likelihood-ratio test asks whether the two bamboo-containing types share one interaction",
+   "source": "rebuilt table + new control pool",
+   "cls": "A",
+   "note": ""
+  },
+  "S6.bamboo_definition": {
+   "value": {
+    "original_controls": {
+     "OR": 1.0238,
+     "ci": [
+      1.0107,
+      1.0371
+     ],
+     "p": 0.00034921589229286454,
+     "n_case": 6200,
+     "n_bamboo_case": 456,
+     "n_ctrl": 9956
+    },
+    "new_pool": {
+     "OR": 1.0202,
+     "ci": [
+      1.0098,
+      1.0307
+     ],
+     "p": 0.00012642764136638895,
+     "n_case": 6200,
+     "n_bamboo_case": 456,
+     "n_ctrl": 121558
+    },
+    "drop2events_pure_original": {
+     "OR": 1.0107,
+     "ci": [
+      0.976,
+      1.0467
+     ],
+     "p": 0.5505113472678536,
+     "n_case": 3630,
+     "n_bamboo_case": 45,
+     "n_ctrl": 9365
+    },
+    "drop2events_pure_newpool": {
+     "OR": 1.012,
+     "ci": [
+      0.9804,
+      1.0447
+     ],
+     "p": 0.4611058557191725,
+     "n_case": 3630,
+     "n_bamboo_case": 45,
+     "n_ctrl": 115225
+    },
+    "drop2events_pooled_newpool": {
+     "OR": 1.024,
+     "ci": [
+      1.0029,
+      1.0455
+     ],
+     "p": 0.025698647666019925,
+     "n_case": 3684,
+     "n_bamboo_case": 99,
+     "n_ctrl": 121558
+    }
+   },
+   "definition": "pure bamboo versus bamboo-containing stands, and the effect of removing the two events that carry most bamboo cases",
+   "source": "rebuilt table",
+   "cls": "A",
+   "note": ""
+  },
+  "S6.per_event": {
+   "value": {
+    "pure": [
+     {
+      "OR": 1.0451,
+      "ci": [
+       1.018,
+       1.073
+      ],
+      "p": 0.0010207873091658826,
+      "n_case": 992,
+      "n_bamboo_case": 76,
+      "n_ctrl": 42227,
+      "event": "0728豪雨"
+     },
+     {
+      "OR": 1.0349,
+      "ci": [
+       1.0039,
+       1.0669
+      ],
+      "p": 0.027111238800457516,
+      "n_case": 1293,
+      "n_bamboo_case": 50,
+      "n_ctrl": 67517,
+      "event": "凱米颱風"
+     }
+    ],
+    "pooled": [
+     {
+      "OR": 1.0176,
+      "ci": [
+       1.0015,
+       1.034
+      ],
+      "p": 0.03197718723210663,
+      "n_case": 1138,
+      "n_bamboo_case": 222,
+      "n_ctrl": 46551,
+      "event": "0728豪雨"
+     },
+     {
+      "OR": 1.0225,
+      "ci": [
+       1.004,
+       1.0413
+      ],
+      "p": 0.016779367416143165,
+      "n_case": 1378,
+      "n_bamboo_case": 135,
+      "n_ctrl": 72356,
+      "event": "凱米颱風"
+     },
+     {
+      "OR": 1.0555,
+      "ci": [
+       1.0007,
+       1.1132
+      ],
+      "p": 0.046920626289461476,
+      "n_case": 819,
+      "n_bamboo_case": 25,
+      "n_ctrl": 11874,
+      "event": "卡努颱風"
+     },
+     {
+      "OR": 1.0392,
+      "ci": [
+       0.9842,
+       1.0973
+      ],
+      "p": 0.16580738958378705,
+      "n_case": 82,
+      "n_bamboo_case": 17,
+      "n_ctrl": 13288,
+      "event": "丹娜絲颱風、薇帕颱風、0721豪雨"
+     }
+    ],
+    "rule": "events with at least 15 bamboo cases and at least 200 controls inside the event footprint"
+   },
+   "definition": "event-specific interaction estimates",
+   "source": "rebuilt table + new control pool",
+   "cls": "A",
+   "note": ""
+  },
+  "S6.leave_one_event_out": {
+   "value": {
+    "n_refits": 39,
+    "OR_min": 1.0245,
+    "OR_max": 1.0388,
+    "all_above_1": true,
+    "n_p_lt_05": 38,
+    "worst": {
+     "dropped": "0728豪雨",
+     "n_dropped": 992,
+     "OR": 1.0245,
+     "p": 0.0683832892193994
+    },
+    "rows": [
+     {
+      "dropped": "0428豪雨",
+      "n_dropped": 4,
+      "OR": 1.0342,
+      "p": 0.0020714647533794928
+     },
+     {
+      "dropped": "0518及0611豪雨",
+      "n_dropped": 27,
+      "OR": 1.0336,
+      "p": 0.0024505303107382748
+     },
+     {
+      "dropped": "0521暨0528豪雨",
+      "n_dropped": 9,
+      "OR": 1.0342,
+      "p": 0.002056330227149239
+     },
+     {
+      "dropped": "0613暨0619豪雨暨瑪莉亞颱風",
+      "n_dropped": 9,
+      "OR": 1.0342,
+      "p": 0.0020383133792141184
+     },
+     {
+      "dropped": "0613豪雨",
+      "n_dropped": 18,
+      "OR": 1.0366,
+      "p": 0.0011022675821519279
+     },
+     {
+      "dropped": "0621豪雨",
+      "n_dropped": 5,
+      "OR": 1.0342,
+      "p": 0.0020688169923455124
+     },
+     {
+      "dropped": "0629豪雨",
+      "n_dropped": 122,
+      "OR": 1.0349,
+      "p": 0.0016419770215310159
+     },
+     {
+      "dropped": "0728豪雨",
+      "n_dropped": 992,
+      "OR": 1.0245,
+      "p": 0.0683832892193994
+     },
+     {
+      "dropped": "0731豪雨暨盧碧颱風",
+      "n_dropped": 173,
+      "OR": 1.0301,
+      "p": 0.007096457053517469
+     },
+     {
+      "dropped": "0823熱帶低壓",
+      "n_dropped": 24,
+      "OR": 1.0348,
+      "p": 0.0017911374313139827
+     },
+     {
+      "dropped": "0909熱帶低壓",
+      "n_dropped": 1,
+      "OR": 1.034,
+      "p": 0.002164171117255309
+     },
+     {
+      "dropped": "0909熱帶低壓暨山竹颱風",
+      "n_dropped": 8,
+      "OR": 1.0342,
+      "p": 0.0020337219516217697
+     },
+     {
+      "dropped": "1007豪雨、尼莎颱風暨1022豪雨",
+      "n_dropped": 38,
+      "OR": 1.0343,
+      "p": 0.0020738289552932887
+     },
+     {
+      "dropped": "1020豪雨",
+      "n_dropped": 8,
+      "OR": 1.0388,
+      "p": 0.0006532700266301816
+     },
+     {
+      "dropped": "1023豪雨",
+      "n_dropped": 6,
+      "OR": 1.0356,
+      "p": 0.0014783840161354256
+     },
+     {
+      "dropped": "1030豪雨",
+      "n_dropped": 3,
+      "OR": 1.0342,
+      "p": 0.0020703993480408744
+     },
+     {
+      "dropped": "1112豪雨",
+      "n_dropped": 2,
+      "OR": 1.0342,
+      "p": 0.002077902629505912
+     },
+     {
+      "dropped": "丹娜絲颱風",
+      "n_dropped": 2,
+      "OR": 1.0342,
+      "p": 0.0020733864876458785
+     },
+     {
+      "dropped": "丹娜絲颱風、薇帕颱風、0721豪雨",
+      "n_dropped": 71,
+      "OR": 1.0355,
+      "p": 0.001780435687960935
+     },
+     {
+      "dropped": "凱米颱風",
+      "n_dropped": 1293,
+      "OR": 1.0324,
+      "p": 0.009623286378276363
+     },
+     {
+      "dropped": "利奇馬颱風",
+      "n_dropped": 8,
+      "OR": 1.0338,
+      "p": 0.0022973234216063787
+     },
+     {
+      "dropped": "利奇馬颱風、0815豪雨、白鹿颱風",
+      "n_dropped": 10,
+      "OR": 1.0342,
+      "p": 0.0020545927646640205
+     },
+     {
+      "dropped": "卡努颱風",
+      "n_dropped": 803,
+      "OR": 1.0338,
+      "p": 0.00254299797451063
+     },
+     {
+      "dropped": "圓規颱風暨1013豪雨",
+      "n_dropped": 29,
+      "OR": 1.0343,
+      "p": 0.002004787637261529
+     },
+     {
+      "dropped": "天兔颱風",
+      "n_dropped": 2,
+      "OR": 1.0342,
+      "p": 0.0020784015770687336
+     },
+     {
+      "dropped": "小犬颱風",
+      "n_dropped": 20,
+      "OR": 1.0343,
+      "p": 0.0019879888171416837
+     },
+     {
+      "dropped": "山陀兒颱風",
+      "n_dropped": 514,
+      "OR": 1.0335,
+      "p": 0.0029897004092909185
+     },
+     {
+      "dropped": "康芮颱風",
+      "n_dropped": 623,
+      "OR": 1.0314,
+      "p": 0.005133496465264731
+     },
+     {
+      "dropped": "彩雲颱風",
+      "n_dropped": 10,
+      "OR": 1.0342,
+      "p": 0.00206394195882198
+     },
+     {
+      "dropped": "杜蘇芮颱風",
+      "n_dropped": 170,
+      "OR": 1.0354,
+      "p": 0.0015027886076319774
+     },
+     {
+      "dropped": "楊柳颱風",
+      "n_dropped": 40,
+      "OR": 1.0343,
+      "p": 0.0020115602492556395
+     },
+     {
+      "dropped": "樺加沙颱風",
+      "n_dropped": 469,
+      "OR": 1.0368,
+      "p": 0.0010158329471849914
+     },
+     {
+      "dropped": "海葵颱風",
+      "n_dropped": 354,
+      "OR": 1.0354,
+      "p": 0.0014031452680804968
+     },
+     {
+      "dropped": "烟花颱風",
+      "n_dropped": 7,
+      "OR": 1.0341,
+      "p": 0.0021620851728105794
+     },
+     {
+      "dropped": "瑪莉亞颱風",
+      "n_dropped": 1,
+      "OR": 1.0341,
+      "p": 0.0020843934295613487
+     },
+     {
+      "dropped": "璨樹颱風",
+      "n_dropped": 1,
+      "OR": 1.0341,
+      "p": 0.002091006114527838
+     },
+     {
+      "dropped": "白鹿颱風",
+      "n_dropped": 17,
+      "OR": 1.0342,
+      "p": 0.0020650366191670155
+     },
+     {
+      "dropped": "軒嵐諾暨梅花颱風",
+      "n_dropped": 8,
+      "OR": 1.0358,
+      "p": 0.0013969178985393516
+     },
+     {
+      "dropped": "鳳凰颱風",
+      "n_dropped": 14,
+      "OR": 1.0341,
+      "p": 0.002110693201476499
+     }
+    ]
+   },
+   "definition": "the interaction refitted 39 times, each time removing all cases of one event",
+   "source": "rebuilt table",
+   "cls": "A",
+   "note": ""
+  },
+  "S6.crossover_bootstrap": {
+   "value": {
+    "seed": 20260902,
+    "draws": 600,
+    "valid": 584,
+    "median": 44.71,
+    "ci95": [
+     34.5,
+     55.78
+    ],
+    "ci50": [
+     41.5,
+     48.14
+    ],
+    "share_below_bamboo_p95": 25.0,
+    "bamboo_control_p95_deg": 41.5
+   },
+   "definition": "cluster bootstrap of the crossover: events resampled with replacement (all their cases), controls resampled with replacement; crossover interpolated on the frozen grid",
+   "source": "rebuilt table",
+   "cls": "C",
+   "note": ""
+  },
+  "S6.curve_statistics": {
+   "value": {
+    "grid": "5.0 to 60.0 degrees, step 0.1",
+    "pure_original_controls": {
+     "crossover_deg": 44.06,
+     "protection_band": [
+      9.9,
+      39.5,
+      true
+     ],
+     "worse_band": null,
+     "at": {
+      "20": {
+       "OR": 0.436,
+       "ci": [
+        0.289,
+        0.66
+       ]
+      },
+      "25": {
+       "OR": 0.452,
+       "ci": [
+        0.338,
+        0.607
+       ]
+      },
+      "30": {
+       "OR": 0.505,
+       "ci": [
+        0.39,
+        0.654
+       ]
+      },
+      "35": {
+       "OR": 0.604,
+       "ci": [
+        0.462,
+        0.789
+       ]
+      },
+      "40": {
+       "OR": 0.772,
+       "ci": [
+        0.575,
+        1.036
+       ]
+      },
+      "42": {
+       "OR": 0.87,
+       "ci": [
+        0.614,
+        1.233
+       ]
+      },
+      "44": {
+       "OR": 0.995,
+       "ci": [
+        0.657,
+        1.509
+       ]
+      },
+      "46": {
+       "OR": 1.157,
+       "ci": [
+        0.712,
+        1.88
+       ]
+      },
+      "50": {
+       "OR": 1.65,
+       "ci": [
+        0.844,
+        3.226
+       ]
+      }
+     }
+    },
+    "pure_new_pool": {
+     "crossover_deg": 46.44,
+     "protection_band": [
+      7.6,
+      36.3,
+      true
+     ],
+     "worse_band": [
+      52.9,
+      60.0,
+      true
+     ],
+     "at": {
+      "20": {
+       "OR": 0.449,
+       "ci": [
+        0.302,
+        0.666
+       ]
+      },
+      "25": {
+       "OR": 0.546,
+       "ci": [
+        0.416,
+        0.718
+       ]
+      },
+      "30": {
+       "OR": 0.674,
+       "ci": [
+        0.539,
+        0.843
+       ]
+      },
+      "35": {
+       "OR": 0.785,
+       "ci": [
+        0.627,
+        0.982
+       ]
+      },
+      "40": {
+       "OR": 0.844,
+       "ci": [
+        0.674,
+        1.058
+       ]
+      },
+      "42": {
+       "OR": 0.872,
+       "ci": [
+        0.675,
+        1.127
+       ]
+      },
+      "44": {
+       "OR": 0.914,
+       "ci": [
+        0.679,
+        1.231
+       ]
+      },
+      "46": {
+       "OR": 0.981,
+       "ci": [
+        0.699,
+        1.376
+       ]
+      },
+      "50": {
+       "OR": 1.256,
+       "ci": [
+        0.829,
+        1.901
+       ]
+      }
+     }
+    },
+    "pooled_original_controls": {
+     "crossover_deg": 38.83,
+     "protection_band": [
+      8.6,
+      32.9,
+      true
+     ],
+     "worse_band": null,
+     "at": {
+      "20": {
+       "OR": 0.605,
+       "ci": [
+        0.46,
+        0.794
+       ]
+      },
+      "25": {
+       "OR": 0.671,
+       "ci": [
+        0.552,
+        0.816
+       ]
+      },
+      "30": {
+       "OR": 0.768,
+       "ci": [
+        0.649,
+        0.909
+       ]
+      },
+      "35": {
+       "OR": 0.892,
+       "ci": [
+        0.747,
+        1.066
+       ]
+      },
+      "40": {
+       "OR": 1.034,
+       "ci": [
+        0.86,
+        1.243
+       ]
+      },
+      "42": {
+       "OR": 1.091,
+       "ci": [
+        0.884,
+        1.347
+       ]
+      },
+      "44": {
+       "OR": 1.146,
+       "ci": [
+        0.893,
+        1.472
+       ]
+      },
+      "46": {
+       "OR": 1.197,
+       "ci": [
+        0.891,
+        1.608
+       ]
+      },
+      "50": {
+       "OR": 1.275,
+       "ci": [
+        0.874,
+        1.861
+       ]
+      }
+     }
+    },
+    "pooled_new_pool": {
+     "crossover_deg": 40.03,
+     "protection_band": [
+      7.4,
+      31.2,
+      true
+     ],
+     "worse_band": null,
+     "at": {
+      "20": {
+       "OR": 0.662,
+       "ci": [
+        0.517,
+        0.847
+       ]
+      },
+      "25": {
+       "OR": 0.75,
+       "ci": [
+        0.629,
+        0.894
+       ]
+      },
+      "30": {
+       "OR": 0.847,
+       "ci": [
+        0.738,
+        0.972
+       ]
+      },
+      "35": {
+       "OR": 0.934,
+       "ci": [
+        0.812,
+        1.075
+       ]
+      },
+      "40": {
+       "OR": 1.0,
+       "ci": [
+        0.872,
+        1.145
+       ]
+      },
+      "42": {
+       "OR": 1.024,
+       "ci": [
+        0.884,
+        1.185
+       ]
+      },
+      "44": {
+       "OR": 1.049,
+       "ci": [
+        0.888,
+        1.239
+       ]
+      },
+      "46": {
+       "OR": 1.078,
+       "ci": [
+        0.889,
+        1.307
+       ]
+      },
+      "50": {
+       "OR": 1.156,
+       "ci": [
+        0.897,
+        1.489
+       ]
+      }
+     }
+    }
+   },
+   "definition": "crossover, significant-protection band and pointwise odds ratios under the frozen slope grid",
+   "source": "rebuilt table",
+   "cls": "A",
+   "note": ""
+  },
+  "S6.common_support": {
+   "value": {
+    "original_controls": {
+     "(0, 10]": {
+      "bamboo": 42,
+      "broadleaf": 302,
+      "bamboo_share_pct": 12.21
+     },
+     "(10, 20]": {
+      "bamboo": 143,
+      "broadleaf": 1002,
+      "bamboo_share_pct": 12.49
+     },
+     "(20, 30]": {
+      "bamboo": 254,
+      "broadleaf": 2163,
+      "bamboo_share_pct": 10.51
+     },
+     "(30, 40]": {
+      "bamboo": 174,
+      "broadleaf": 2848,
+      "bamboo_share_pct": 5.76
+     },
+     "(40, 45]": {
+      "bamboo": 38,
+      "broadleaf": 1122,
+      "bamboo_share_pct": 3.28
+     },
+     "(45, 50]": {
+      "bamboo": 9,
+      "broadleaf": 648,
+      "bamboo_share_pct": 1.37
+     },
+     "(50, 55]": {
+      "bamboo": 1,
+      "broadleaf": 345,
+      "bamboo_share_pct": 0.29
+     },
+     "(55, 60]": {
+      "bamboo": 1,
+      "broadleaf": 161,
+      "bamboo_share_pct": 0.62
+     },
+     "(60, 90]": {
+      "bamboo": 0,
+      "broadleaf": 86,
+      "bamboo_share_pct": 0.0
+     }
+    },
+    "new_pool": {
+     "(0, 10]": {
+      "bamboo": 361,
+      "broadleaf": 2344,
+      "bamboo_share_pct": 13.35
+     },
+     "(10, 20]": {
+      "bamboo": 1335,
+      "broadleaf": 10075,
+      "bamboo_share_pct": 11.7
+     },
+     "(20, 30]": {
+      "bamboo": 2277,
+      "broadleaf": 25501,
+      "bamboo_share_pct": 8.2
+     },
+     "(30, 40]": {
+      "bamboo": 1683,
+      "broadleaf": 37785,
+      "bamboo_share_pct": 4.26
+     },
+     "(40, 45]": {
+      "bamboo": 368,
+      "broadleaf": 15424,
+      "bamboo_share_pct": 2.33
+     },
+     "(45, 50]": {
+      "bamboo": 152,
+      "broadleaf": 9538,
+      "bamboo_share_pct": 1.57
+     },
+     "(50, 55]": {
+      "bamboo": 40,
+      "broadleaf": 4843,
+      "bamboo_share_pct": 0.82
+     },
+     "(55, 60]": {
+      "bamboo": 8,
+      "broadleaf": 2221,
+      "bamboo_share_pct": 0.36
+     },
+     "(60, 90]": {
+      "bamboo": 0,
+      "broadleaf": 1270,
+      "bamboo_share_pct": 0.0
+     }
+    },
+    "bamboo_control_slope": {
+     "original": {
+      "median": 25.8,
+      "p95": 41.5,
+      "max": 57.6
+     },
+     "new_pool": {
+      "median": 26.7,
+      "p95": 43.0,
+      "max": 59.3
+     }
+    },
+    "bamboo_cases_gt50deg": 8,
+    "bamboo_cases_total": 171
+   },
+   "definition": "slope distribution of bamboo and broadleaf control points, by 10-degree bins",
+   "source": "rebuilt table + new control pool",
+   "cls": "A",
+   "note": ""
+  },
+  "S6.event_structure": {
+   "value": {
+    "n_events": 39,
+    "events_lt30_cases": 26,
+    "events_zero_bamboo": 21,
+    "top2_bamboo_share_pct": 73.7,
+    "per_event": {
+     "凱米颱風": {
+      "n_case": 1293,
+      "n_bamboo": 50
+     },
+     "0728豪雨": {
+      "n_case": 992,
+      "n_bamboo": 76
+     },
+     "卡努颱風": {
+      "n_case": 803,
+      "n_bamboo": 9
+     },
+     "康芮颱風": {
+      "n_case": 623,
+      "n_bamboo": 1
+     },
+     "山陀兒颱風": {
+      "n_case": 514,
+      "n_bamboo": 3
+     },
+     "樺加沙颱風": {
+      "n_case": 469,
+      "n_bamboo": 3
+     },
+     "海葵颱風": {
+      "n_case": 354,
+      "n_bamboo": 0
+     },
+     "0731豪雨暨盧碧颱風": {
+      "n_case": 173,
+      "n_bamboo": 6
+     },
+     "杜蘇芮颱風": {
+      "n_case": 170,
+      "n_bamboo": 3
+     },
+     "0629豪雨": {
+      "n_case": 122,
+      "n_bamboo": 0
+     },
+     "丹娜絲颱風、薇帕颱風、0721豪雨": {
+      "n_case": 71,
+      "n_bamboo": 6
+     },
+     "楊柳颱風": {
+      "n_case": 40,
+      "n_bamboo": 0
+     },
+     "1007豪雨、尼莎颱風暨1022豪雨": {
+      "n_case": 38,
+      "n_bamboo": 2
+     },
+     "圓規颱風暨1013豪雨": {
+      "n_case": 29,
+      "n_bamboo": 0
+     },
+     "0518及0611豪雨": {
+      "n_case": 27,
+      "n_bamboo": 1
+     },
+     "0823熱帶低壓": {
+      "n_case": 24,
+      "n_bamboo": 1
+     },
+     "小犬颱風": {
+      "n_case": 20,
+      "n_bamboo": 0
+     },
+     "0613豪雨": {
+      "n_case": 18,
+      "n_bamboo": 1
+     },
+     "白鹿颱風": {
+      "n_case": 17,
+      "n_bamboo": 0
+     },
+     "鳳凰颱風": {
+      "n_case": 14,
+      "n_bamboo": 0
+     },
+     "利奇馬颱風、0815豪雨、白鹿颱風": {
+      "n_case": 10,
+      "n_bamboo": 0
+     },
+     "彩雲颱風": {
+      "n_case": 10,
+      "n_bamboo": 0
+     },
+     "0613暨0619豪雨暨瑪莉亞颱風": {
+      "n_case": 9,
+      "n_bamboo": 0
+     },
+     "0521暨0528豪雨": {
+      "n_case": 9,
+      "n_bamboo": 0
+     },
+     "0909熱帶低壓暨山竹颱風": {
+      "n_case": 8,
+      "n_bamboo": 0
+     },
+     "1020豪雨": {
+      "n_case": 8,
+      "n_bamboo": 3
+     },
+     "軒嵐諾暨梅花颱風": {
+      "n_case": 8,
+      "n_bamboo": 2
+     },
+     "利奇馬颱風": {
+      "n_case": 8,
+      "n_bamboo": 1
+     },
+     "烟花颱風": {
+      "n_case": 7,
+      "n_bamboo": 2
+     },
+     "1023豪雨": {
+      "n_case": 6,
+      "n_bamboo": 1
+     },
+     "0621豪雨": {
+      "n_case": 5,
+      "n_bamboo": 0
+     },
+     "0428豪雨": {
+      "n_case": 4,
+      "n_bamboo": 0
+     },
+     "1030豪雨": {
+      "n_case": 3,
+      "n_bamboo": 0
+     },
+     "丹娜絲颱風": {
+      "n_case": 2,
+      "n_bamboo": 0
+     },
+     "1112豪雨": {
+      "n_case": 2,
+      "n_bamboo": 0
+     },
+     "天兔颱風": {
+      "n_case": 2,
+      "n_bamboo": 0
+     },
+     "0909熱帶低壓": {
+      "n_case": 1,
+      "n_bamboo": 0
+     },
+     "瑪莉亞颱風": {
+      "n_case": 1,
+      "n_bamboo": 0
+     },
+     "璨樹颱風": {
+      "n_case": 1,
+      "n_bamboo": 0
+     }
+    }
+   },
+   "definition": "cases per rainfall event in the bamboo-versus-broadleaf subset",
+   "source": "rebuilt table",
+   "cls": "A",
+   "note": ""
+  },
+  "S7.irls_crosscheck": {
+   "value": {
+    "beta_manual": 0.033563940515153885,
+    "beta_statsmodels": 0.03356394051515349,
+    "abs_diff_beta": 3.95516952522712e-16,
+    "se_manual": 0.010908255382179082,
+    "se_statsmodels": 0.010908255382179152,
+    "abs_diff_se": 6.938893903907228e-17,
+    "OR_manual": 1.034134,
+    "iterations": 7
+   },
+   "definition": "the headline coefficient re-estimated with a hand-written Newton-Raphson solver and an analytically inverted information matrix, independent of statsmodels",
+   "source": "step1_dataset.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S7.bspline_basis_crosscheck": {
+   "value": {
+    "max_abs_diff": 0.0,
+    "crossover_from_manual_basis": 44.0633,
+    "primary_path_crossover": 44.0633,
+    "protection_band_manual": [
+     9.9,
+     39.5
+    ],
+    "primary_path_band": [
+     9.9,
+     39.5
+    ]
+   },
+   "definition": "the whole spline path rebuilt without patsy: scipy BSpline.design_matrix for the basis, statsmodels Logit on a hand-built design matrix, contrast formed by hand",
+   "source": "step1_dataset.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S7.delta_vs_simulation": {
+   "value": {
+    "max_abs_se_diff": 0.001586810258461968,
+    "protection_band_delta": [
+     9.9,
+     39.5
+    ],
+    "protection_band_simulated": [
+     9.9,
+     39.5
+    ],
+    "n_sim": 20000,
+    "seed": 99
+   },
+   "definition": "the delta-method standard error of the log odds-ratio curve compared with a 20,000-draw multivariate-normal simulation of the parameter vector",
+   "source": "step1_dataset.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S7.crossover_invariance": {
+   "value": {
+    "at_median": 44.06328420290831,
+    "at_p10": 44.06328420290831,
+    "at_p90": 44.06328420290831
+   },
+   "definition": "the crossover recomputed with the non-slope covariates set to their 10th, 50th and 90th percentiles; they cancel in the bamboo contrast, so the value must not change",
+   "source": "step1_dataset.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S6.event_by_block_clogit_exact": {
+   "value": {
+    "method": "exact conditional likelihood (elementary symmetric polynomial dynamic program), validated against statsmodels ConditionalLogit to 7e-06",
+    "seeds": "2000-2009",
+    "controls_per_stratum": "min(available, max(40, 4x cases))",
+    "20km": {
+     "OR_mean": 1.0367,
+     "OR_range_mc": [
+      1.0322,
+      1.0403
+     ],
+     "p_median": 0.00020083504153523002,
+     "p_max": 0.0009061526589462243,
+     "share_p_lt_05": 1.0,
+     "strata_median": 535,
+     "n_draws": 10
+    },
+    "10km": {
+     "OR_mean": 1.0294,
+     "OR_range_mc": [
+      1.0238,
+      1.0339
+     ],
+     "p_median": 0.0017749952304135785,
+     "p_max": 0.014101604207036322,
+     "share_p_lt_05": 1.0,
+     "strata_median": 993,
+     "n_draws": 10
+    },
+    "5km": {
+     "OR_mean": 1.0307,
+     "OR_range_mc": [
+      1.0266,
+      1.0359
+     ],
+     "p_median": 0.0012225608712934655,
+     "p_max": 0.005643486220596072,
+     "share_p_lt_05": 1.0,
+     "strata_median": 1766,
+     "n_draws": 10
+    }
+   },
+   "definition": "conditional logistic regression stratified by event x spatial block, exact likelihood, mean over 10 independent control draws",
+   "source": "rebuilt table + new control pool",
+   "cls": "C",
+   "note": ""
+  },
+  "S7.clogit_method": {
+   "value": {
+    "breslow_cox_vs_exact": "Breslow tie handling in a stratified Cox model is NOT equal to conditional logistic regression when strata contain many cases; on a 60-stratum simulation the coefficients differed by 1.9e-01",
+    "exact_implementation_vs_statsmodels": {
+     "max_param_diff": 7.097e-06,
+     "max_se_diff": 1.094e-07
+    },
+    "decision": "all conditional-logit results are reported from the exact implementation; the earlier Breslow-tied numbers are superseded"
+   },
+   "definition": "validation of the conditional logistic regression implementation",
+   "source": "simulation + statsmodels ConditionalLogit",
+   "cls": "A",
+   "note": ""
+  },
+  "S2.step1_rows": {
+   "value": {
+    "rows": 20585,
+    "cases": 7454,
+    "controls": 13131
+   },
+   "definition": "row counts of the published model-input table step1_dataset.csv",
+   "source": "step1_dataset.csv",
+   "cls": "A",
+   "note": ""
+  },
+  "S6.aux_layers": {
+   "value": {
+    "debris_flow_torrents": 1753,
+    "large_landslide_potential_areas": 94,
+    "road_segments_national_provincial": 58276,
+    "river_polygons": 13262,
+    "historic_landslide_polygons_2004_2017": 29879
+   },
+   "definition": "feature counts of the official auxiliary layers used for failure-type screens",
+   "source": "ARDSWC debris-flow torrent layer; large-landslide potential areas (2026); national/provincial road layer; WRA river polygons; 2004-2017 event inventories",
+   "cls": "A",
+   "note": ""
+  },
+  "S8.fig4_plot_cap": {
+   "value": {
+    "dots_per_type_max": 1500,
+    "true_n": {
+     "闊葉樹林型": 8702,
+     "針葉樹林型": 1874,
+     "針闊葉樹混淆": 1126,
+     "竹林": 663,
+     "竹闊混淆林": 591,
+     "待成林地": 175
+    }
+   },
+   "definition": "Figure 4 draws at most 1,500 scatter dots per forest type; statistics on the figure use the full sample",
+   "source": "results.json E2_slope_niche slope_samples lengths",
+   "cls": "A",
+   "note": "display thinning only; the model uses all samples"
+  },
+  "S8.removed_claim_avoided_landslides": {
+   "value": {
+    "number_in_earlier_text": 1062,
+    "status": "removed in revision"
+   },
+   "definition": "the 'roughly 1,062 landslides' figure in the earlier version of the text, an association-level extrapolation without calibrated baseline incidence",
+   "source": "earlier version of the text, section 3",
+   "cls": "A",
+   "note": "not to be reintroduced"
+  }
+ },
+ "log": [
+  "[    0.0s] STAGE 0  source inventory",
+  "[    0.3s]    dem_20m.tif                 389,235,991 B  sha16=e6a686ad99d33123",
+  "[    0.6s]    forest4.shp                1,233,085,292 B  sha16=5813c7f2ea8250d2",
+  "[    0.6s]    overlay_result.csv              360,621 B  sha16=b554ec401f324bdb",
+  "[    0.6s]    landslide_centroids.csv         985,726 B  sha16=63aaf1675178215b",
+  "[    0.8s]    bg_points.csv                 1,938,926 B  sha16=c43c44b3c7b22e3d",
+  "[    0.9s]    step1_dataset.csv             2,884,215 B  sha16=e17b9aead5acb9d1",
+  "[    0.9s]    results.json                     77,232 B  sha16=19973b384519dc14",
+  "[    0.9s]    poly_2018                       290,884 B  sha16=6cacb2600827b181",
+  "[    0.9s]    poly_2019                        50,556 B  sha16=a1cf20b1c6f240e1",
+  "[    0.9s]    poly_2020                         9,788 B  sha16=3853a2348e5457f6",
+  "[    0.9s]    poly_2021                       180,148 B  sha16=3dc173b1a491aaf1",
+  "[    0.9s]    poly_2022                       185,508 B  sha16=e910afe8ab77a97e",
+  "[    1.4s]    poly_2023                     6,369,536 B  sha16=632121b4b810b79a",
+  "[    4.8s]    poly_2024                   123,776,360 B  sha16=5a20e00ee1d7111c",
+  "[    5.0s]    poly_2025                     5,679,412 B  sha16=8bddbf0b282a9200",
+  "[    5.0s] STAGE 1  landslide inventory",
+  "[   10.7s]    polygons 13900  centroid offset median 0.0311 m  max 2.70 m",
+  "[   10.7s] STAGE 2  terrain reconstruction",
+  "[   20.2s]    terrain max abs diff: slope 1.42e-14, north 1.11e-16, east 2.45e-16, planc 1.00e-16, profc 1.00e-16, elev 0.00e+00",
+  "[   20.2s]    Horn differs by median 0.75 deg, max 15.99 deg",
+  "[   20.2s] STAGE 3  forest type reconstruction",
+  "[   37.7s]    case forest-type agreement 7454/7454  control counts match: True",
+  "[   37.7s] STAGE 4  control coordinate recovery",
+  "[   38.0s]    controls matched uniquely 13083/13131, monotone True, residual slope 1.42e-14",
+  "[    0.1s] STAGE 5  reproduction of the published numbers",
+  "[    0.3s]    published 1.0341 | from step1 1.0341 | from rebuilt 1.0341",
+  "[    0.4s]    spline max |OR| diff vs results.json = 4.92e-05; crossover 44.06 deg; protection band [9.9, 39.5, True]",
+  "[    0.5s]    size sensitivity reproduced: [1.0341, 1.0416, 1.0232, 1.0706] vs published [1.0341, 1.0416, 1.0232, 1.0706]",
+  "[    0.8s]    VIF raw slope 17.85 -> centred 1.16; spline interior knot [35.43232547287678]",
+  "[    0.1s] 6a.1 event footprints (frozen: 5 km grid over each polygon's bounding box)",
+  "[    1.1s]    40 rainfall events, 845 distinct 5 km cells",
+  "[    1.1s] 6a.2 event fixed-effects models on the original control set",
+  "[    2.6s]    event FE 1.0315 [1.0114, 1.0521] p=0.002061; once 1.0357",
+  "[    2.6s] 6a.3 footprint-size sensitivity",
+  "[    2.9s]     2 km grid: 1.0221 p=0.0473",
+  "[    3.4s]     5 km grid: 1.0315 p=0.002061",
+  "[    4.1s]    10 km grid: 1.036 p=0.0003132",
+  "[    5.1s]    20 km grid: 1.037 p=0.000152",
+  "[    9.3s]     2 km buffer: 1.0222",
+  "[   12.5s]     5 km buffer: 1.0355",
+  "[   12.5s] 6a.4 conditional logistic regression (stratified Cox equivalence)",
+  "[   12.8s]    clogit by event 1.0246 [1.008, 1.0416] p=0.003605",
+  "[   12.8s] 6a.5 new control pool (seed 20260901, 260 points per 5 km footprint cell)",
+  "[   37.1s]    pool 167924 forest-land points; bamboo 6224, broadleaf 109001, mixed 6333",
+  "[   37.1s] 6a.6 event-matched models on the new pool",
+  "[   38.0s]     5:1  1.0308 [1.0123, 1.0497] p=0.001023",
+  "[   39.3s]    10:1  1.028 [1.0106, 1.0458] p=0.001513",
+  "[   41.1s]    20:1  1.0311 [1.0138, 1.0487] p=0.0003987",
+  "[   41.4s]    unmatched  1.0327 [1.0152, 1.0505] p=0.0002181",
+  "[   41.4s] 6a.7 event x spatial-block conditional logit",
+  "[   45.1s]    event x 20 km: 535 strata, OR 1.0322 p=0.0002175",
+  "[   51.9s]    event x 10 km: 993 strata, OR 1.026 p=0.001903",
+  "[   63.6s]    event x  5 km: 1766 strata, OR 1.0293 p=0.00104",
+  "[    0.4s] 6a2.1 new-pool matched models, 25 draws each",
+  "[   15.6s]     5:1  OR mean 1.0271 MC range [1.0234, 1.0335] p median 0.004758 p<0.05 in 100%",
+  "[   35.4s]    10:1  OR mean 1.0285 MC range [1.0255, 1.0323] p median 0.001573 p<0.05 in 100%",
+  "[   73.3s]    20:1  OR mean 1.0289 MC range [1.0269, 1.032] p median 0.001096 p<0.05 in 100%",
+  "[   73.3s] 6a2.2 event x spatial-block conditional logit, 25 draws each",
+  "[  166.5s]    event x 20 km: 535 strata, OR mean 1.0303 MC range [1.0261, 1.0328] p median 0.0002236 p<0.05 in 100%",
+  "[  330.9s]    event x 10 km: 993 strata, OR mean 1.0267 MC range [1.0221, 1.0304] p median 0.001702 p<0.05 in 100%",
+  "[  615.3s]    event x  5 km: 1766 strata, OR mean 1.0296 MC range [1.0262, 1.0332] p median 0.0008063 p<0.05 in 100%",
+  "[  615.3s] 6a2.3 each control used once, 25 draws",
+  "[  625.9s]    once: OR mean 1.0366 MC range [1.0338, 1.0391] p median 0.002119",
+  "[    0.3s] 6b.1 DEM cells inside each landslide polygon",
+  "[   18.1s]    11090 polygons, 178221 cells",
+  "[   18.2s] 6b.2 forest type at the highest DEM cell of each polygon",
+  "[   31.9s]    bamboo cases at source point 211; OR 1.0288; elev gain mean 38.9 m",
+  "[   31.9s] 6b.3 polygon representation",
+  "[   53.4s]    centroid                     OR 1.0341 p 0.002091",
+  "[   53.4s]    highest_cell                 OR 1.0215 p 0.03982",
+  "[   53.4s]    steepest_cell                OR 1.0341 p 0.008222",
+  "[   53.4s]    lowest_cell                  OR 1.0235 p 0.02067",
+  "[   53.4s]    median_cell                  OR 1.0193 p 0.0972",
+  "[   53.4s]    polygon_mean                 OR 1.0136 p 0.2497",
+  "[   53.4s]    source_area_top20pct         OR 1.0201 p 0.06447",
+  "[   53.4s]    all_cells_polygon_weight1    OR 1.0283 p 0.007224",
+  "[   53.4s]    all_cells_area_weighted      OR 1.0272 p 1.099e-07",
+  "[   53.4s]    random cell (200 reps) mean 1.0278, 100% above 1",
+  "[   53.4s]    dilution check (>=5 cells): mean 1.0147 vs random 1.0389",
+  "[    0.5s] 6c.1 historical scars 2004-2017 and failure-type layers",
+  "[   73.3s]    reactivation: cases 8.08%, controls 0.67%, pool 0.88%",
+  "[   75.5s] 6c.2 failure-type screens",
+  "[   77.4s]    baseline                               OR 1.0341 p 0.002091 (bamboo cases 171)",
+  "[   77.4s]    exclude_reactivation                   OR 1.0306 p 0.006995 (bamboo cases 155)",
+  "[   77.4s]    exclude_debris_200m                    OR 1.0352 p 0.002786 (bamboo cases 155)",
+  "[   77.4s]    exclude_debris_500m                    OR 1.0318 p 0.0102 (bamboo cases 137)",
+  "[   77.4s]    exclude_road_200m                      OR 1.0369 p 0.001292 (bamboo cases 162)",
+  "[   77.4s]    exclude_river_200m                     OR 1.0265 p 0.03024 (bamboo cases 144)",
+  "[   77.4s]    exclude_large_ls_potential             OR 1.0335 p 0.002488 (bamboo cases 171)",
+  "[   77.4s]    exclude_area_ge10ha                    OR 1.0339 p 0.002216 (bamboo cases 171)",
+  "[   77.4s]    exclude_area_ge1ha                     OR 1.0321 p 0.004037 (bamboo cases 163)",
+  "[   77.4s]    relief_lt50m                           OR 1.024 p 0.06113 (bamboo cases 117)",
+  "[   77.4s]    relief_lt30m                           OR 1.0122 p 0.396 (bamboo cases 83)",
+  "[   77.4s]    elongation_lt3                         OR 1.0333 p 0.004409 (bamboo cases 152)",
+  "[   77.4s]    reliably_shallow_original_controls     OR 1.0287 p 0.01719 (bamboo cases 139)",
+  "[   77.4s]    reliably_shallow_new_pool              OR 1.0266 p 0.006532 (bamboo cases 139)",
+  "[   77.4s]    all_screens_original_controls          OR 1.0247 p 0.07141 (bamboo cases 112)",
+  "[   77.4s]    all_screens_new_pool                   OR 1.0211 p 0.05539 (bamboo cases 112)",
+  "[   77.4s]    pooled_all_screens_new_pool            OR 1.0225 p 0.0009582 (bamboo cases 281)",
+  "[   77.4s]    pooled_reliably_shallow_new_pool       OR 1.0232 p 9.942e-05 (bamboo cases 357)",
+  "[   77.4s] 6c.3 forest-type misclassification simulation",
+  "[   84.7s]     2% both ways: mean 1.0258  >1 in 100%",
+  "[   92.7s]     5% both ways: mean 1.0183  >1 in 100%",
+  "[   99.9s]    10% both ways: mean 1.0127  >1 in 99%",
+  "[  106.7s]    20% both ways: mean 1.0065  >1 in 95%",
+  "[  120.7s] 6c.4 three-level model and the pooling test",
+  "[  121.7s]    mixed x slope 1.0107 p=0.09643; bamboo x slope 1.0326 p=0.0002231; LR p=0.0415",
+  "[  121.7s] 6c.5 pooled definition, per-event, leave-one-event-out",
+  "[  122.7s]    original_controls                OR 1.0238 p 0.0003492 (bamboo cases 456)",
+  "[  122.7s]    new_pool                         OR 1.0202 p 0.0001264 (bamboo cases 456)",
+  "[  122.7s]    drop2events_pure_original        OR 1.0107 p 0.5505 (bamboo cases 45)",
+  "[  122.7s]    drop2events_pure_newpool         OR 1.012 p 0.4611 (bamboo cases 45)",
+  "[  122.7s]    drop2events_pooled_newpool       OR 1.024 p 0.0257 (bamboo cases 99)",
+  "[  123.5s]    per-event (pure): [('0728豪雨', 1.0451, 0.001), ('凱米颱風', 1.0349, 0.0271)]",
+  "[  124.8s]    LOEO range 1.0245-1.0388, all>1 True, p<0.05 in 38/39",
+  "[  124.8s] 6c.6 crossover bootstrap, common support, frozen curve statistics",
+  "[  163.6s]    crossover bootstrap: median 44.71, 95% CI [34.50,55.78], valid 584/600",
+  "[  164.6s]    pure_original_controls       crossover 44.06 protection [9.9, 39.5, True]",
+  "[  164.6s]    pure_new_pool                crossover 46.44 protection [7.6, 36.3, True]",
+  "[  164.6s]    pooled_original_controls     crossover 38.83 protection [8.6, 32.9, True]",
+  "[  164.6s]    pooled_new_pool              crossover 40.03 protection [7.4, 31.2, True]",
+  "[    0.0s] cross-check 1: hand-written Newton-Raphson logistic regression",
+  "[    0.1s]    beta diff 3.955e-16, se diff 6.939e-17, OR 1.034134",
+  "[    0.1s] cross-check 2: manual cubic B-spline basis vs patsy bs()",
+  "[    0.1s]    basis max abs diff 1.000e+00",
+  "[    0.1s] cross-check 3: delta-method confidence band vs parametric simulation",
+  "[    1.1s]    se max diff 1.587e-03; band delta 9.9-39.5 vs sim 9.9-39.5",
+  "[    1.1s] cross-check 4: stratified Cox equals exact conditional logistic regression on small strata",
+  "[    1.3s]    clogit vs stratified Cox max coef diff 1.907e-01",
+  "[    1.3s] cross-check 5: crossover invariance to prediction covariates",
+  "[    1.4s]    crossover at p10/median/p90 = 44.06328420290831, 44.06328420290831, 44.06328420290831",
+  "[  116.2s]    20 km draw 1: strata 535, bamboo cases 171, OR 1.0365 p 0.0001956",
+  "[ 1032.2s]    event x 20 km EXACT: OR mean 1.0367 MC [1.0322, 1.0403] p med 0.0002008 p<0.05 in 100%",
+  "[ 1098.3s]    10 km draw 1: strata 993, bamboo cases 171, OR 1.0343 p 0.0004329",
+  "[ 2373.5s]    event x 10 km EXACT: OR mean 1.0294 MC [1.0238, 1.0339] p med 0.001775 p<0.05 in 100%",
+  "[ 2537.4s]    5 km draw 1: strata 1766, bamboo cases 171, OR 1.0368 p 0.0001307",
+  "[ 4186.8s]    event x  5 km EXACT: OR mean 1.0307 MC [1.0266, 1.0359] p med 0.001223 p<0.05 in 100%",
+  "[    0.1s] cross-check 1: hand-written Newton-Raphson logistic regression",
+  "[    0.1s]    beta diff 3.955e-16, se diff 6.939e-17, OR 1.034134",
+  "[    0.2s] cross-check 2: spline path rebuilt without patsy (scipy BSpline.design_matrix, hand-built design matrix, hand-built contrast)",
+  "[    0.3s]    basis max abs diff 0.000e+00; crossover manual 44.0633 vs primary 44.0633; band manual [9.9, 39.5] vs primary [9.9, 39.5]",
+  "[    0.3s] cross-check 3: delta-method confidence band vs parametric simulation",
+  "[    1.1s]    se max diff 1.587e-03; band delta 9.9-39.5 vs sim 9.9-39.5",
+  "[    1.1s] cross-check 4: conditional logistic regression implementation (Breslow Cox vs exact; clogit_exact vs statsmodels)",
+  "[    1.5s]    Breslow Cox vs conditional logit max coef diff 1.907e-01; clogit_exact vs statsmodels: params 7.097e-06, se 1.094e-07",
+  "[    1.5s] cross-check 5: crossover invariance to prediction covariates",
+  "[    1.6s]    crossover at p10/median/p90 = 44.06328420290831, 44.06328420290831, 44.06328420290831"
+ ]
+}

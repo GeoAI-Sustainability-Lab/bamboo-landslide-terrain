@@ -1,0 +1,17 @@
+[    0.3s] 6b.1 DEM cells inside each landslide polygon
+[   18.1s]    11090 polygons, 178221 cells
+[   18.2s] 6b.2 forest type at the highest DEM cell of each polygon
+[   31.9s]    bamboo cases at source point 211; OR 1.0288; elev gain mean 38.9 m
+[   31.9s] 6b.3 polygon representation
+[   53.4s]    centroid                     OR 1.0341 p 0.002091
+[   53.4s]    highest_cell                 OR 1.0215 p 0.03982
+[   53.4s]    steepest_cell                OR 1.0341 p 0.008222
+[   53.4s]    lowest_cell                  OR 1.0235 p 0.02067
+[   53.4s]    median_cell                  OR 1.0193 p 0.0972
+[   53.4s]    polygon_mean                 OR 1.0136 p 0.2497
+[   53.4s]    source_area_top20pct         OR 1.0201 p 0.06447
+[   53.4s]    all_cells_polygon_weight1    OR 1.0283 p 0.007224
+[   53.4s]    all_cells_area_weighted      OR 1.0272 p 1.099e-07
+[   53.4s]    random cell (200 reps) mean 1.0278, 100% above 1
+[   53.4s]    dilution check (>=5 cells): mean 1.0147 vs random 1.0389
+[   53.4s] stage 6b part 1 written

@@ -1,0 +1,13 @@
+polys 13900 controls 13131 cases 7454 1 s
+{"S12.control_distance_to_nearest_polygon": {"value": {"all_2018_2025_polygons": {"n_polygons": 13900, "median_m": 1122.0, "share_within_100m_pct": 3.3, "share_within_500m_pct": 22.7, "share_inside_pct": 0.32}, "rainfall_polygons_of_case_events": {"n_polygons": 11089, "median_m": 1170.0, "share_within_100m_pct": 2.8, "share_within_500m_pct": 20.9, "share_inside_pct": 0.25}, "n_controls": 13131}, "definition": "planar distance (EPSG:3826) from each of the 13,131 controls to the nearest landslide polygon of the 2018-2025 inventory", "source": "controls_xy.csv + all_polys.gpkg", "cls": "A"}} 4 s
+case polygons matched 7454
+forest chunk 0 6 s
+forest chunk 40000 7 s
+forest chunk 80000 8 s
+forest chunk 120000 9 s
+forest chunk 160000 10 s
+forest chunk 200000 11 s
+forest chunk 240000 13 s
+forest chunk 280000 13 s
+forest chunk 320000 14 s
+{"value": {"six_types": {"n": 7454, "agree_pct": 98.3, "n_disagree": 126}, "bamboo_vs_broadleaf": {"n": 5915, "agree_pct": 99.5, "n_disagree": 31}, "bamboo_cases": {"n": 171, "agree_pct": 95.9, "mean_bamboo_area_share_pct": 80.7, "median_bamboo_area_share_pct": 87.4}}, "definition": "forest type read at the polygon centroid (as in the analysis table) compared with the type holding the largest intersected area of the polygon; bamboo area share = intersected pure-bamboo area / polygon area", "source": "all_polys.gpkg + forest4/f4.shp + cases_annot.csv", "cls": "A"} 14 s

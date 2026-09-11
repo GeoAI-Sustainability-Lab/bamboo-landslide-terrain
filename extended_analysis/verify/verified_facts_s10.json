@@ -1,0 +1,544 @@
+{
+ "facts": {
+  "S10.event_fe_with_rainfall": {
+   "value": {
+    "fe_baseline": {
+     "OR": 1.0315,
+     "ci": [
+      1.0114,
+      1.0521
+     ],
+     "p": 0.00206,
+     "n": 29277,
+     "n_case": 5915,
+     "n_bamboo_case": 171
+    },
+    "fe_plus_max24": {
+     "OR": 1.0316,
+     "ci": [
+      1.0116,
+      1.052
+     ],
+     "p": 0.00187,
+     "n": 29277,
+     "n_case": 5915,
+     "n_bamboo_case": 171
+    },
+    "fe_plus_max24_total": {
+     "OR": 1.0301,
+     "ci": [
+      1.0102,
+      1.0505
+     ],
+     "p": 0.00296,
+     "n": 29277,
+     "n_case": 5915,
+     "n_bamboo_case": 171
+    },
+    "fe_plus_max72": {
+     "OR": 1.0299,
+     "ci": [
+      1.01,
+      1.0503
+     ],
+     "p": 0.00317,
+     "n": 29277,
+     "n_case": 5915,
+     "n_bamboo_case": 171
+    },
+    "rain_coefficients": {
+     "log_max24_in_fe_plus_max24": {
+      "beta": 1.2308,
+      "OR_per_log_unit": 3.424,
+      "p": 0.0
+     },
+     "log_max72_in_fe_plus_max72": {
+      "beta": 1.2129,
+      "OR_per_log_unit": 3.363,
+      "p": 0.0
+     }
+    },
+    "within_event_control_exposure": {
+     "events_with_ge5_bamboo_controls": 23,
+     "mean_difference_max24_bamboo_minus_broadleaf_mm": -3.1,
+     "median_difference_mm": -3.8
+    }
+   },
+   "definition": "event fixed-effects interaction with point-level event rainfall (IMERG V07 max 24-h, max 72-h, total over the event window) as covariates; island-wide controls inside 5 km affected cells",
+   "source": "gee/rain rasters + rebuilt table",
+   "cls": "B",
+   "note": "rainfall at 0.1 degree; windows in gee/event_windows_curated.json"
+  },
+  "S10.new_pool_5to1_with_rainfall": {
+   "value": {
+    "baseline": {
+     "OR_mean": 1.0271,
+     "OR_range_mc": [
+      1.0234,
+      1.0335
+     ],
+     "p_median": 0.00476,
+     "p_max": 0.01292,
+     "share_p_lt_05": 1.0,
+     "n_draws": 25
+    },
+    "plus_max24": {
+     "OR_mean": 1.0301,
+     "OR_range_mc": [
+      1.026,
+      1.0367
+     ],
+     "p_median": 0.00157,
+     "p_max": 0.00595,
+     "share_p_lt_05": 1.0,
+     "n_draws": 25
+    }
+   },
+   "definition": "event fixed effects on the new control pool, 5 controls per case, 25 draws (seeds 1000-1024), with and without log max 24-h rainfall",
+   "source": "gee/rain rasters + new control pool",
+   "cls": "C",
+   "note": ""
+  },
+  "S10.island_wide_with_climatology": {
+   "value": {
+    "baseline": {
+     "OR": 1.0342,
+     "ci": [
+      1.0123,
+      1.0565
+     ],
+     "p": 0.00207,
+     "n": 15276,
+     "n_case": 5915,
+     "n_bamboo_case": 171
+    },
+    "plus_mean_annual_precip": {
+     "OR": 1.025,
+     "ci": [
+      1.0032,
+      1.0472
+     ],
+     "p": 0.02431,
+     "n": 15276,
+     "n_case": 5915,
+     "n_bamboo_case": 171
+    },
+    "plus_map_and_annual_max_daily": {
+     "OR": 1.025,
+     "ci": [
+      1.0032,
+      1.0472
+     ],
+     "p": 0.02419,
+     "n": 15276,
+     "n_case": 5915,
+     "n_bamboo_case": 171
+    },
+    "climatology_coefficients": {
+     "log_map": 2.949,
+     "log_map_p": 0.0,
+     "log_annmax": 0.126,
+     "log_annmax_p": 0.55146
+    },
+    "medians": {
+     "bamboo_ctrl_map": 2174.0,
+     "broadleaf_ctrl_map": 2297.0,
+     "bamboo_ctrl_annmax": 132.0,
+     "broadleaf_ctrl_annmax": 138.0
+    }
+   },
+   "definition": "island-wide design with CHIRPS 2018-2025 rainfall climatology (log mean annual precipitation, log mean annual maximum daily precipitation) as covariates",
+   "source": "gee/rain/chirps_clim_2018_2025.tif",
+   "cls": "B",
+   "note": ""
+  },
+  "S10.rainfall_windows": {
+   "value": {
+    "0613暨0619豪雨": {
+     "window": [
+      "2018-06-13",
+      "2018-06-20"
+     ],
+     "peak_day": "2018-06-19",
+     "peak_area_mean_mm": 85.0,
+     "window_total_area_mean_mm": 239.6
+    },
+    "0613暨0619豪雨暨瑪莉亞颱風": {
+     "window": [
+      "2018-06-13",
+      "2018-07-11"
+     ],
+     "peak_day": "2018-06-19",
+     "peak_area_mean_mm": 54.6,
+     "window_total_area_mean_mm": 312.4
+    },
+    "瑪莉亞颱風": {
+     "window": [
+      "2018-07-09",
+      "2018-07-11"
+     ],
+     "peak_day": "2018-07-11",
+     "peak_area_mean_mm": 30.0,
+     "window_total_area_mean_mm": 32.1
+    },
+    "0823熱帶低壓": {
+     "window": [
+      "2018-08-22",
+      "2018-08-29"
+     ],
+     "peak_day": "2018-08-24",
+     "peak_area_mean_mm": 123.4,
+     "window_total_area_mean_mm": 517.5
+    },
+    "0909熱帶低壓": {
+     "window": [
+      "2018-09-07",
+      "2018-09-10"
+     ],
+     "peak_day": "2018-09-08",
+     "peak_area_mean_mm": 95.9,
+     "window_total_area_mean_mm": 166.1
+    },
+    "0909熱帶低壓暨山竹颱風": {
+     "window": [
+      "2018-09-07",
+      "2018-09-16"
+     ],
+     "peak_day": "2018-09-15",
+     "peak_area_mean_mm": 90.6,
+     "window_total_area_mean_mm": 149.7
+    },
+    "0428豪雨": {
+     "window": [
+      "2019-04-26",
+      "2019-04-29"
+     ],
+     "peak_day": "2019-04-27",
+     "peak_area_mean_mm": 7.8,
+     "window_total_area_mean_mm": 9.0
+    },
+    "0518及0611豪雨": {
+     "window": [
+      "2019-05-16",
+      "2019-06-14"
+     ],
+     "peak_day": "2019-06-11",
+     "peak_area_mean_mm": 75.3,
+     "window_total_area_mean_mm": 482.1
+    },
+    "丹娜絲颱風": {
+     "window": [
+      "2019-07-16",
+      "2019-07-19"
+     ],
+     "peak_day": "2019-07-19",
+     "peak_area_mean_mm": 66.3,
+     "window_total_area_mean_mm": 68.8
+    },
+    "利奇馬颱風": {
+     "window": [
+      "2019-08-07",
+      "2019-08-10"
+     ],
+     "peak_day": "2019-08-09",
+     "peak_area_mean_mm": 58.3,
+     "window_total_area_mean_mm": 108.8
+    },
+    "利奇馬颱風、0815豪雨、白鹿颱風": {
+     "window": [
+      "2019-08-07",
+      "2019-08-26"
+     ],
+     "peak_day": "2019-08-24",
+     "peak_area_mean_mm": 89.9,
+     "window_total_area_mean_mm": 369.8
+    },
+    "白鹿颱風": {
+     "window": [
+      "2019-08-23",
+      "2019-08-26"
+     ],
+     "peak_day": "2019-08-24",
+     "peak_area_mean_mm": 131.1,
+     "window_total_area_mean_mm": 159.3
+    },
+    "0521暨0528豪雨": {
+     "window": [
+      "2020-05-20",
+      "2020-05-29"
+     ],
+     "peak_day": "2020-05-22",
+     "peak_area_mean_mm": 99.6,
+     "window_total_area_mean_mm": 257.3
+    },
+    "彩雲颱風": {
+     "window": [
+      "2021-06-02",
+      "2021-06-06"
+     ],
+     "peak_day": "2021-06-06",
+     "peak_area_mean_mm": 118.0,
+     "window_total_area_mean_mm": 231.4
+    },
+    "0621豪雨": {
+     "window": [
+      "2021-06-19",
+      "2021-06-23"
+     ],
+     "peak_day": "2021-06-22",
+     "peak_area_mean_mm": 34.9,
+     "window_total_area_mean_mm": 103.8
+    },
+    "烟花颱風": {
+     "window": [
+      "2021-07-20",
+      "2021-07-25"
+     ],
+     "peak_day": "2021-07-24",
+     "peak_area_mean_mm": 27.4,
+     "window_total_area_mean_mm": 61.7
+    },
+    "0731豪雨暨盧碧颱風": {
+     "window": [
+      "2021-07-30",
+      "2021-08-09"
+     ],
+     "peak_day": "2021-08-07",
+     "peak_area_mean_mm": 129.9,
+     "window_total_area_mean_mm": 592.6
+    },
+    "璨樹颱風": {
+     "window": [
+      "2021-09-10",
+      "2021-09-13"
+     ],
+     "peak_day": "2021-09-12",
+     "peak_area_mean_mm": 53.8,
+     "window_total_area_mean_mm": 88.2
+    },
+    "圓規颱風暨1013豪雨": {
+     "window": [
+      "2021-10-09",
+      "2021-10-14"
+     ],
+     "peak_day": "2021-10-12",
+     "peak_area_mean_mm": 111.3,
+     "window_total_area_mean_mm": 314.1
+    },
+    "軒嵐諾暨梅花颱風": {
+     "window": [
+      "2022-08-31",
+      "2022-09-14"
+     ],
+     "peak_day": "2022-09-11",
+     "peak_area_mean_mm": 99.5,
+     "window_total_area_mean_mm": 285.3
+    },
+    "1007豪雨、尼莎颱風暨1022豪雨": {
+     "window": [
+      "2022-10-05",
+      "2022-10-24"
+     ],
+     "peak_day": "2022-10-16",
+     "peak_area_mean_mm": 101.3,
+     "window_total_area_mean_mm": 274.3
+    },
+    "1030豪雨": {
+     "window": [
+      "2022-10-28",
+      "2022-11-01"
+     ],
+     "peak_day": "2022-10-31",
+     "peak_area_mean_mm": 46.6,
+     "window_total_area_mean_mm": 65.6
+    },
+    "杜蘇芮颱風": {
+     "window": [
+      "2023-07-24",
+      "2023-07-29"
+     ],
+     "peak_day": "2023-07-26",
+     "peak_area_mean_mm": 80.2,
+     "window_total_area_mean_mm": 195.9
+    },
+    "卡努颱風": {
+     "window": [
+      "2023-08-01",
+      "2023-08-06"
+     ],
+     "peak_day": "2023-08-04",
+     "peak_area_mean_mm": 56.7,
+     "window_total_area_mean_mm": 123.6
+    },
+    "海葵颱風": {
+     "window": [
+      "2023-09-01",
+      "2023-09-06"
+     ],
+     "peak_day": "2023-09-03",
+     "peak_area_mean_mm": 117.2,
+     "window_total_area_mean_mm": 177.2
+    },
+    "小犬颱風": {
+     "window": [
+      "2023-10-02",
+      "2023-10-07"
+     ],
+     "peak_day": "2023-10-04",
+     "peak_area_mean_mm": 34.4,
+     "window_total_area_mean_mm": 92.1
+    },
+    "0629豪雨": {
+     "window": [
+      "2024-06-27",
+      "2024-07-02"
+     ],
+     "peak_day": "2024-06-28",
+     "peak_area_mean_mm": 11.1,
+     "window_total_area_mean_mm": 25.5
+    },
+    "凱米颱風": {
+     "window": [
+      "2024-07-22",
+      "2024-07-27"
+     ],
+     "peak_day": "2024-07-25",
+     "peak_area_mean_mm": 116.4,
+     "window_total_area_mean_mm": 254.5
+    },
+    "山陀兒颱風": {
+     "window": [
+      "2024-09-28",
+      "2024-10-05"
+     ],
+     "peak_day": "2024-10-02",
+     "peak_area_mean_mm": 76.8,
+     "window_total_area_mean_mm": 234.9
+    },
+    "1023豪雨": {
+     "window": [
+      "2024-10-21",
+      "2024-10-27"
+     ],
+     "peak_day": "2024-10-25",
+     "peak_area_mean_mm": 7.8,
+     "window_total_area_mean_mm": 17.5
+    },
+    "康芮颱風": {
+     "window": [
+      "2024-10-29",
+      "2024-11-02"
+     ],
+     "peak_day": "2024-10-31",
+     "peak_area_mean_mm": 83.7,
+     "window_total_area_mean_mm": 95.0
+    },
+    "1112豪雨": {
+     "window": [
+      "2024-11-10",
+      "2024-11-15"
+     ],
+     "peak_day": "2024-11-12",
+     "peak_area_mean_mm": 50.4,
+     "window_total_area_mean_mm": 67.2
+    },
+    "天兔颱風": {
+     "window": [
+      "2024-11-13",
+      "2024-11-17"
+     ],
+     "peak_day": "2024-11-16",
+     "peak_area_mean_mm": 34.5,
+     "window_total_area_mean_mm": 50.9
+    },
+    "0613豪雨": {
+     "window": [
+      "2025-06-11",
+      "2025-06-14"
+     ],
+     "peak_day": "2025-06-13",
+     "peak_area_mean_mm": 83.1,
+     "window_total_area_mean_mm": 137.6
+    },
+    "丹娜絲颱風、薇帕颱風、0721豪雨": {
+     "window": [
+      "2025-07-04",
+      "2025-07-23"
+     ],
+     "peak_day": "2025-07-10",
+     "peak_area_mean_mm": 73.9,
+     "window_total_area_mean_mm": 462.0
+    },
+    "0728豪雨": {
+     "window": [
+      "2025-07-26",
+      "2025-08-03"
+     ],
+     "peak_day": "2025-08-03",
+     "peak_area_mean_mm": 97.7,
+     "window_total_area_mean_mm": 406.2
+    },
+    "楊柳颱風": {
+     "window": [
+      "2025-08-11",
+      "2025-08-15"
+     ],
+     "peak_day": "2025-08-13",
+     "peak_area_mean_mm": 107.7,
+     "window_total_area_mean_mm": 108.7
+    },
+    "樺加沙颱風": {
+     "window": [
+      "2025-09-20",
+      "2025-09-25"
+     ],
+     "peak_day": "2025-09-23",
+     "peak_area_mean_mm": 87.2,
+     "window_total_area_mean_mm": 140.2
+    },
+    "1020豪雨": {
+     "window": [
+      "2025-10-17",
+      "2025-10-23"
+     ],
+     "peak_day": "2025-10-20",
+     "peak_area_mean_mm": 169.3,
+     "window_total_area_mean_mm": 383.4
+    },
+    "鳳凰颱風": {
+     "window": [
+      "2025-11-09",
+      "2025-11-14"
+     ],
+     "peak_day": "2025-11-11",
+     "peak_area_mean_mm": 217.0,
+     "window_total_area_mean_mm": 344.2
+    }
+   },
+   "definition": "event rainfall windows (event-name dates or typhoon warning periods padded by one day) with the IMERG daily area-mean peak inside the window",
+   "source": "gee/gee_rain_rasters.py",
+   "cls": "A",
+   "note": ""
+  },
+  "S10.case_exposure": {
+   "value": {
+    "bamboo_cases": {
+     "max24": 145.6,
+     "max72": 257.4,
+     "total": 320.8
+    },
+    "broadleaf_cases": {
+     "max24": 112.9,
+     "max72": 192.2,
+     "total": 220.6
+    },
+    "share_cases_with_max24_lt_50mm": 0.031,
+    "n_missing": 0
+   },
+   "definition": "median event rainfall at bamboo and broadleaf landslide cases",
+   "source": "rain_exposure_table.csv",
+   "cls": "B",
+   "note": ""
+  }
+ }
+}

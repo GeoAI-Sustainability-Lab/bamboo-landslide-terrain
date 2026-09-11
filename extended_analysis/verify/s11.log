@@ -1,0 +1,6 @@
+[   0.4s] pooled spline: ordinary band [9.9, 39.5] crossover 44.06; event-cluster band [9.3, 31.4] (clusters 40)
+[   5.5s] FE dataset rows 29277, control rows 23362, distinct control points 7178
+[   6.5s] FE+rain linear: ordinary {'OR': 1.0316, 'ci': [1.0116, 1.052], 'p': 0.00187}  point-clustered {'OR': 1.0316, 'ci': [1.0061, 1.0578], 'p': 0.01498}
+[   7.3s] FE+rain spline: ordinary band [10.2, 30.5] crossover 41.99; point-clustered band [11.1, 29.7]
+[  48.6s] bootstrap: curves 600, crossings 585, q97.5<1 band [12.2, 35.8], crossover median 44.69 95% [34.51, 55.75]
+[  48.6s] done

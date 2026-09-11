@@ -1,0 +1,7 @@
+[  116.2s]    20 km draw 1: strata 535, bamboo cases 171, OR 1.0365 p 0.0001956
+[ 1032.2s]    event x 20 km EXACT: OR mean 1.0367 MC [1.0322, 1.0403] p med 0.0002008 p<0.05 in 100%
+[ 1098.3s]    10 km draw 1: strata 993, bamboo cases 171, OR 1.0343 p 0.0004329
+[ 2373.5s]    event x 10 km EXACT: OR mean 1.0294 MC [1.0238, 1.0339] p med 0.001775 p<0.05 in 100%
+[ 2537.4s]    5 km draw 1: strata 1766, bamboo cases 171, OR 1.0368 p 0.0001307
+[ 4186.8s]    event x  5 km EXACT: OR mean 1.0307 MC [1.0266, 1.0359] p med 0.001223 p<0.05 in 100%
+[ 4186.8s] stage 6d written

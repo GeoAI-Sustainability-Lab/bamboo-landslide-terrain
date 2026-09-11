@@ -1,0 +1,3 @@
+# Only for re-running the Earth Engine extraction (extended_analysis/gee/); the analysis itself does not need these.
+earthengine-api>=0.1.400
+requests>=2.31

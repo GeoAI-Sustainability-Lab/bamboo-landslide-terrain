@@ -1,0 +1,907 @@
+{
+ "facts": {
+  "S11.pooled_spline_bands": {
+   "value": {
+    "ordinary": {
+     "supported_band": [
+      9.9,
+      39.5
+     ],
+     "contiguous": true,
+     "crossover_deg": 44.06,
+     "at": {
+      "10": {
+       "OR": 0.518,
+       "ci": [
+        0.271,
+        0.991
+       ]
+      },
+      "20": {
+       "OR": 0.436,
+       "ci": [
+        0.289,
+        0.66
+       ]
+      },
+      "25": {
+       "OR": 0.452,
+       "ci": [
+        0.338,
+        0.607
+       ]
+      },
+      "30": {
+       "OR": 0.505,
+       "ci": [
+        0.39,
+        0.654
+       ]
+      },
+      "35": {
+       "OR": 0.604,
+       "ci": [
+        0.462,
+        0.789
+       ]
+      },
+      "40": {
+       "OR": 0.772,
+       "ci": [
+        0.575,
+        1.036
+       ]
+      },
+      "45": {
+       "OR": 1.071,
+       "ci": [
+        0.683,
+        1.68
+       ]
+      },
+      "50": {
+       "OR": 1.65,
+       "ci": [
+        0.844,
+        3.226
+       ]
+      }
+     }
+    },
+    "event_cluster_robust": {
+     "supported_band": [
+      9.3,
+      31.4
+     ],
+     "contiguous": true,
+     "crossover_deg": 44.06,
+     "at": {
+      "10": {
+       "OR": 0.518,
+       "ci": [
+        0.283,
+        0.95
+       ]
+      },
+      "20": {
+       "OR": 0.436,
+       "ci": [
+        0.222,
+        0.858
+       ]
+      },
+      "25": {
+       "OR": 0.452,
+       "ci": [
+        0.233,
+        0.877
+       ]
+      },
+      "30": {
+       "OR": 0.505,
+       "ci": [
+        0.266,
+        0.957
+       ]
+      },
+      "35": {
+       "OR": 0.604,
+       "ci": [
+        0.318,
+        1.145
+       ]
+      },
+      "40": {
+       "OR": 0.772,
+       "ci": [
+        0.398,
+        1.496
+       ]
+      },
+      "45": {
+       "OR": 1.071,
+       "ci": [
+        0.522,
+        2.198
+       ]
+      },
+      "50": {
+       "OR": 1.65,
+       "ci": [
+        0.733,
+        3.712
+       ]
+      }
+     }
+    },
+    "n_clusters": 40,
+    "knots": {
+     "interior": 35.43232547287678,
+     "lower": 0.0,
+     "upper": 79.36055186759805
+    },
+    "note": "same fitted curve; only the covariance differs. Bands are pointwise 95% limits, not simultaneous"
+   },
+   "definition": "delta-method 95% band of the bamboo-versus-broadleaf spline curve under ordinary and event-cluster-robust covariance (cases clustered by event, all controls one cluster)",
+   "source": "rebuilt table",
+   "cls": "A",
+   "note": ""
+  },
+  "S11.fe_rain_spline_bands": {
+   "value": {
+    "linear_interaction": {
+     "ordinary": {
+      "OR": 1.0316,
+      "ci": [
+       1.0116,
+       1.052
+      ],
+      "p": 0.00187
+     },
+     "control_point_clustered": {
+      "OR": 1.0316,
+      "ci": [
+       1.0061,
+       1.0578
+      ],
+      "p": 0.01498
+     },
+     "n_rows": 29277,
+     "n_control_rows": 23362,
+     "n_distinct_control_points": 7178,
+     "n_clusters": 13093
+    },
+    "spline_ordinary": {
+     "supported_band": [
+      10.2,
+      30.5
+     ],
+     "contiguous": true,
+     "crossover_deg": 41.99,
+     "at": {
+      "10": {
+       "OR": 0.527,
+       "ci": [
+        0.272,
+        1.021
+       ]
+      },
+      "20": {
+       "OR": 0.493,
+       "ci": [
+        0.319,
+        0.76
+       ]
+      },
+      "25": {
+       "OR": 0.599,
+       "ci": [
+        0.444,
+        0.81
+       ]
+      },
+      "30": {
+       "OR": 0.756,
+       "ci": [
+        0.586,
+        0.975
+       ]
+      },
+      "35": {
+       "OR": 0.906,
+       "ci": [
+        0.691,
+        1.189
+       ]
+      },
+      "40": {
+       "OR": 0.977,
+       "ci": [
+        0.748,
+        1.277
+       ]
+      },
+      "45": {
+       "OR": 1.063,
+       "ci": [
+        0.717,
+        1.574
+       ]
+      },
+      "50": {
+       "OR": 1.38,
+       "ci": [
+        0.786,
+        2.422
+       ]
+      }
+     }
+    },
+    "spline_control_point_clustered": {
+     "supported_band": [
+      11.1,
+      29.7
+     ],
+     "contiguous": true,
+     "crossover_deg": 41.99,
+     "at": {
+      "10": {
+       "OR": 0.527,
+       "ci": [
+        0.248,
+        1.121
+       ]
+      },
+      "20": {
+       "OR": 0.493,
+       "ci": [
+        0.3,
+        0.808
+       ]
+      },
+      "25": {
+       "OR": 0.599,
+       "ci": [
+        0.428,
+        0.839
+       ]
+      },
+      "30": {
+       "OR": 0.756,
+       "ci": [
+        0.564,
+        1.014
+       ]
+      },
+      "35": {
+       "OR": 0.906,
+       "ci": [
+        0.651,
+        1.261
+       ]
+      },
+      "40": {
+       "OR": 0.977,
+       "ci": [
+        0.689,
+        1.387
+       ]
+      },
+      "45": {
+       "OR": 1.063,
+       "ci": [
+        0.629,
+        1.795
+       ]
+      },
+      "50": {
+       "OR": 1.38,
+       "ci": [
+        0.631,
+        3.014
+       ]
+      }
+     }
+    },
+    "note": "event fixed effects + log(1+max 24-h IMERG rainfall); same interior knot and boundaries as the pooled spline; controls enter once per event they fall in"
+   },
+   "definition": "spline curve and linear interaction in the event fixed-effects + rainfall design, ordinary and control-point-clustered covariance",
+   "source": "rebuilt table",
+   "cls": "B",
+   "note": ""
+  },
+  "S11.curve_cluster_bootstrap": {
+   "value": {
+    "draws": 600,
+    "curves_fitted": 600,
+    "draws_skipped_fewer_than_20_bamboo_cases": 0,
+    "fit_failures": 0,
+    "crossings_found": 585,
+    "band_q975_below_1": [
+     12.2,
+     35.8
+    ],
+    "contiguous": true,
+    "crossover": {
+     "median": 44.69,
+     "ci95": [
+      34.51,
+      55.75
+     ],
+     "ci50": [
+      41.54,
+      48.18
+     ]
+    },
+    "at": {
+     "10.0": {
+      "median": 0.501,
+      "q025": 0.216,
+      "q975": 1.099
+     },
+     "20.0": {
+      "median": 0.442,
+      "q025": 0.143,
+      "q975": 0.763
+     },
+     "25.0": {
+      "median": 0.455,
+      "q025": 0.126,
+      "q975": 0.745
+     },
+     "30.0": {
+      "median": 0.494,
+      "q025": 0.145,
+      "q975": 0.825
+     },
+     "35.0": {
+      "median": 0.576,
+      "q025": 0.161,
+      "q975": 0.963
+     },
+     "40.0": {
+      "median": 0.705,
+      "q025": 0.184,
+      "q975": 1.281
+     },
+     "45.0": {
+      "median": 1.005,
+      "q025": 0.24,
+      "q975": 1.958
+     },
+     "50.0": {
+      "median": 1.707,
+      "q025": 0.35,
+      "q975": 9.108
+     }
+    }
+   },
+   "definition": "cluster bootstrap of the whole spline curve (events resampled with all their cases, controls resampled), pointwise percentiles on the frozen grid",
+   "source": "rebuilt table",
+   "cls": "C",
+   "note": "the range where the 97.5th percentile of the bootstrap curve is below 1 is a pointwise statement, not a simultaneous band"
+  },
+  "S11.registered_bootstrap_curves": {
+   "value": {
+    "seed": 20260902,
+    "draws": 600,
+    "curves_fitted": 600,
+    "draws_skipped_fewer_than_20_bamboo_cases": 0,
+    "fit_failures": 0,
+    "crossings_found": 584,
+    "no_crossing": 16,
+    "no_crossing_detail": {
+     "curve_still_below_1_at_60": 16,
+     "curve_above_1_at_5": 3,
+     "rows": [
+      {
+       "draw": 20,
+       "n_bamboo_cases": 108,
+       "OR_at_5": 0.35530260212405074,
+       "OR_at_40": 0.43309247444224475,
+       "OR_at_60": 0.9479577519789577,
+       "max_OR": 0.9479577519789577
+      },
+      {
+       "draw": 27,
+       "n_bamboo_cases": 34,
+       "OR_at_5": 0.1399086751632374,
+       "OR_at_40": 0.2467306885067236,
+       "OR_at_60": 0.10027544783991751,
+       "max_OR": 0.9679849849131561
+      },
+      {
+       "draw": 53,
+       "n_bamboo_cases": 119,
+       "OR_at_5": 0.32617079698176255,
+       "OR_at_40": 0.7052136322920529,
+       "OR_at_60": 0.6048713834444206,
+       "max_OR": 0.8812798887386764
+      },
+      {
+       "draw": 100,
+       "n_bamboo_cases": 37,
+       "OR_at_5": 0.701196658247929,
+       "OR_at_40": 0.2129574303207768,
+       "OR_at_60": 0.3404517965118297,
+       "max_OR": 0.8742630462800107
+      },
+      {
+       "draw": 109,
+       "n_bamboo_cases": 33,
+       "OR_at_5": 1.3988127015151561,
+       "OR_at_40": 0.23614296188736567,
+       "OR_at_60": 0.0009138806914266582,
+       "max_OR": 1.3988127015151561
+      },
+      {
+       "draw": 138,
+       "n_bamboo_cases": 30,
+       "OR_at_5": 0.2972849627330145,
+       "OR_at_40": 0.07914026651417172,
+       "OR_at_60": 0.38995742248784937,
+       "max_OR": 0.6775830794052681
+      },
+      {
+       "draw": 146,
+       "n_bamboo_cases": 201,
+       "OR_at_5": 0.48284480518166,
+       "OR_at_40": 0.6208360798730556,
+       "OR_at_60": 0.9082359083075999,
+       "max_OR": 0.9123425914353942
+      },
+      {
+       "draw": 231,
+       "n_bamboo_cases": 103,
+       "OR_at_5": 0.10589477366264469,
+       "OR_at_40": 0.47170575791221747,
+       "OR_at_60": 0.9774418405323927,
+       "max_OR": 0.9774418405323927
+      },
+      {
+       "draw": 272,
+       "n_bamboo_cases": 43,
+       "OR_at_5": 0.07155293993721058,
+       "OR_at_40": 0.25405105242350823,
+       "OR_at_60": 0.6649116877105127,
+       "max_OR": 0.6649116877105127
+      },
+      {
+       "draw": 279,
+       "n_bamboo_cases": 32,
+       "OR_at_5": 0.3707559053817222,
+       "OR_at_40": 0.16149239715012434,
+       "OR_at_60": 3.5792865208009615e-13,
+       "max_OR": 0.3707559053817222
+      },
+      {
+       "draw": 378,
+       "n_bamboo_cases": 42,
+       "OR_at_5": 0.041431876940602734,
+       "OR_at_40": 0.22372731065299534,
+       "OR_at_60": 0.08579386592094475,
+       "max_OR": 0.5569891347497855
+      },
+      {
+       "draw": 428,
+       "n_bamboo_cases": 135,
+       "OR_at_5": 1.0610466388299873,
+       "OR_at_40": 0.5509565210170928,
+       "OR_at_60": 0.8252825462715242,
+       "max_OR": 1.0610466388299873
+      },
+      {
+       "draw": 472,
+       "n_bamboo_cases": 82,
+       "OR_at_5": 0.8348490102319993,
+       "OR_at_40": 0.4943592240964963,
+       "OR_at_60": 0.8960372938214384,
+       "max_OR": 0.8960372938214384
+      },
+      {
+       "draw": 475,
+       "n_bamboo_cases": 85,
+       "OR_at_5": 0.314645644780458,
+       "OR_at_40": 0.5289737924773062,
+       "OR_at_60": 0.4220546269561201,
+       "max_OR": 0.5941669874408664
+      },
+      {
+       "draw": 563,
+       "n_bamboo_cases": 42,
+       "OR_at_5": 0.7106552911698861,
+       "OR_at_40": 0.26477144881217896,
+       "OR_at_60": 0.045527829787671774,
+       "max_OR": 0.7106552911698861
+      },
+      {
+       "draw": 568,
+       "n_bamboo_cases": 46,
+       "OR_at_5": 1.239032430937285,
+       "OR_at_40": 0.2526437993143613,
+       "OR_at_60": 0.0006524424353887338,
+       "max_OR": 1.239032430937285
+      }
+     ]
+    },
+    "crossover": {
+     "median": 44.71,
+     "ci95": [
+      34.5,
+      55.78
+     ],
+     "ci50": [
+      41.5,
+      48.14
+     ],
+     "share_below_bamboo_p95": 25.0
+    },
+    "band_q975_below_1": [
+     12.2,
+     35.8
+    ],
+    "contiguous": true,
+    "at": {
+     "10.0": {
+      "median": 0.5,
+      "q025": 0.217,
+      "q975": 1.101
+     },
+     "15.0": {
+      "median": 0.448,
+      "q025": 0.171,
+      "q975": 0.838
+     },
+     "20.0": {
+      "median": 0.442,
+      "q025": 0.144,
+      "q975": 0.763
+     },
+     "25.0": {
+      "median": 0.454,
+      "q025": 0.127,
+      "q975": 0.745
+     },
+     "30.0": {
+      "median": 0.494,
+      "q025": 0.145,
+      "q975": 0.826
+     },
+     "35.0": {
+      "median": 0.574,
+      "q025": 0.162,
+      "q975": 0.964
+     },
+     "40.0": {
+      "median": 0.704,
+      "q025": 0.186,
+      "q975": 1.278
+     },
+     "45.0": {
+      "median": 1.005,
+      "q025": 0.244,
+      "q975": 1.957
+     },
+     "50.0": {
+      "median": 1.704,
+      "q025": 0.353,
+      "q975": 9.629
+     }
+    }
+   },
+   "definition": "the registered crossing bootstrap (S6.crossover_bootstrap, seed 20260902, bs(slope, df=4) refitted in each draw) re-run storing every curve; pointwise 2.5/97.5 percentiles on the frozen grid and the draws without a crossing inside 5-60 deg",
+   "source": "rebuilt table",
+   "cls": "C",
+   "note": "pointwise band, not a simultaneous band; the 16 draws without a crossing are characterised in no_crossing_detail"
+  },
+  "S11.envelope_exact": {
+   "value": {
+    "rule": "5th to 95th percentiles of the 663 bamboo controls, slope and elevation, applied exactly (no rounding of the bounds)",
+    "slope_bounds_deg": [
+     8.294,
+     41.496
+    ],
+    "elev_bounds_m": [
+     61.1,
+     1362.5
+    ],
+    "OR": 0.612,
+    "ci": [
+     0.496,
+     0.755
+    ],
+    "p": 4.501754723884588e-06,
+    "n_case": 2613,
+    "n_bamboo_case": 126,
+    "n_ctrl": 5439,
+    "n_bamboo_ctrl": 544,
+    "model": "Eq. (1) terrain set: slope, slope^2, northness, eastness, plan and profile curvature, elevation + bamboo indicator",
+    "previous_value_with_rounded_lower_bound_8_0": {
+     "OR": 0.611,
+     "ci": [
+      0.496,
+      0.754
+     ],
+     "p": 4.2e-06,
+     "n_case": 2614
+    }
+   },
+   "definition": "terrain-adjusted bamboo-versus-broadleaf odds ratio within the observed slope and elevation range of bamboo",
+   "source": "cases_annot.csv + controls_annot.csv",
+   "cls": "B"
+  },
+  "S11.fe_linear_point_clustered": {
+   "value": {
+    "ordinary": {
+     "OR": 1.0315,
+     "ci": [
+      1.0114,
+      1.0521
+     ],
+     "p": 0.00206
+    },
+    "control_point_clustered": {
+     "OR": 1.0315,
+     "ci": [
+      1.0054,
+      1.0583
+     ],
+     "p": 0.01779
+    },
+    "n_rows": 29277,
+    "n_control_rows": 23362,
+    "n_distinct_control_points": 7178,
+    "n_case_rows": 5915
+   },
+   "definition": "event fixed-effects linear interaction (no rainfall covariate) on the 5 km affected-area design, ordinary and control-point-clustered covariance (each control point is one cluster across the events it enters)",
+   "source": "rebuilt table",
+   "cls": "A",
+   "note": ""
+  },
+  "S11.within_period_reactivation": {
+   "value": {
+    "rule_earlier_polygon": {
+     "definition": "case centroid inside a 2018-2025 polygon of another record whose post-event image date is on or before the case pre-event image date",
+     "n_cases_flagged": 90,
+     "n_bamboo_flagged": 1,
+     "refit": {
+      "OR": 1.0336,
+      "ci": [
+       1.0117,
+       1.0559
+      ],
+      "p": 0.00248,
+      "n_case": 5825,
+      "n_bamboo_case": 170
+     }
+    },
+    "rule_any_other_event": {
+     "definition": "case centroid inside a 2018-2025 polygon of a different event (either order)",
+     "n_cases_flagged": 216,
+     "n_bamboo_flagged": 1,
+     "refit": {
+      "OR": 1.0337,
+      "ci": [
+       1.0119,
+       1.0561
+      ],
+      "p": 0.00236,
+      "n_case": 5699,
+      "n_bamboo_case": 170
+     }
+    },
+    "base": {
+     "OR": 1.0341,
+     "ci": [
+      1.0123,
+      1.0565
+     ],
+     "p": 0.00209,
+     "n_case": 5915,
+     "n_bamboo_case": 171
+    },
+    "n_cases": 5915,
+    "n_bamboo_cases": 171,
+    "cases_with_dates": 5460
+   },
+   "definition": "within-period repeat check: cases whose centroid lies inside an earlier 2018-2025 landslide polygon, and the interaction refitted without them",
+   "source": "rebuilt table",
+   "cls": "A",
+   "note": "complements the 2004-2017 scar screen; the inventory itself does not flag reactivations"
+  },
+  "S11.latitude_band_LR_tests": {
+   "value": {
+    "slope_only": {
+     "LR": 7.266,
+     "df": 2,
+     "p": 0.0264,
+     "definition": "region x bamboo x slope terms added to a model that already lets the bamboo main effect differ by region"
+    },
+    "joint": {
+     "LR": 49.607,
+     "df": 4,
+     "p": 4.3616377176647347e-10,
+     "definition": "region x bamboo and region x bamboo x slope terms together",
+     "p_text": "<0.001"
+    },
+    "main_effect_only": {
+     "LR": 42.341,
+     "df": 2,
+     "p": 6.394988982805216e-10
+    },
+    "n": 15280
+   },
+   "definition": "likelihood-ratio tests of latitude-band heterogeneity of the bamboo main effect and its slope interaction",
+   "source": "cases_annot.csv + controls_annot.csv",
+   "cls": "B"
+  },
+  "S11.tree_ensemble_fair": {
+   "value": {
+    "sample": {
+     "n": 15280,
+     "n_case": 5915,
+     "n_bamboo_case": 171,
+     "n_ctrl": 9365
+    },
+    "features": [
+     "slope",
+     "north",
+     "east",
+     "planc",
+     "profc",
+     "elev",
+     "bamboo"
+    ],
+    "tree": {
+     "model": "HistGradientBoostingClassifier",
+     "max_iter": 400,
+     "learning_rate": 0.06,
+     "max_depth": 3,
+     "l2_regularization": 1.0,
+     "random_state": 0
+    },
+    "cv": {
+     "block_km": 20,
+     "nfold": 5,
+     "fold_seed": 1,
+     "folds": [
+      {
+       "fold": 0,
+       "n_test": 3424,
+       "n_test_bamboo_case": 40,
+       "auc_tree": 0.729,
+       "auc_logistic_linear": 0.725,
+       "auc_logistic_spline": 0.726
+      },
+      {
+       "fold": 1,
+       "n_test": 2990,
+       "n_test_bamboo_case": 35,
+       "auc_tree": 0.729,
+       "auc_logistic_linear": 0.719,
+       "auc_logistic_spline": 0.719
+      },
+      {
+       "fold": 2,
+       "n_test": 2794,
+       "n_test_bamboo_case": 10,
+       "auc_tree": 0.747,
+       "auc_logistic_linear": 0.746,
+       "auc_logistic_spline": 0.747
+      },
+      {
+       "fold": 3,
+       "n_test": 2970,
+       "n_test_bamboo_case": 69,
+       "auc_tree": 0.676,
+       "auc_logistic_linear": 0.681,
+       "auc_logistic_spline": 0.679
+      },
+      {
+       "fold": 4,
+       "n_test": 3102,
+       "n_test_bamboo_case": 17,
+       "auc_tree": 0.73,
+       "auc_logistic_linear": 0.72,
+       "auc_logistic_spline": 0.72
+      }
+     ],
+     "mean_auc_tree": 0.722,
+     "mean_auc_logistic_linear": 0.718,
+     "mean_auc_logistic_spline": 0.718
+    },
+    "permutation_importance_heldout_mean": {
+     "slope": 0.1186,
+     "north": 0.039,
+     "east": 0.0252,
+     "planc": 0.0144,
+     "elev": 0.0073,
+     "profc": 0.0029,
+     "bamboo": 0.0023
+    },
+    "permutation_importance_heldout_sd": {
+     "slope": 0.0152,
+     "north": 0.0085,
+     "east": 0.0036,
+     "planc": 0.0031,
+     "elev": 0.0101,
+     "profc": 0.0006,
+     "bamboo": 0.0019
+    },
+    "importance_rank": [
+     "slope",
+     "north",
+     "east",
+     "planc",
+     "elev",
+     "profc",
+     "bamboo"
+    ],
+    "predicted_or_at": {
+     "10": {
+      "tree": 0.481,
+      "spline": 0.518,
+      "linear": 0.288
+     },
+     "20": {
+      "tree": 0.481,
+      "spline": 0.436,
+      "linear": 0.402
+     },
+     "25": {
+      "tree": 0.467,
+      "spline": 0.452,
+      "linear": 0.476
+     },
+     "30": {
+      "tree": 0.467,
+      "spline": 0.505,
+      "linear": 0.563
+     },
+     "35": {
+      "tree": 0.519,
+      "spline": 0.604,
+      "linear": 0.666
+     },
+     "40": {
+      "tree": 0.519,
+      "spline": 0.772,
+      "linear": 0.787
+     },
+     "45": {
+      "tree": 0.864,
+      "spline": 1.071,
+      "linear": 0.931
+     },
+     "50": {
+      "tree": 0.864,
+      "spline": 1.65,
+      "linear": 1.101
+     },
+     "55": {
+      "tree": 0.864,
+      "spline": 2.881,
+      "linear": 1.303
+     },
+     "60": {
+      "tree": 0.854,
+      "spline": 5.832,
+      "linear": 1.541
+     }
+    },
+    "tree_or_min": {
+     "slope": 27.5,
+     "OR": 0.467
+    },
+    "tree_or_max_below_p95": 0.519,
+    "tree_or_at_p95": 0.519,
+    "tree_crosses_1_within_grid": false,
+    "tree_first_slope_ge_1": null,
+    "note": "predicted odds ratio at median covariates; the ensemble prediction is piecewise-constant in slope"
+   },
+   "definition": "gradient-boosted tree ensemble versus logistic models on the same bamboo-versus-broadleaf sample, covariates and 20 km spatial-block five-fold split: held-out AUC, permutation importance, predicted odds ratio of bamboo versus broadleaf at median covariates",
+   "source": "cases_annot.csv + controls_annot.csv",
+   "cls": "B"
+  }
+ }
+}

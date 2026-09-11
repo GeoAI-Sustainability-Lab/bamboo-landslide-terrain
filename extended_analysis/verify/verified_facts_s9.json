@@ -1,0 +1,364 @@
+{
+ "facts": {
+  "S9.twi_definition": {
+   "value": {
+    "grid_m": 240.0,
+    "rows": 1592,
+    "cols": 847,
+    "method": "block-mean of 20 m DEM (12x12), D8 steepest descent, TWI=ln(a*cell/(tan(beta)+1e-3))",
+    "dem_origin_pixel_centre": [
+     148320.0,
+     2801720.0
+    ],
+    "finite_share_cases": 0.9996,
+    "finite_share_controls": 0.9995
+   },
+   "definition": "topographic wetness index exactly as in the original pipeline (analysis_all.py)",
+   "source": "dem_20m.tif",
+   "cls": "A",
+   "note": ""
+  },
+  "S9.lithology_classes": {
+   "value": {
+    "source": "Hengl (2018) 10.5281/zenodo.1464846, dtm_lithology_usgs.ecotapestry_c_250m, EPSG:4326 0.002083 deg, nearest cell",
+    "cases": {
+     "siliciclastic sedimentary": 4093,
+     "metamorphics": 2117,
+     "mixed sedimentary rock": 984,
+     "unconsolidated sediment": 103,
+     "intermediate volcanics": 79,
+     "acid plutonics": 44,
+     "undefined": 16,
+     "basic plutonics": 9
+    },
+    "controls": {
+     "siliciclastic sedimentary": 8364,
+     "metamorphics": 2459,
+     "mixed sedimentary rock": 1413,
+     "intermediate volcanics": 347,
+     "unconsolidated sediment": 343,
+     "acid plutonics": 87,
+     "carbonate sedimentary rock": 37,
+     "basic plutonics": 33,
+     "undefined": 25
+    }
+   },
+   "definition": "surface lithology class at each analysis point",
+   "source": "Zenodo 1464846",
+   "cls": "A",
+   "note": ""
+  },
+  "S9.soil_layers": {
+   "value": {
+    "source": "OpenLandMap v0.2 (Zenodo 2525553 SOC x5 g/kg, 2525664 pH x10, 2525663 clay %), depth 0 cm, nearest 250 m cell",
+    "cases_finite": {
+     "soc": 0.9988,
+     "ph": 0.9988,
+     "clay": 0.9988
+    },
+    "medians_cases": {
+     "soc": 11.0,
+     "ph": 54.0,
+     "clay": 28.0
+    }
+   },
+   "definition": "topsoil properties at each analysis point",
+   "source": "Zenodo OpenLandMap",
+   "cls": "A",
+   "note": ""
+  },
+  "S9.covariate_specs": {
+   "value": {
+    "specs": {
+     "terrain": {
+      "OR": 1.0341,
+      "ci": [
+       1.0123,
+       1.0565
+      ],
+      "p": 0.00209,
+      "linear_crossover_deg": 47.1,
+      "n": 15280,
+      "n_case": 5915,
+      "n_bamboo_case": 171
+     },
+     "plus_twi": {
+      "OR": 1.0361,
+      "ci": [
+       1.0142,
+       1.0584
+      ],
+      "p": 0.00113,
+      "linear_crossover_deg": 46.3,
+      "n": 15271,
+      "n_case": 5912,
+      "n_bamboo_case": 171
+     },
+     "plus_soil": {
+      "OR": 1.0392,
+      "ci": [
+       1.0171,
+       1.0617
+      ],
+      "p": 0.00044,
+      "linear_crossover_deg": 43.1,
+      "n": 15253,
+      "n_case": 5907,
+      "n_bamboo_case": 171
+     },
+     "plus_twi_soil": {
+      "OR": 1.0402,
+      "ci": [
+       1.0182,
+       1.0627
+      ],
+      "p": 0.0003,
+      "linear_crossover_deg": 42.9,
+      "n": 15247,
+      "n_case": 5904,
+      "n_bamboo_case": 171
+     },
+     "plus_lithology": {
+      "OR": 1.0361,
+      "ci": [
+       1.0141,
+       1.0586
+      ],
+      "p": 0.00122,
+      "linear_crossover_deg": 44.6,
+      "n": 15253,
+      "n_case": 5907,
+      "n_bamboo_case": 171
+     },
+     "within_siliciclastic": {
+      "OR": 1.0345,
+      "ci": [
+       1.0108,
+       1.0588
+      ],
+      "p": 0.00412,
+      "linear_crossover_deg": 42.8,
+      "n": 9439,
+      "n_case": 3264,
+      "n_bamboo_case": 156
+     },
+     "within_unconsolidated sediment": {
+      "OR": 1.0062,
+      "ci": [
+       0.9302,
+       1.0884
+      ],
+      "p": 0.87705,
+      "linear_crossover_deg": 98.3,
+      "n": 349,
+      "n_case": 75,
+      "n_bamboo_case": 10
+     }
+    },
+    "comparison_with_results_json": {
+     "terrain": {
+      "reproduced": 1.0341,
+      "published": 1.0341
+     },
+     "plus_twi": {
+      "reproduced": 1.0361,
+      "published": 1.0361
+     },
+     "plus_soil": {
+      "reproduced": 1.0392,
+      "published": 1.0386
+     },
+     "plus_twi_soil": {
+      "reproduced": 1.0402,
+      "published": 1.0397
+     }
+    },
+    "lithology_class_odds_vs_siliciclastic": {
+     "acid plutonics": {
+      "OR": 0.799,
+      "p": 0.3123
+     },
+     "intermediate volcanics": {
+      "OR": 0.411,
+      "p": 0.0
+     },
+     "metamorphics": {
+      "OR": 1.259,
+      "p": 0.0
+     },
+     "mixed sedimentary rock": {
+      "OR": 1.692,
+      "p": 0.0
+     },
+     "other": {
+      "OR": 0.622,
+      "p": 0.06
+     },
+     "unconsolidated sediment": {
+      "OR": 0.699,
+      "p": 0.0159
+     }
+    },
+    "manuscript_lithology_values": {
+     "interaction_plus_lithology": 1.0363,
+     "within_siliciclastic": 1.0345,
+     "note": "earlier values, script not recovered; compare with the reproduced values here"
+    }
+   },
+   "definition": "interaction re-estimated with TWI, soil and lithology in the model (original controls)",
+   "source": "dem_20m.tif + Zenodo layers",
+   "cls": "A",
+   "note": ""
+  },
+  "S9.glmm_event_random_intercept": {
+   "value": {
+    "n_events": 39,
+    "event_re_sd": 0.796,
+    "interaction_OR": 1.038,
+    "ci": [
+     1.0174,
+     1.059
+    ],
+    "method": "statsmodels BinomialBayesMixedGLM, variational Bayes (fit_vb), z-scored predictors, back-transformed per degree",
+    "published": {
+     "desc": "Bayesian mixed logistic w/ event random intercept (VB); predictors z-scored then interaction back-transformed to per-degree; controls assigned to nearest-case event",
+     "n_events": 39,
+     "event_re_sd": 0.796,
+     "interaction_OR": 1.038,
+     "interaction_post_sd_perdeg": 0.0102,
+     "ci": [
+      1.0173,
+      1.059
+     ],
+     "converged": true
+    }
+   },
+   "definition": "event random-intercept mixed logistic model, controls assigned to the event of the nearest case",
+   "source": "cases_annot/controls_annot",
+   "cls": "A",
+   "note": ""
+  },
+  "S9.spatial_block_cv": {
+   "value": {
+    "block_km": 20,
+    "nfold": 5,
+    "fold_seed": 1,
+    "folds": [
+     {
+      "fold": 0,
+      "n_test": 3424,
+      "n_test_bamboo_case": 40,
+      "train_interaction_OR": 1.0435,
+      "train_p": 0.00069,
+      "held_out_AUC": 0.725,
+      "within_block_interaction_OR": 0.9987,
+      "within_block_ci": [
+       0.9552,
+       1.0441
+      ],
+      "within_block_p": 0.9535
+     },
+     {
+      "fold": 1,
+      "n_test": 2990,
+      "n_test_bamboo_case": 35,
+      "train_interaction_OR": 1.0219,
+      "train_p": 0.07374,
+      "held_out_AUC": 0.719,
+      "within_block_interaction_OR": 1.0807,
+      "within_block_ci": [
+       1.026,
+       1.1383
+      ],
+      "within_block_p": 0.0034
+     },
+     {
+      "fold": 2,
+      "n_test": 2794,
+      "n_test_bamboo_case": 10,
+      "train_interaction_OR": 1.0442,
+      "train_p": 0.00022,
+      "held_out_AUC": 0.746,
+      "within_block_interaction_OR": 0.9226,
+      "within_block_ci": [
+       0.8547,
+       0.996
+      ],
+      "within_block_p": 0.039
+     },
+     {
+      "fold": 3,
+      "n_test": 2970,
+      "n_test_bamboo_case": 69,
+      "train_interaction_OR": 1.0313,
+      "train_p": 0.0298,
+      "held_out_AUC": 0.681,
+      "within_block_interaction_OR": 1.0468,
+      "within_block_ci": [
+       1.0109,
+       1.0841
+      ],
+      "within_block_p": 0.0103
+     },
+     {
+      "fold": 4,
+      "n_test": 3102,
+      "n_test_bamboo_case": 17,
+      "train_interaction_OR": 1.0294,
+      "train_p": 0.00941,
+      "held_out_AUC": 0.72,
+      "within_block_interaction_OR": 1.1074,
+      "within_block_ci": [
+       1.0095,
+       1.2149
+      ],
+      "within_block_p": 0.0308
+     }
+    ],
+    "mean_held_out_AUC": 0.718,
+    "published_folds": [
+     {
+      "fold": 0,
+      "n_test": 3930,
+      "n_test_bamboo_ls": 41,
+      "interaction_OR": 1.044,
+      "AUC": 0.723
+     },
+     {
+      "fold": 1,
+      "n_test": 3058,
+      "n_test_bamboo_ls": 34,
+      "interaction_OR": 1.0189,
+      "AUC": 0.748
+     },
+     {
+      "fold": 2,
+      "n_test": 2494,
+      "n_test_bamboo_ls": 15,
+      "interaction_OR": 1.0406,
+      "AUC": 0.728
+     },
+     {
+      "fold": 3,
+      "n_test": 2324,
+      "n_test_bamboo_ls": 62,
+      "interaction_OR": 1.0362,
+      "AUC": 0.653
+     },
+     {
+      "fold": 4,
+      "n_test": 3474,
+      "n_test_bamboo_ls": 19,
+      "interaction_OR": 1.0317,
+      "AUC": 0.696
+     }
+    ],
+    "clarification": "In the earlier version the per-fold interaction odds ratio was estimated on the four training folds (the held-out block contributed only the AUC). The within-block estimates are new."
+   },
+   "definition": "20 km spatial-block five-fold cross-validation reproduced, plus the interaction estimated inside each held-out block",
+   "source": "cases_annot/controls_annot",
+   "cls": "A",
+   "note": ""
+  }
+ }
+}

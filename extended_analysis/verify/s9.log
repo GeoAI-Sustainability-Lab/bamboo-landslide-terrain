@@ -1,0 +1,6 @@
+[   24.3s] TWI grid 1592x847 at 240 m; cases finite 0.9996, controls 0.9995
+[   24.6s] lithology classes, cases: {'siliciclastic sedimentary': 4093, 'metamorphics': 2117, 'mixed sedimentary rock': 984, 'unconsolidated sediment': 103, 'intermediate volcanics': 79, 'acid plutonics': 44, 'undefined': 16, 'basic plutonics': 9}
+[   25.5s] covariate specs: {'terrain': 1.0341, 'plus_twi': 1.0361, 'plus_soil': 1.0392, 'plus_twi_soil': 1.0402, 'plus_lithology': 1.0361, 'within_siliciclastic': 1.0345, 'within_unconsolidated sediment': 1.0062}
+[   27.5s] GLMM 1.038 [1.0174, 1.059] re_sd 0.796
+[   27.8s] CV folds: [(0, 1.0435, 0.725, 0.9987), (1, 1.0219, 0.719, 1.0807), (2, 1.0442, 0.746, 0.9226), (3, 1.0313, 0.681, 1.0468), (4, 1.0294, 0.72, 1.1074)]
+[   27.8s] done

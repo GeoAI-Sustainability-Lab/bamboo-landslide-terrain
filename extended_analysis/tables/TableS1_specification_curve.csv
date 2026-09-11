@@ -1,0 +1,82 @@
+﻿id,group,specification,OR_per_degree,CI_low,CI_high,p,stability,note,significant
+A1,A,"published specification (centroid, unmatched)",1.0341,1.0123,1.0565,0.002091442618789685,A,,yes
+A2,A,"event fixed effects, 5 km footprint",1.0315,1.0114,1.0521,0.002061457606008732,B,,yes
+A3,A,"event FE, SE clustered by point",1.0315,1.0054,1.0583,0.01779188014730626,B,,yes
+A4,A,"event FE, SE clustered by event",1.0315,1.0111,1.0523,0.0023469172325654153,B,,yes
+A5,A,"event FE, each control used once (25 draws)",1.0366,1.0338,1.0391,0.0021192637725651053,C,"MC range, not a CI",yes
+A6,A,footprint 2 km grid,1.0221,1.0003,1.0444,0.04730247039717517,B,,yes
+A7,A,footprint 10 km grid,1.036,1.0163,1.0562,0.00031316291854976974,B,,yes
+A8,A,footprint 20 km grid,1.037,1.0177,1.0567,0.00015204574144056515,B,,yes
+A9,A,footprint 2 km buffer union,1.0222,1.0017,1.043,0.03348190551514518,B,,yes
+A10,A,footprint 5 km buffer union,1.0355,1.0158,1.0557,0.00037917814658205984,B,,yes
+A11,A,"new control pool, 5:1 (25 draws)",1.0271,1.0234,1.0335,0.0047576536136151315,C,"MC range, not a CI",yes
+A12,A,"new control pool, 10:1 (25 draws)",1.0285,1.0255,1.0323,0.0015726085245537647,C,"MC range, not a CI",yes
+A13,A,"new control pool, 20:1 (25 draws)",1.0289,1.0269,1.032,0.0010963242317960642,C,"MC range, not a CI",yes
+A14,A,"conditional logit, event x 20 km block (exact, 10 draws)",1.0367,1.0322,1.0403,0.00020083504153523002,C,"MC range, not a CI",yes
+A15,A,"conditional logit, event x 10 km block (exact, 10 draws)",1.0294,1.0238,1.0339,0.0017749952304135785,C,"MC range, not a CI",yes
+A16,A,"conditional logit, event x 5 km block (exact, 10 draws)",1.0307,1.0266,1.0359,0.0012225608712934655,C,"MC range, not a CI",yes
+B1,B,centroid (published),1.0341,1.0123,1.0565,0.002091442618789463,B,,yes
+B2,B,highest cell (the rule section 2.3 describes),1.0215,1.001,1.0424,0.03981510326312376,B,,yes
+B3,B,steepest cell,1.0341,1.0087,1.0602,0.008221839915279583,B,,yes
+B4,B,lowest cell,1.0235,1.0036,1.0438,0.02066612548167046,B,,yes
+B5,B,median cell,1.0193,0.9965,1.0425,0.0971959001975855,B,,no
+B6,B,polygon-mean terrain,1.0136,0.9906,1.0371,0.24974920289895253,B,,no
+B7,B,"source area, top 20% elevation",1.0201,0.9988,1.0419,0.0644665552568986,B,,no
+B8,B,"all 20 m cells, SE clustered by polygon",1.0272,1.004,1.051,0.02149,B,,yes
+B9,B,"all cells, polygon weight 1, SE clustered by polygon (approx.)",1.0283,1.0082,1.0487,0.00546,B,,yes
+B10,B,random cell in polygon (200 draws),1.0278,1.0191,1.0368,,C,100% of draws above 1,MC
+B11,B,"source point = highest DEM cell, full re-run",1.0288,1.0094,1.0485,0.003486378429172987,B,,yes
+C1,C,exclude pre-2018 scar reactivations,1.0306,1.0083,1.0535,0.006995048609915955,A,,yes
+C2,C,exclude <200 m from a debris-flow torrent,1.0352,1.012,1.059,0.002785943774566091,A,,yes
+C3,C,exclude <500 m from a debris-flow torrent,1.0318,1.0074,1.0567,0.010199221464138875,A,,yes
+C4,C,exclude <200 m from a national or provincial road,1.0369,1.0143,1.06,0.0012922608319074769,A,,yes
+C5,C,exclude <200 m from a river polygon,1.0265,1.0025,1.051,0.03023793677972142,A,,yes
+C6,C,exclude large-landslide potential areas,1.0335,1.0117,1.0558,0.0024882637230367877,A,,yes
+C7,C,exclude area >= 10 ha (official large-scale criterion),1.0339,1.0121,1.0563,0.002216158487741149,A,,yes
+C8,C,exclude area >= 1 ha,1.0321,1.0101,1.0546,0.004037182491147373,A,,yes
+C9,C,elongation < 3,1.0333,1.0103,1.0569,0.0044094218041035305,A,,yes
+C10,C,within-polygon relief < 50 m,1.024,0.9989,1.0498,0.06113286828021991,A,,no
+C11,C,within-polygon relief < 30 m,1.0122,0.9843,1.0408,0.39601081699480867,A,,no
+C12,C,"proxy-screened subset (area <1 ha, no 2004-2017 scar, >200 m from torrents, outside potential areas), original controls",1.0287,1.005,1.0529,0.017192439247026625,A,,yes
+C13,C,"proxy-screened subset, new control pool",1.0266,1.0073,1.0461,0.006531664741697307,A,,yes
+C14,C,"all screens combined, original controls",1.0247,0.9979,1.0522,0.071408293930463,A,,no
+C15,C,"all screens combined, new control pool",1.0211,0.9995,1.0431,0.05539372067892101,A,,no
+D1,D,"bamboo-containing stands pooled, original controls",1.0238,1.0107,1.0371,0.00034921589229286454,A,,yes
+D2,D,"bamboo-containing stands pooled, new control pool",1.0202,1.0098,1.0307,0.00012642764136638895,A,,yes
+D3,D,"drop the two dominant events, pure bamboo",1.0107,0.976,1.0467,0.5505113472678536,A,,no
+D4,D,"drop the two dominant events, pure bamboo, new pool",1.012,0.9804,1.0447,0.4611058557191725,A,,no
+D5,D,"drop the two dominant events, pooled, new pool",1.024,1.0029,1.0455,0.025698647666019925,A,,yes
+D6,D,"pooled, all screens, new pool",1.0225,1.0091,1.036,0.0009582366684852683,A,,yes
+D7,D,"pooled, proxy-screened subset, new pool",1.0232,1.0115,1.0352,9.942295829823422e-05,A,,yes
+D8,D,three-level model: pure bamboo term,1.0326,1.0152,1.0504,0.00022307321511916278,A,,yes
+D9,D,three-level model: bamboo-broadleaf mixed term,1.0107,0.9981,1.0234,0.09642679699552503,A,,no
+D10,D,event-specific: 0728 rainstorm 2025,1.0451,1.018,1.073,0.0010207873091658826,A,,yes
+D11,D,event-specific: Typhoon Gaemi 2024,1.0349,1.0039,1.0669,0.027111238800457516,A,,yes
+E1,E,5% forest-type misclassification (300 draws),1.0183,1.0071,1.029,,C,100.0% of draws above 1,MC
+E2,E,10% forest-type misclassification (300 draws),1.0127,1.0034,1.0226,,C,99.3% of draws above 1,MC
+E3,E,20% forest-type misclassification (300 draws),1.0065,0.9983,1.0144,,C,95.0% of draws above 1,MC
+A17,A,"headline, event-cluster robust SE (39 events + controls)",1.0341,1.0128,1.0559,0.0015613605140760711,A,,yes
+A18,A,"mixed logistic model, event random intercept (VB)",1.038,1.0174,1.059,,B,posterior 95% interval,MC
+A19,A,event FE + log max 24-h IMERG rainfall,1.0316,1.0116,1.052,0.00187,B,,yes
+A20,A,"event FE + log max 24-h rainfall, SE clustered by control point",1.0316,1.0061,1.0578,0.01498,B,,yes
+A21,A,event FE + log max 24-h + log total rainfall,1.0301,1.0102,1.0505,0.00296,B,,yes
+A22,A,event FE + log max 72-h rainfall,1.0299,1.01,1.0503,0.00317,B,,yes
+A23,A,new control pool 5:1 + log max 24-h rainfall (25 draws),1.0301,1.026,1.0367,0.00157,C,"MC range, not a CI",yes
+A24,A,island-wide + CHIRPS mean annual precipitation,1.025,1.0032,1.0472,0.02431,B,,yes
+F1,F,+ topographic wetness index,1.0361,1.0142,1.0584,0.00113,A,,yes
+F2,F,"+ topsoil organic carbon, pH, clay",1.0392,1.0171,1.0617,0.00044,A,,yes
+F3,F,+ wetness index and soil,1.0402,1.0182,1.0627,0.0003,A,,yes
+F4,F,+ surface lithology classes,1.0361,1.0141,1.0586,0.00122,A,,yes
+F5,F,within siliciclastic sedimentary lithology only,1.0345,1.0108,1.0588,0.00412,A,,yes
+F6,F,+ canopy height,1.0338,1.0115,1.0567,0.00286,A,,yes
+F7,F,+ pre-event NDVI (like-for-like window),1.0354,1.0127,1.0587,0.00212,A,,yes
+F8,F,+ pre-event NDVI and NDMI,1.0406,1.0175,1.0641,0.0005,A,,yes
+F9,F,+ pre-event NBR,1.0409,1.0177,1.0645,0.00047,A,,yes
+F10,F,"greenness subsample without indices (5,393 cases, 9,148 controls)",1.0324,1.0099,1.0554,0.00451,A,,yes
+F11,F,"+ pre-event NDVI, controls as 2019-2024 median (earlier definition)",1.0396,1.0164,1.0634,0.00076,A,,yes
+F12,F,"+ pre-event NDVI and NDMI, controls as 2019-2024 median",1.0434,1.0198,1.0674,0.00027,A,,yes
+C16,C,exclude the 42 controls inside 2018-2025 landslide polygons,1.0337,1.0119,1.0561,0.00235,A,,yes
+C17,C,exclude cases inside an earlier 2018-2025 polygon (within-period repeat),1.0336,1.0117,1.0559,0.00248,A,,yes
+C18,C,exclude cases inside any other-event 2018-2025 polygon,1.0337,1.0119,1.0561,0.00236,A,,yes
+D12,D,running (monopodial) bamboo only vs broadleaf,1.0472,1.008,1.0879,0.01782,A,,yes
+D13,D,clumping (sympodial) bamboo only vs broadleaf,1.0303,1.004,1.0573,0.0238,A,,yes

@@ -1,0 +1,185 @@
+{
+ "definition": {
+  "region": "TWD97 (EPSG:3826) northing bands: north y>=2,720,000 m (~24.6N); central 2,600,000<=y<2,720,000; south y<2,600,000 m (~23.5N)",
+  "design": "original case-control design, pure 竹林 vs 闊葉樹林型, original controls, model = published E1 form"
+ },
+ "all": {
+  "OR": 1.0341,
+  "ci": [
+   1.0123,
+   1.0565
+  ],
+  "p": 0.00209,
+  "main_OR": 0.206,
+  "linear_crossover_deg": 47.1,
+  "n": 15280,
+  "n_case": 5915,
+  "n_bamboo_case": 171,
+  "n_bamboo_ctrl": 663,
+  "bamboo_case_median_slope": 34.7,
+  "bamboo_case_slope_p90": 47.0
+ },
+ "by_region": {
+  "north": {
+   "OR": 0.9741,
+   "ci": [
+    0.9167,
+    1.0352
+   ],
+   "p": 0.3985,
+   "main_OR": 5.64,
+   "linear_crossover_deg": null,
+   "n": 1780,
+   "n_case": 78,
+   "n_bamboo_case": 13,
+   "n_bamboo_ctrl": 150,
+   "bamboo_case_median_slope": 27.0,
+   "bamboo_case_slope_p90": 41.3
+  },
+  "central": {
+   "OR": 1.0408,
+   "ci": [
+    0.995,
+    1.0888
+   ],
+   "p": 0.08171,
+   "main_OR": 0.088,
+   "linear_crossover_deg": 60.7,
+   "n": 6533,
+   "n_case": 2864,
+   "n_bamboo_case": 42,
+   "n_bamboo_ctrl": 259,
+   "bamboo_case_median_slope": 34.3,
+   "bamboo_case_slope_p90": 43.3
+  },
+  "south": {
+   "OR": 1.0506,
+   "ci": [
+    1.0215,
+    1.0805
+   ],
+   "p": 0.00058,
+   "main_OR": 0.173,
+   "linear_crossover_deg": 35.6,
+   "n": 6967,
+   "n_case": 2973,
+   "n_bamboo_case": 116,
+   "n_bamboo_ctrl": 254,
+   "bamboo_case_median_slope": 35.4,
+   "bamboo_case_slope_p90": 48.0
+  }
+ },
+ "region_heterogeneity_LR": {
+  "LR": 49.607,
+  "df": 4,
+  "p": 0.0
+ },
+ "bamboo_points_by_region_form": {
+  "central|ctrl": {
+   "叢生狀竹(clumping)": 143,
+   "單桿狀竹(running)": 116
+  },
+  "central|case": {
+   "叢生狀竹(clumping)": 26,
+   "單桿狀竹(running)": 16
+  },
+  "north|ctrl": {
+   "叢生狀竹(clumping)": 83,
+   "單桿狀竹(running)": 67
+  },
+  "north|case": {
+   "叢生狀竹(clumping)": 8,
+   "單桿狀竹(running)": 5
+  },
+  "south|ctrl": {
+   "叢生狀竹(clumping)": 192,
+   "單桿狀竹(running)": 60,
+   "nan": 1,
+   "B600": 1
+  },
+  "south|case": {
+   "叢生狀竹(clumping)": 70,
+   "單桿狀竹(running)": 46
+  }
+ },
+ "by_form_original_controls": {
+  "單桿狀竹(running)": {
+   "OR": 1.0472,
+   "ci": [
+    1.008,
+    1.0879
+   ],
+   "p": 0.01782,
+   "main_OR": 0.113,
+   "linear_crossover_deg": 47.2,
+   "n": 14756,
+   "n_case": 5811,
+   "n_bamboo_case": 67,
+   "n_bamboo_ctrl": 243,
+   "bamboo_case_median_slope": 36.0,
+   "bamboo_case_slope_p90": 47.5
+  },
+  "叢生狀竹(clumping)": {
+   "OR": 1.0303,
+   "ci": [
+    1.004,
+    1.0573
+   ],
+   "p": 0.0238,
+   "main_OR": 0.261,
+   "linear_crossover_deg": 45.0,
+   "n": 14968,
+   "n_case": 5848,
+   "n_bamboo_case": 104,
+   "n_bamboo_ctrl": 418,
+   "bamboo_case_median_slope": 33.0,
+   "bamboo_case_slope_p90": 45.7
+  }
+ },
+ "elev_slope_by_form": {
+  "case": {
+   "叢生狀竹(clumping)": {
+    "n": 104,
+    "elev_median": 452.0,
+    "elev_p10": 150.0,
+    "elev_p90": 1127.0,
+    "slope_median": 33.0
+   },
+   "單桿狀竹(running)": {
+    "n": 67,
+    "elev_median": 626.0,
+    "elev_p10": 314.0,
+    "elev_p90": 1192.0,
+    "slope_median": 36.0
+   }
+  },
+  "ctrl": {
+   "B600": {
+    "n": 1,
+    "elev_median": 544.0,
+    "elev_p10": 544.0,
+    "elev_p90": 544.0,
+    "slope_median": 25.4
+   },
+   "叢生狀竹(clumping)": {
+    "n": 418,
+    "elev_median": 308.0,
+    "elev_p10": 70.0,
+    "elev_p90": 995.0,
+    "slope_median": 24.4
+   },
+   "單桿狀竹(running)": {
+    "n": 243,
+    "elev_median": 719.0,
+    "elev_p10": 219.0,
+    "elev_p90": 1353.0,
+    "slope_median": 28.8
+   }
+  }
+ },
+ "n_cases_by_region_all_types": {
+  "central": 3784,
+  "south": 3576,
+  "north": 94
+ }
+}

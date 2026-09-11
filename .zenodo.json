@@ -1,0 +1,18 @@
+{
+  "title": "Terrain-controlled analysis of bamboo forests and rainfall-triggered landslides in Taiwan: data, code and verification chain",
+  "upload_type": "software",
+  "description": "<p>Data tables and Python code for a terrain-controlled, multi-event analysis of how the association between bamboo forests and rainfall-triggered landslides varies with hillslope steepness in Taiwan (event-based landslide inventory 2018 to 2025, national forest type map, 20 m digital elevation model).</p><p><b>Purpose of the data.</b> The tables are the derived point samples used in the analysis: 7,454 rainfall-triggered landslides on six forest types (read at the polygon centroid) and 13,131 control points sampled uniformly within forest, each with terrain attributes (slope, aspect, plan and profile curvature, elevation), forest type, event membership, polygon attributes, failure-type screen distances, and, in separate tables, wetness index, soil, lithology, canopy height, event rainfall from GPM IMERG and pre-event Sentinel-2 vegetation indices. Raw source layers are not redistributed; their providers are credited in the README.</p><p><b>Purpose of the code.</b> (1) A core analysis (case-control logistic regression with a forest type by slope interaction, cubic B-spline odds-ratio curve, spatial block cross-validation) that reproduces the main estimates from the tables. (2) A deterministic verification chain that rebuilds the tables from the raw layers, recomputes every reported quantity under frozen definitions and fixed seeds, and writes each to a JSON register with its definition, source and reproducibility class; it covers controls drawn from the affected area of each rainfall event (event fixed effects, event-matched control pools, exact conditional logistic regression), failure-type screens, polygon representation alternatives, leave-one-event-out and event-specific estimates, latitude-band subsets, cluster bootstrap of the odds-ratio curve, bamboo growth forms, canopy height, pre-event vegetation indices, event rainfall covariates and a tree-ensemble comparison. (3) Earth Engine scripts for the rainfall and vegetation-index extraction.</p><p>Every script resolves its inputs from the repository; the README lists the purpose, inputs, outputs and expected values of each step. Funding: National Science and Technology Council, Taiwan (NSTC 114-2634-F-005-002; NSTC 114-2121-M-005-007-MY2).</p>",
+  "creators": [
+    {
+      "name": "Hsu, Yu-Chun",
+      "affiliation": "Department of Forestry, National Chung Hsing University, Taichung, Taiwan",
+      "orcid": "0000-0002-6616-6906"
+    }
+  ],
+  "keywords": ["bamboo forest", "shallow landslide", "landslide susceptibility", "forest type", "hillslope steepness", "case-control logistic regression", "root reinforcement", "Taiwan", "reproducibility", "verification chain"],
+  "license": "MIT",
+  "access_right": "open",
+  "language": "eng",
+  "version": "1.1.0",
+  "notes": "Version 1.0 holds the core analysis; version 1.1 adds the extended analysis and the verification chain (folder extended_analysis/). Derived data tables are provided for research reproducibility with attribution to the providers of the source layers listed in the README."
+}

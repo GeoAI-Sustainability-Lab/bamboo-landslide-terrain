@@ -1,0 +1,43 @@
+[    0.5s] 6c.1 historical scars 2004-2017 and failure-type layers
+[   73.3s]    reactivation: cases 8.08%, controls 0.67%, pool 0.88%
+[   75.5s] 6c.2 failure-type screens
+[   77.4s]    baseline                               OR 1.0341 p 0.002091 (bamboo cases 171)
+[   77.4s]    exclude_reactivation                   OR 1.0306 p 0.006995 (bamboo cases 155)
+[   77.4s]    exclude_debris_200m                    OR 1.0352 p 0.002786 (bamboo cases 155)
+[   77.4s]    exclude_debris_500m                    OR 1.0318 p 0.0102 (bamboo cases 137)
+[   77.4s]    exclude_road_200m                      OR 1.0369 p 0.001292 (bamboo cases 162)
+[   77.4s]    exclude_river_200m                     OR 1.0265 p 0.03024 (bamboo cases 144)
+[   77.4s]    exclude_large_ls_potential             OR 1.0335 p 0.002488 (bamboo cases 171)
+[   77.4s]    exclude_area_ge10ha                    OR 1.0339 p 0.002216 (bamboo cases 171)
+[   77.4s]    exclude_area_ge1ha                     OR 1.0321 p 0.004037 (bamboo cases 163)
+[   77.4s]    relief_lt50m                           OR 1.024 p 0.06113 (bamboo cases 117)
+[   77.4s]    relief_lt30m                           OR 1.0122 p 0.396 (bamboo cases 83)
+[   77.4s]    elongation_lt3                         OR 1.0333 p 0.004409 (bamboo cases 152)
+[   77.4s]    reliably_shallow_original_controls     OR 1.0287 p 0.01719 (bamboo cases 139)
+[   77.4s]    reliably_shallow_new_pool              OR 1.0266 p 0.006532 (bamboo cases 139)
+[   77.4s]    all_screens_original_controls          OR 1.0247 p 0.07141 (bamboo cases 112)
+[   77.4s]    all_screens_new_pool                   OR 1.0211 p 0.05539 (bamboo cases 112)
+[   77.4s]    pooled_all_screens_new_pool            OR 1.0225 p 0.0009582 (bamboo cases 281)
+[   77.4s]    pooled_reliably_shallow_new_pool       OR 1.0232 p 9.942e-05 (bamboo cases 357)
+[   77.4s] 6c.3 forest-type misclassification simulation
+[   84.7s]     2% both ways: mean 1.0258  >1 in 100%
+[   92.7s]     5% both ways: mean 1.0183  >1 in 100%
+[   99.9s]    10% both ways: mean 1.0127  >1 in 99%
+[  106.7s]    20% both ways: mean 1.0065  >1 in 95%
+[  120.7s] 6c.4 three-level model and the pooling test
+[  121.7s]    mixed x slope 1.0107 p=0.09643; bamboo x slope 1.0326 p=0.0002231; LR p=0.0415
+[  121.7s] 6c.5 pooled definition, per-event, leave-one-event-out
+[  122.7s]    original_controls                OR 1.0238 p 0.0003492 (bamboo cases 456)
+[  122.7s]    new_pool                         OR 1.0202 p 0.0001264 (bamboo cases 456)
+[  122.7s]    drop2events_pure_original        OR 1.0107 p 0.5505 (bamboo cases 45)
+[  122.7s]    drop2events_pure_newpool         OR 1.012 p 0.4611 (bamboo cases 45)
+[  122.7s]    drop2events_pooled_newpool       OR 1.024 p 0.0257 (bamboo cases 99)
+[  123.5s]    per-event (pure): [('0728豪雨', 1.0451, 0.001), ('凱米颱風', 1.0349, 0.0271)]
+[  124.8s]    LOEO range 1.0245-1.0388, all>1 True, p<0.05 in 38/39
+[  124.8s] 6c.6 crossover bootstrap, common support, frozen curve statistics
+[  163.6s]    crossover bootstrap: median 44.71, 95% CI [34.50,55.78], valid 584/600
+[  164.6s]    pure_original_controls       crossover 44.06 protection [9.9, 39.5, True]
+[  164.6s]    pure_new_pool                crossover 46.44 protection [7.6, 36.3, True]
+[  164.6s]    pooled_original_controls     crossover 38.83 protection [8.6, 32.9, True]
+[  164.6s]    pooled_new_pool              crossover 40.03 protection [7.4, 31.2, True]
+[  164.7s] stage 6c written -> verified_facts.json

@@ -1,0 +1,6 @@
+[   1.2s] rasters loaded for 40 events; CHIRPS climatology sampled
+[   1.3s] case exposure medians (max24): bamboo 145.6 broadleaf 112.9
+[   3.0s] FE baseline 1.0315  +max24 1.0316  +max24+total 1.0301  +max72 1.0299
+[  29.2s] new pool 5:1 baseline 1.0271 -> +max24 1.0301
+[  29.3s] island-wide baseline 1.0342 +MAP 1.025 +MAP+annmax 1.025
+[  29.3s] done

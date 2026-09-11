@@ -1,0 +1,336 @@
+{
+ "facts": {
+  "S13.landslide_density_by_type": {
+   "value": {
+    "rows": {
+     "broadleaf": {
+      "n_rain": 5744,
+      "area_km2": 13480.7,
+      "density_per_km2": 0.4261,
+      "ratio_to_mean": 1.158
+     },
+     "conifer": {
+      "n_rain": 395,
+      "area_km2": 2958.0,
+      "density_per_km2": 0.1335,
+      "ratio_to_mean": 0.363
+     },
+     "conifer-broadleaf": {
+      "n_rain": 374,
+      "area_km2": 1673.8,
+      "density_per_km2": 0.2234,
+      "ratio_to_mean": 0.607
+     },
+     "bamboo": {
+      "n_rain": 171,
+      "area_km2": 978.7,
+      "density_per_km2": 0.1747,
+      "ratio_to_mean": 0.475
+     },
+     "bamboo-broadleaf": {
+      "n_rain": 285,
+      "area_km2": 891.7,
+      "density_per_km2": 0.3196,
+      "ratio_to_mean": 0.869
+     },
+     "immature": {
+      "n_rain": 485,
+      "area_km2": 273.6,
+      "density_per_km2": 1.7724,
+      "ratio_to_mean": 4.817
+     }
+    },
+    "mean_density_per_km2": 0.368,
+    "ratio_max_to_min": 13.3,
+    "comparison_with_core": {
+     "broadleaf": {
+      "here": 0.4261,
+      "core": 0.4261
+     },
+     "conifer": {
+      "here": 0.1335,
+      "core": 0.1335
+     },
+     "conifer-broadleaf": {
+      "here": 0.2234,
+      "core": 0.2234
+     },
+     "bamboo": {
+      "here": 0.1747,
+      "core": 0.1747
+     },
+     "bamboo-broadleaf": {
+      "here": 0.3196,
+      "core": 0.3196
+     },
+     "immature": {
+      "here": 1.7724,
+      "core": 1.7724
+     }
+    }
+   },
+   "definition": "rainfall-triggered landslides (cases on the six analysed types) per km2 of each forest type; area from the forest type map",
+   "source": "cases_annot.csv + S3.forest_map",
+   "cls": "B"
+  },
+  "S13.slope_distribution_by_type": {
+   "value": {
+    "broadleaf": {
+     "n": 8702,
+     "median": 33.1,
+     "p5": 11.6,
+     "p95": 51.9,
+     "q1": 24.7,
+     "q3": 40.5
+    },
+    "conifer": {
+     "n": 1874,
+     "median": 35.3,
+     "p5": 16.3,
+     "p95": 51.4,
+     "q1": 27.7,
+     "q3": 41.8
+    },
+    "conifer-broadleaf": {
+     "n": 1126,
+     "median": 36.5,
+     "p5": 17.5,
+     "p95": 53.1,
+     "q1": 28.7,
+     "q3": 43.8
+    },
+    "bamboo": {
+     "n": 663,
+     "median": 25.8,
+     "p5": 8.3,
+     "p95": 41.5,
+     "q1": 19.3,
+     "q3": 32.4
+    },
+    "bamboo-broadleaf": {
+     "n": 591,
+     "median": 26.6,
+     "p5": 9.0,
+     "p95": 45.2,
+     "q1": 18.8,
+     "q3": 34.5
+    },
+    "immature": {
+     "n": 175,
+     "median": 34.9,
+     "p5": 7.1,
+     "p95": 55.2,
+     "q1": 27.0,
+     "q3": 43.9
+    }
+   },
+   "definition": "slope statistics of the 13,131 controls by forest type (degrees)",
+   "source": "controls_annot.csv",
+   "cls": "B"
+  },
+  "S13.odds_ratio_by_type": {
+   "value": {
+    "rows": {
+     "conifer": {
+      "n_case": 395,
+      "n": 16715,
+      "OR_raw": 0.319,
+      "raw_ci": [
+       0.285,
+       0.358
+      ],
+      "OR_adj": 0.292,
+      "adj_ci": [
+       0.253,
+       0.338
+      ],
+      "p_adj": 2.9516384675989703e-62
+     },
+     "conifer-broadleaf": {
+      "n_case": 374,
+      "n": 15946,
+      "OR_raw": 0.503,
+      "raw_ci": [
+       0.446,
+       0.568
+      ],
+      "OR_adj": 0.417,
+      "adj_ci": [
+       0.363,
+       0.478
+      ],
+      "p_adj": 2.2231636757712157e-35
+     },
+     "bamboo": {
+      "n_case": 171,
+      "n": 15280,
+      "OR_raw": 0.391,
+      "raw_ci": [
+       0.329,
+       0.464
+      ],
+      "OR_adj": 0.602,
+      "adj_ci": [
+       0.501,
+       0.723
+      ],
+      "p_adj": 5.284784306300995e-08
+     },
+     "bamboo-broadleaf": {
+      "n_case": 285,
+      "n": 15322,
+      "OR_raw": 0.731,
+      "raw_ci": [
+       0.632,
+       0.845
+      ],
+      "OR_adj": 1.066,
+      "adj_ci": [
+       0.91,
+       1.249
+      ],
+      "p_adj": 0.4298339582447409
+     },
+     "immature": {
+      "n_case": 485,
+      "n": 15106,
+      "OR_raw": 4.199,
+      "raw_ci": [
+       3.521,
+       5.007
+      ],
+      "OR_adj": 4.157,
+      "adj_ci": [
+       3.436,
+       5.03
+      ],
+      "p_adj": 1.3242918607186423e-48
+     }
+    },
+    "reference": "broadleaf",
+    "comparison_with_core": {
+     "conifer": {
+      "here": [
+       0.319,
+       0.292
+      ],
+      "core": [
+       0.319,
+       0.292
+      ]
+     },
+     "conifer-broadleaf": {
+      "here": [
+       0.503,
+       0.417
+      ],
+      "core": [
+       0.503,
+       0.417
+      ]
+     },
+     "bamboo": {
+      "here": [
+       0.391,
+       0.602
+      ],
+      "core": [
+       0.391,
+       0.602
+      ]
+     },
+     "bamboo-broadleaf": {
+      "here": [
+       0.731,
+       1.066
+      ],
+      "core": [
+       0.731,
+       1.066
+      ]
+     },
+     "immature": {
+      "here": [
+       4.199,
+       4.157
+      ],
+      "core": [
+       4.199,
+       4.157
+      ]
+     }
+    }
+   },
+   "definition": "logistic regression of case status on a forest-type indicator, each type against broadleaf in a two-type sample, unadjusted and with the Eq. (1) terrain set",
+   "source": "cases_annot.csv + controls_annot.csv",
+   "cls": "B"
+  },
+  "S13.bamboo_share_5deg_bands": {
+   "value": {
+    "bands": {
+     "5-10": {
+      "n_bamboo": 30,
+      "n_broadleaf": 183,
+      "bamboo_share_pct": 14.08
+     },
+     "10-15": {
+      "n_bamboo": 56,
+      "n_broadleaf": 368,
+      "bamboo_share_pct": 13.21
+     },
+     "15-20": {
+      "n_bamboo": 87,
+      "n_broadleaf": 634,
+      "bamboo_share_pct": 12.07
+     },
+     "20-25": {
+      "n_bamboo": 125,
+      "n_broadleaf": 905,
+      "bamboo_share_pct": 12.14
+     },
+     "25-30": {
+      "n_bamboo": 129,
+      "n_broadleaf": 1258,
+      "bamboo_share_pct": 9.3
+     },
+     "30-35": {
+      "n_bamboo": 113,
+      "n_broadleaf": 1403,
+      "bamboo_share_pct": 7.45
+     },
+     "35-40": {
+      "n_bamboo": 61,
+      "n_broadleaf": 1445,
+      "bamboo_share_pct": 4.05
+     },
+     "40-45": {
+      "n_bamboo": 38,
+      "n_broadleaf": 1122,
+      "bamboo_share_pct": 3.28
+     },
+     "45-50": {
+      "n_bamboo": 9,
+      "n_broadleaf": 648,
+      "bamboo_share_pct": 1.37
+     },
+     "50-55": {
+      "n_bamboo": 1,
+      "n_broadleaf": 345,
+      "bamboo_share_pct": 0.29
+     },
+     "55-60": {
+      "n_bamboo": 1,
+      "n_broadleaf": 161,
+      "bamboo_share_pct": 0.62
+     }
+    },
+    "bamboo_controls_above_45": 11,
+    "bamboo_control_p95": 41.5
+   },
+   "definition": "share of bamboo among the bamboo and broadleaf controls in 5-degree slope bands (lo, hi], and the number of bamboo controls per band",
+   "source": "controls_annot.csv",
+   "cls": "B"
+  }
+ },
+ "log": "verify_s13_reported_quantities.py"
+}
