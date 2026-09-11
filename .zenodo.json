@@ -9,10 +9,21 @@
       "orcid": "0000-0002-6616-6906"
     }
   ],
-  "keywords": ["bamboo forest", "shallow landslide", "landslide susceptibility", "forest type", "hillslope steepness", "case-control logistic regression", "root reinforcement", "Taiwan", "reproducibility", "verification chain"],
+  "keywords": [
+    "bamboo forest",
+    "shallow landslide",
+    "landslide susceptibility",
+    "forest type",
+    "hillslope steepness",
+    "case-control logistic regression",
+    "root reinforcement",
+    "Taiwan",
+    "reproducibility",
+    "verification chain"
+  ],
   "license": "MIT",
   "access_right": "open",
   "language": "eng",
-  "version": "1.1.0",
-  "notes": "Version 1.0 holds the core analysis; version 1.1 adds the extended analysis and the verification chain (folder extended_analysis/). Derived data tables are provided for research reproducibility with attribution to the providers of the source layers listed in the README."
+  "version": "1.1.1",
+  "notes": "Version 1.0 holds the core analysis; version 1.1 adds the extended analysis and the verification chain (folder extended_analysis/); version 1.1.1 has the same analysis content as 1.1 and adds the archive DOI and citation metadata to the README. Derived data tables are provided for research reproducibility with attribution to the providers of the source layers listed in the README."
 }

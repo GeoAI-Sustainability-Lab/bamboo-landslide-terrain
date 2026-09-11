@@ -2,10 +2,15 @@ cff-version: 1.2.0
 message: "If you use this repository, please cite it as below."
 type: software
 title: "Terrain-controlled analysis of bamboo forests and rainfall-triggered landslides in Taiwan: data, code and verification chain"
-version: 1.1.0
-date-released: 2026-09-09
+version: 1.1.1
+date-released: 2026-09-11
 license: MIT
 repository-code: "https://github.com/GeoAI-Sustainability-Lab/bamboo-landslide-terrain"
+doi: 10.5281/zenodo.22702156
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22702156
+    description: "Concept DOI of the Zenodo archive (all versions)"
 authors:
   - family-names: Hsu
     given-names: Yu-Chun

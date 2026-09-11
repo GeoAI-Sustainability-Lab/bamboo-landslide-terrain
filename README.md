@@ -11,6 +11,12 @@ Author: Yu-Chun Hsu, Department of Forestry, National Chung Hsing University, Ta
 (ORCID https://orcid.org/0000-0002-6616-6906). Citation metadata is in `CITATION.cff` and
 `.zenodo.json`.
 
+Archived on Zenodo: https://doi.org/10.5281/zenodo.22702156 (concept DOI; it always resolves to
+the latest version, and each release has its own version DOI on that page). Cite as: Hsu, Y.-C.
+(2026). Terrain-controlled analysis of bamboo forests and rainfall-triggered landslides in
+Taiwan: data, code and verification chain (Version 1.1.1) [Software]. Zenodo.
+https://doi.org/10.5281/zenodo.22702156
+
 ## What the analysis does
 
 Landslide rates cannot be compared across forest types directly, because each forest type
