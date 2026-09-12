@@ -73,7 +73,7 @@ F7,F,+ pre-event NDVI (like-for-like window),1.0354,1.0127,1.0587,0.00212,A,,yes
 F8,F,+ pre-event NDVI and NDMI,1.0406,1.0175,1.0641,0.0005,A,,yes
 F9,F,+ pre-event NBR,1.0409,1.0177,1.0645,0.00047,A,,yes
 F10,F,"greenness subsample without indices (5,393 cases, 9,148 controls)",1.0324,1.0099,1.0554,0.00451,A,,yes
-F11,F,"+ pre-event NDVI, controls as 2019-2024 median (earlier definition)",1.0396,1.0164,1.0634,0.00076,A,,yes
+F11,F,"+ pre-event NDVI, controls as 2019-2024 median (multi-year definition)",1.0396,1.0164,1.0634,0.00076,A,,yes
 F12,F,"+ pre-event NDVI and NDMI, controls as 2019-2024 median",1.0434,1.0198,1.0674,0.00027,A,,yes
 C16,C,exclude the 42 controls inside 2018-2025 landslide polygons,1.0337,1.0119,1.0561,0.00235,A,,yes
 C17,C,exclude cases inside an earlier 2018-2025 polygon (within-period repeat),1.0336,1.0117,1.0559,0.00248,A,,yes

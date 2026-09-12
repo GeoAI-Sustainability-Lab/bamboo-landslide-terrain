@@ -116,7 +116,7 @@ for i,(k,l) in enumerate([('plus_ndvi','+ pre-event NDVI (like-for-like window)'
 add('F',10,'greenness subsample without indices (5,393 cases, 9,148 controls)',gr['base_on_covered_subset']['OR'],*gr['base_on_covered_subset']['ci'],gr['base_on_covered_subset']['p'],'A')
 grm=S10B['S10.pre_event_greenness']['value'].get('multiyear_controls')
 if grm:
-    add('F',11,'+ pre-event NDVI, controls as 2019-2024 median (earlier definition)',grm['plus_ndvi']['OR'],*grm['plus_ndvi']['ci'],grm['plus_ndvi']['p'],'A')
+    add('F',11,'+ pre-event NDVI, controls as 2019-2024 median (multi-year definition)',grm['plus_ndvi']['OR'],*grm['plus_ndvi']['ci'],grm['plus_ndvi']['p'],'A')
     add('F',12,'+ pre-event NDVI and NDMI, controls as 2019-2024 median',grm['plus_ndvi_ndmi']['OR'],*grm['plus_ndvi_ndmi']['ci'],grm['plus_ndvi_ndmi']['p'],'A')
 ci_=CIP['excluding_inside']; add('C',16,'exclude the 42 controls inside 2018-2025 landslide polygons',ci_['OR'],*ci_['ci'],ci_['p'],'A')
 wr=S11['S11.within_period_reactivation']['value']

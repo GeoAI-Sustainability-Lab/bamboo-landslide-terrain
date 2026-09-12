@@ -13,7 +13,7 @@ ps=S['S11.pooled_spline_bands']['value']; fe=S['S11.fe_rain_spline_bands']['valu
 rows=[]
 def add(design,inference,band,cross,note=''):
     rows.append(dict(design=design,inference=inference,lower_deg=band[0],upper_deg=band[1],crossing_deg=cross,note=note))
-add('island-wide case-control, cubic B-spline (Fig. 6)','ordinary covariance, pointwise delta method',ps['ordinary']['supported_band'],ps['ordinary']['crossover_deg'],'as in the earlier version')
+add('island-wide case-control, cubic B-spline (Fig. 6)','ordinary covariance, pointwise delta method',ps['ordinary']['supported_band'],ps['ordinary']['crossover_deg'],'main design, model-based covariance')
 add('island-wide case-control, cubic B-spline (Fig. 6)','event-cluster robust covariance (39 events + all controls as one cluster), pointwise',ps['event_cluster_robust']['supported_band'],ps['event_cluster_robust']['crossover_deg'],'same fitted curve; only the covariance differs')
 add('island-wide case-control, cubic B-spline (Fig. 6)',f"cluster bootstrap, 600 draws, pointwise 2.5-97.5 percentiles of the refitted curves",bt['band_q975_below_1'],bt['crossover']['median'],f"crossing median of {bt['crossings_found']} draws that reach 1 inside 5-60 deg; 95% interval {bt['crossover']['ci95'][0]}-{bt['crossover']['ci95'][1]}; {bt['no_crossing']} draws stay below 1 throughout")
 add('event fixed effects + log max 24-h IMERG rainfall, same spline knots','ordinary covariance, pointwise',fe['spline_ordinary']['supported_band'],fe['spline_ordinary']['crossover_deg'],f"{fe['linear_interaction']['n_rows']:,} rows, {fe['linear_interaction']['n_distinct_control_points']:,} distinct control points")
