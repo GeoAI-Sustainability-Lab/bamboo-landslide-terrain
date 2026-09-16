@@ -22,7 +22,7 @@ https://doi.org/10.5281/zenodo.22702156
 Landslide rates cannot be compared across forest types directly, because each forest type
 occupies different terrain. The analysis therefore uses a case-control design: rainfall-triggered
 landslides (cases, read at the polygon centroid) are compared with random points within forest
-(controls) in a logistic regression that holds terrain constant (slope, its square, aspect, plan
+(controls) in a logistic regression that adjusts for terrain (slope, its square, aspect, plan
 and profile curvature, elevation), and the model includes an interaction between forest type and
 slope so that the forest-type association is allowed to change with steepness. A cubic B-spline
 describes the bamboo-versus-broadleaf odds ratio as a smooth function of slope. Alternative

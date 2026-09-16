@@ -24,7 +24,7 @@ Contents of this README
 ## 1. The question and the design in one page
 
 The question is whether the association between bamboo forests and rainfall-triggered
-landslides changes with hillslope steepness once terrain is held constant. Forest types are not
+landslides changes with hillslope steepness after adjustment for terrain. Forest types are not
 placed at random across terrain, so raw landslide rates by forest type confound the type with
 the slopes it occupies. The design is case-control logistic regression: cases are
 rainfall-triggered landslide polygons of the 2018 to 2025 event-based inventory, each read at
