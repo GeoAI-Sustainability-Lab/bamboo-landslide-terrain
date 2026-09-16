@@ -1,0 +1,24 @@
+{
+ "facts": {
+  "S15.bg_points_extent": {
+   "value": {
+    "n_points": 50000,
+    "x_min": 150001.3,
+    "x_max": 351999.6,
+    "y_min": 2420013.6,
+    "y_max": 2799995.8,
+    "rectangle_rounded_to_1km": {
+     "x0": 150000,
+     "x1": 352000,
+     "y0": 2420000,
+     "y1": 2800000
+    },
+    "crs": "EPSG:3826 (TWD97 TM2)"
+   },
+   "definition": "bounding coordinates of the 50,000 candidate control points and the sampling rectangle they imply (rounded to 1 km)",
+   "source": "bg_points.csv",
+   "cls": "A"
+  }
+ },
+ "log": "verify_s15_bg_extent.py"
+}

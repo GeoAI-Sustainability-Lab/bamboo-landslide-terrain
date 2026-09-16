@@ -73,7 +73,8 @@ extended_analysis/
     verified_facts*.json                     registers (section 6; verified_facts_partial.json = stages 1-4); allcells_cluster.json, bamboo_form.json,
                                              controls_inside_polygons.json, regional_form_check.json: outputs of the scripts of the same name
     *.log                                    console logs of the runs that produced the registers
-  tables/                    TableS1_specification_curve.csv (81 specifications), TableS9_supported_range.csv
+  tables/                    TableS1_specification_curve.csv (82 specifications), TableS2_coefficients_vif.csv,
+                             TableS3_events_cases_loeo.csv, supported_slope_range_by_inference.csv
   gee/                       Earth Engine scripts and their outputs (section 10)
   data/layers/               public 250 m OpenLandMap soil and USGS lithology layers clipped to Taiwan; fetch_soil.py
 ```
@@ -119,15 +120,18 @@ python verify_s11c_fe_cluster.py     # control-point-clustered errors of the eve
 python verify_s11e_envelope_lr.py    # odds ratio within the bamboo range; latitude-band likelihood-ratio tests
 python verify_s11f_tree_ensemble.py  # gradient-boosted trees versus the logistic models on the same split
 python verify_s13_reported_quantities.py   # densities, slope distributions, odds ratios by type, common support
-python make_tableS9.py               # slope range with the upper 95% limit below 1, by procedure and design
-python make_tableS1.py               # the 81 alternative specifications
+python verify_s15_bg_extent.py       # extent of the 50,000 candidate control points (data/bg_points.csv)
+python make_supported_range_table.py # slope range with the upper 95% limit below 1, by procedure and design
+python make_tableS2_S3.py            # coefficient and VIF table; rainfall events, cases and leave-one-event-out table
+python make_tableS1.py               # the 82 alternative specifications
 ```
 
 Four more stages also run from the frozen tables: `verify_s10_rain.py` (event rainfall
 covariates, 1 min), `verify_crosscheck.py` (independent re-implementations of the main path,
 1 min), `verify_s6a2.py` (25 repeated draws from the event-matched control pool, 10 min) and
-`verify_s6d.py` (exact conditional logistic regression, about 70 min). The remaining stages read
-the raw source layers (section 7).
+`verify_s6d.py` (exact conditional logistic regression, about 70 min). The remaining stages,
+including `verify_s14_horn.py` (Horn slopes recomputed from the DEM), read the raw source layers
+(section 7).
 
 What to look for in the output (literal fragments; some scripts print their whole register as
 indented JSON, others print one summary line per quantity):
@@ -162,7 +166,7 @@ with fixed seeds (mean and 2.5 to 97.5 percentile range over repeated control dr
 
 | Script | Purpose (what question it answers) | Reads | Writes | Needs | Time |
 | --- | --- | --- | --- | --- | --- |
-| `verify_all.py` | Stages 1-4. Rebuilds the analysis table from the raw layers (polygon centroids, terrain by the Zevenbergen-Thorne formulation, forest type by point-in-polygon overlay, control sampling with seed 20260723) and checks it against the version 1.0 table `data/step1_dataset.csv` row by row. Answers: are the tables reproducible from the official layers? | raw layers, `data/*` | `verified_facts_partial.json`, `all_polys.gpkg`, `cases_xy.csv`, `controls_xy.csv`, `ft_join.csv` | raw | 10-30 min |
+| `verify_all.py` | Stages 1-4. Rebuilds the analysis table from the raw layers (polygon centroids, terrain by the Zevenbergen-Thorne formulation, forest type by point-in-polygon overlay, control coordinates recovered from `data/bg_points.csv`, the 50,000 candidate points drawn with seed 20260723 as recorded in `expected_outputs/results.json`) and checks it against the version 1.0 table `data/step1_dataset.csv` row by row. Answers: are the tables reproducible from the official layers? | raw layers, `data/*` | `verified_facts_partial.json`, `all_polys.gpkg`, `cases_xy.csv`, `controls_xy.csv`, `ft_join.csv` | raw | 10-30 min |
 | `verify_models.py` | Stages 5-7. Reproduces the core estimates (interaction 1.0341, spline curve, cluster-robust errors, size sensitivity, full coefficients, variance inflation factors) and compares them with `expected_outputs/results.json`. | tables, `results.json`, `verified_facts_partial.json` (stages 1-4 register, shipped) | `verified_facts_s5.json` | frozen | 2 min |
 | `verify_s6a.py` | Stage 6a. Defines the affected area of each event (5 km cells intersecting the bounding box of any polygon of the event; also 2, 10, 20 km cells and 2, 5 km buffers), fits the event fixed-effects model with island-wide controls inside the affected area, and samples the event-matched control pool (260 points per 5 km cell, seed 20260901). Answers: does the slope dependence survive when controls share the event's rainfall? | raw layers, tables | `verified_facts_s6a.json`, `event_cells_5km.json`, `newctrl_pool.csv` | raw | 10 min |
 | `verify_s6a2.py` | Stage 6a-bis. Replaces every single-draw estimate on the new control pool by the mean over 25 independent draws (5, 10, 20 controls per case; each control assigned to one event only). | tables | `verified_facts_s6a2.json` | frozen | 10 min |
@@ -186,8 +190,11 @@ with fixed seeds (mean and 2.5 to 97.5 percentile range over repeated control dr
 | `controls_inside_polygons.py` | Controls that fall inside a landslide polygon of the study period (42 of 13,131), by forest type, and the interaction with them removed. | `all_polys.gpkg`, tables | `controls_inside_polygons.json` | raw | 20 s |
 | `bamboo_form.py` | Growth form (running C800 / clumping C700) of every bamboo-containing point from the type-map codes; area shares. | forest type map, tables | `bamboo_form.json`, `bamboo_points_form.csv` | raw | 5 min |
 | `regional_form_check.py` | Latitude-band subsets (TWD97 northings 2,720,000 and 2,600,000 m) and growth-form subsets of the interaction; pooled heterogeneity test. | tables | `regional_form_check.json` | frozen | 3 s |
-| `make_tableS9.py` | Table of the slope range over which the upper 95% limit is below 1, by inference procedure and design, from the stage-11 register. | registers | `tables/TableS9_supported_range.csv` | frozen | 1 s |
-| `make_tableS1.py` | Table of the 81 alternative specifications (specification curve) from the registers; also draws the specification-curve figure as a by-product. | registers | `tables/TableS1_specification_curve.csv` (+ a PNG) | frozen | 2 s |
+| `verify_s14_horn.py` | Stage 14. Slope algorithm sensitivity: Horn (1981) eight-neighbour slopes recomputed from the DEM at the 15,280 analysis points, their difference from the stored Zevenbergen-Thorne slopes, and the main model and the spline refitted with Horn slopes (interaction 1.0363, 95% CI 1.0138 to 1.0592). | raw DEM, `cases_xy.csv`, `controls_xy.csv` | `verified_facts_s14.json` | raw | 30 s |
+| `verify_s15_bg_extent.py` | Stage 15. Bounding coordinates of the 50,000 candidate control points and the sampling rectangle they imply. | `data/bg_points.csv` | `verified_facts_s15.json` | frozen | 1 s |
+| `make_supported_range_table.py` | Table of the slope range over which the upper 95% limit is below 1, by inference procedure and design, from the stage-11 register. | registers | `tables/supported_slope_range_by_inference.csv` | frozen | 1 s |
+| `make_tableS2_S3.py` | Coefficient table of the main model with variance inflation factors before and after centring slope (from the stage-5 register), and the table of the 40 rainfall events with their rainfall windows, cases, bamboo cases and leave-one-event-out estimates (from the stage-6 and stage-10 registers). | registers | `tables/TableS2_coefficients_vif.csv`, `tables/TableS3_events_cases_loeo.csv` | frozen | 1 s |
+| `make_tableS1.py` | Table of the 82 alternative specifications (specification curve) from the registers, including the stage-14 Horn refit; also draws the specification-curve figure as a by-product. | registers | `tables/TableS1_specification_curve.csv` (+ a PNG) | frozen | 2 s |
 | `clogit_exact.py` | Library: exact conditional logistic likelihood via elementary symmetric polynomials (imported by stage 6d). | - | - | - | - |
 
 Order for a complete rebuild from the raw layers: `verify_all` -> `verify_models` -> `verify_s6a`
@@ -195,8 +202,8 @@ Order for a complete rebuild from the raw layers: `verify_all` -> `verify_models
 `verify_s9_legacy` -> `verify_s9b_chm` -> `verify_s10_rain` -> `verify_s10b_vi` ->
 `verify_s11_audit` -> `verify_s11b_boot` -> `verify_s11c_fe_cluster` -> `verify_s11d_reactivation`
 -> `verify_s11e_envelope_lr` -> `verify_s11f_tree_ensemble` -> `verify_s12_consistency` ->
-`verify_s13_reported_quantities`, then `allcells_cluster`, `controls_inside_polygons`, `bamboo_form`,
-`regional_form_check`, `make_tableS9`, `make_tableS1`. Each stage reads the register of the previous one; the stage-11
+`verify_s13_reported_quantities` -> `verify_s14_horn` -> `verify_s15_bg_extent`, then `allcells_cluster`, `controls_inside_polygons`, `bamboo_form`,
+`regional_form_check`, `make_supported_range_table`, `make_tableS2_S3`, `make_tableS1`. Each stage reads the register of the previous one; the stage-11
 scripts append to `verified_facts_s11.json` rather than overwrite it.
 
 ## 6. How to read the registers
@@ -210,7 +217,7 @@ scripts append to `verified_facts_s11.json` rather than overwrite it.
 - `cls`: reproducibility class A, B or C as defined in section 5.
 
 Identifiers follow the stage: `S0.*` to `S4.*` in `verified_facts_partial.json` (sources and the table rebuild), `S1.*` to `S7.*` in `verified_facts.json`, `S9.*`, `S10.*`,
-`S11.*`, `S12.*`, `S13.*` in the files of the same suffix. For example
+`S11.*`, `S12.*`, `S13.*`, `S14.*`, `S15.*` in the files of the same suffix. For example
 `verified_facts.json` -> `S6.event_fixed_effects` -> `fe` holds the event fixed-effects
 interaction 1.0315 (95% CI 1.0114 to 1.0521) and `S6.crossover_bootstrap` the bootstrap of the
 slope at which the odds ratio equals 1 (median 44.71°, 95% interval 34.5° to 55.78°).

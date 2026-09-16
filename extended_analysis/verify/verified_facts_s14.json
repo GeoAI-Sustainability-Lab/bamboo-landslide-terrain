@@ -1,0 +1,70 @@
+{
+ "facts": {
+  "S14.horn_vs_zt_all_points": {
+   "value": {
+    "n_points": 15280,
+    "median_deg": 0.785,
+    "p90_deg": 2.57,
+    "max_deg": 16.0,
+    "pct_gt_2deg": 15.9,
+    "median_deg_cases": 0.742,
+    "pct_gt_2deg_cases": 13.7,
+    "horn_minus_zt_mean_deg": -0.408
+   },
+   "definition": "absolute difference between the Horn eight-neighbour slope and the Zevenbergen-Thorne four-neighbour slope at the 15,280 analysis points (5,915 cases, 9,365 controls) of the bamboo-versus-broadleaf sample",
+   "source": "dem_20m.tif recomputation at cases_xy.csv and controls_xy.csv",
+   "cls": "A"
+  },
+  "S14.horn_slope_refit": {
+   "value": {
+    "zevenbergen_thorne": {
+     "OR": 1.0341,
+     "ci": [
+      1.0123,
+      1.0565
+     ],
+     "p": 0.002091442618789463,
+     "n": 15280,
+     "n_case": 5915,
+     "n_bamboo_case": 171
+    },
+    "horn": {
+     "OR": 1.0363,
+     "ci": [
+      1.0138,
+      1.0592
+     ],
+     "p": 0.0014174859204576506,
+     "n": 15280,
+     "n_case": 5915,
+     "n_bamboo_case": 171
+    }
+   },
+   "definition": "interaction odds ratio per degree of slope from Eq. (3) with the slope covariate (linear, quadratic and interaction terms) computed by the Zevenbergen-Thorne method (main analysis) and by the Horn method",
+   "source": "same sample as S5.headline_interaction; Horn slopes from dem_20m.tif",
+   "cls": "A"
+  },
+  "S14.horn_slope_refit_spline": {
+   "value": {
+    "zevenbergen_thorne": {
+     "band_upper_ci_below_1": [
+      9.9,
+      39.5
+     ],
+     "crossing_deg": 44.06
+    },
+    "horn": {
+     "band_upper_ci_below_1": [
+      10.6,
+      38.1
+     ],
+     "crossing_deg": 41.82
+    }
+   },
+   "definition": "cubic B-spline (df = 4) bamboo-versus-broadleaf curve of Eq. (4) with Zevenbergen-Thorne and with Horn slopes: slope range over which the pointwise upper 95% limit is below 1 (grid 5-60 degrees, step 0.1) and the slope where the curve reaches 1",
+   "source": "same sample; model-based covariance",
+   "cls": "A"
+  }
+ },
+ "log": "verify_s14_horn.py"
+}

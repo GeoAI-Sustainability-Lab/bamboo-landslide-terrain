@@ -1,0 +1,6 @@
+﻿design,inference,lower_deg,upper_deg,crossing_deg,note
+"island-wide case-control, cubic B-spline (Fig. 6)","model-based covariance, pointwise delta method",9.9,39.5,44.06,"main design, model-based covariance"
+"island-wide case-control, cubic B-spline (Fig. 6)","cluster-robust covariance, rainfall events as clusters and the controls as one further cluster, pointwise",9.3,31.4,44.06,same fitted curve; only the covariance differs
+"island-wide case-control, cubic B-spline (Fig. 6)","cluster bootstrap by event, 600 draws, pointwise 2.5 to 97.5 percentiles of the refitted curves",12.2,35.8,44.71,median over the 584 draws whose fitted odds ratio equals 1 inside 5 to 60 degrees; 95% interval 34.5 to 55.78; 16 draws stay below 1 throughout
+"event fixed effects + log max 24-h IMERG rainfall, same spline knots","model-based covariance, pointwise",10.2,30.5,41.99,"29,277 rows, 7,178 distinct control points"
+"event fixed effects + log max 24-h IMERG rainfall, same spline knots","covariance clustered by control point, pointwise",11.1,29.7,41.99,

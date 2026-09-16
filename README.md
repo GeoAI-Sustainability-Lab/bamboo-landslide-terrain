@@ -84,7 +84,7 @@ python verify_models.py
 python regional_form_check.py && python allcells_cluster.py && python verify_s9b_chm.py && python verify_s10b_vi.py
 python verify_s11_audit.py && python verify_s11b_boot.py && python verify_s11c_fe_cluster.py
 python verify_s11e_envelope_lr.py && python verify_s11f_tree_ensemble.py && python verify_s13_reported_quantities.py
-python make_tableS9.py && python make_tableS1.py
+python verify_s15_bg_extent.py && python make_supported_range_table.py && python make_tableS2_S3.py && python make_tableS1.py
 ```
 
 Each script prints the quantities it computes and writes them to a JSON register in
