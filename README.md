@@ -17,6 +17,10 @@ the latest version, and each release has its own version DOI on that page). Cite
 Taiwan: data, code and verification chain (Version 1.1.1) [Software]. Zenodo.
 https://doi.org/10.5281/zenodo.22702156
 
+Published article: Hsu, Y.-C. (2026). Slope steepness weakens the landslide protection
+associated with bamboo forests: Implications for afforestation siting in Taiwan. *Forest Ecology
+and Management* 621, 124264. https://doi.org/10.1016/j.foreco.2026.124264
+
 ## What the analysis does
 
 Landslide rates cannot be compared across forest types directly, because each forest type

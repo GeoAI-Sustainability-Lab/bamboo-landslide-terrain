@@ -9,6 +9,14 @@
       "orcid": "0000-0002-6616-6906"
     }
   ],
+  "related_identifiers": [
+    {
+      "identifier": "10.1016/j.foreco.2026.124264",
+      "relation": "isSupplementTo",
+      "scheme": "doi",
+      "resource_type": "publication-article"
+    }
+  ],
   "keywords": [
     "bamboo forest",
     "shallow landslide",

@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this repository, please cite it as below."
+message: "If you use this repository, please cite the article below; the software archive is cited in the identifiers."
 type: software
 title: "Terrain-controlled analysis of bamboo forests and rainfall-triggered landslides in Taiwan: data, code and verification chain"
 version: 1.1.1
@@ -25,3 +25,18 @@ keywords:
   - case-control logistic regression
   - Taiwan
 abstract: "Data tables and Python code for a terrain-controlled, multi-event analysis of how the association between bamboo forests and rainfall-triggered landslides varies with hillslope steepness in Taiwan (2018 to 2025), with a deterministic verification chain that recomputes every reported quantity from the frozen tables and writes it to a register."
+preferred-citation:
+  type: article
+  title: "Slope steepness weakens the landslide protection associated with bamboo forests: Implications for afforestation siting in Taiwan"
+  authors:
+    - family-names: Hsu
+      given-names: Yu-Chun
+      orcid: "https://orcid.org/0000-0002-6616-6906"
+      affiliation: "Department of Forestry, National Chung Hsing University, Taichung, Taiwan"
+  journal: "Forest Ecology and Management"
+  volume: 621
+  number: 124264
+  year: 2026
+  issn: "0378-1127"
+  doi: 10.1016/j.foreco.2026.124264
+  url: "https://doi.org/10.1016/j.foreco.2026.124264"
